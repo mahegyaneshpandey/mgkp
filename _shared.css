@@ -1,0 +1,15 @@
+/* Shared styles - inlined into each page */
+:root {
+  --bg: #0C0E14;
+  --surface: #13161F;
+  --surface2: #1A1E2A;
+  --border: #232838;
+  --gold: #C9A84C;
+  --gold2: #E8C872;
+  --teal: #2DD4BF;
+  --text: #E8E6E0;
+  --muted: #7A7A8A;
+  --soft: #B0ADA6;
+  --radius: 12px;
+  --nav-h: 64px;
+}

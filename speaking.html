@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Public Speaking Mastery — when to pause, how to convince, how to handle tough questions. By Gyanesh Kumar Pandey."/>
+<title>Speaking Mastery — Gyanesh Kumar Pandey</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#0C0E14;--sur:#13161F;--sur2:#1A1E2A;--bdr:#232838;--gold:#C9A84C;--gold2:#E8C872;--teal:#2DD4BF;--text:#E8E6E0;--muted:#7A7A8A;--soft:#B0ADA6;--r:12px;--nh:64px;
+  --c-short:#0F6E56;--c-medium:#854F0B;--c-long:#712B13;--c-breath:#3C3489;
+  --bg-short:#E1F5EE;--bg-medium:#FAEEDA;--bg-long:#FAECE7;--bg-breath:#EEEDFE}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;height:var(--nh);display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:rgba(12,14,20,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--bdr)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--gold)}
+.nav-desktop{display:none;gap:28px;list-style:none}
+.nav-desktop a{font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);transition:color .2s}
+.nav-desktop a:hover,.nav-desktop a.act{color:var(--gold)}
+.hamburger{background:none;border:none;cursor:pointer;padding:8px;display:flex;flex-direction:column;gap:5px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:transform .25s,opacity .25s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:var(--nh);left:0;right:0;bottom:0;z-index:190;background:var(--bg);padding:32px 24px;display:flex;flex-direction:column;gap:8px;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1)}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{font-size:18px;font-weight:500;color:var(--soft);padding:16px 0;border-bottom:1px solid var(--bdr);display:block}
+.mobile-menu a.act{color:var(--gold)}
+.mobile-menu .m-cta{margin-top:24px;background:var(--gold);color:#0C0E14;padding:16px;border-radius:var(--r);text-align:center;font-weight:600;font-size:16px;border-bottom:none}
+
+/* PAGE HERO */
+.page-hero{padding:36px 24px 32px;background:var(--sur);border-bottom:1px solid var(--bdr);position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;top:-50%;right:-20%;width:50vw;height:50vw;max-width:400px;max-height:400px;background:radial-gradient(circle,rgba(201,168,76,.07) 0%,transparent 65%);pointer-events:none}
+.ph-tag{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--teal);letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px}
+.page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,9vw,62px);font-weight:700;line-height:1.05;margin-bottom:12px}
+.page-hero h1 em{color:var(--gold);font-style:normal}
+.page-hero p{font-size:14px;color:var(--muted);max-width:560px;line-height:1.7}
+.ph-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.ph-tag2{background:var(--sur2);border:1px solid var(--bdr);color:var(--soft);padding:7px 14px;border-radius:100px;font-size:12px}
+
+/* TOC NAV */
+.toc{background:var(--sur);border-bottom:1px solid var(--bdr);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.toc::-webkit-scrollbar{display:none}
+.toc-row{display:flex;width:max-content;padding:0 24px}
+.toc-link{display:block;padding:14px 16px;font-size:13px;font-weight:500;color:var(--muted);white-space:nowrap;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.toc-link:hover,.toc-link.act{color:var(--gold);border-bottom-color:var(--gold)}
+
+/* SECTIONS */
+.sec{padding:56px 24px;border-bottom:1px solid var(--bdr)}
+.sec:last-of-type{border-bottom:none}
+.sec-max{max-width:860px;margin:0 auto}
+.sec-tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:10px}
+.sec-h{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,7vw,46px);font-weight:700;line-height:1.1;margin-bottom:8px}
+.sec-h em{color:var(--gold);font-style:normal}
+.sec-sub{font-size:14px;color:var(--muted);margin-bottom:32px;max-width:560px;line-height:1.6}
+
+/* PAUSE BADGES */
+.badge-row{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:36px}
+.badge-card{border-radius:var(--r);padding:16px;border:1px solid transparent}
+.badge-card.bs{background:var(--bg-short);border-color:rgba(15,110,86,.2);color:var(--c-short)}
+.badge-card.bm{background:var(--bg-medium);border-color:rgba(133,79,11,.2);color:var(--c-medium)}
+.badge-card.bl{background:var(--bg-long);border-color:rgba(113,43,19,.2);color:var(--c-long)}
+.badge-card.bb{background:var(--bg-breath);border-color:rgba(60,52,137,.2);color:var(--c-breath)}
+.badge-label{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+.badge-desc{font-size:12px;line-height:1.5;opacity:.85}
+
+/* SPEECH SCRIPT */
+.script-wrap{background:var(--sur);border:1px solid var(--bdr);border-radius:var(--r);padding:24px;font-size:15px;line-height:2.0;color:var(--soft)}
+.script-wrap strong{color:var(--text)}
+.pbadge{display:inline-flex;align-items:center;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.06em;padding:2px 8px;border-radius:4px;margin:0 4px;cursor:default;vertical-align:middle;position:relative}
+.pbadge:hover .ptip{display:block}
+.ptip{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--sur2);border:1px solid var(--bdr);border-radius:8px;padding:10px 14px;font-size:12px;font-family:'Inter',sans-serif;font-weight:400;color:var(--text);width:220px;text-align:left;z-index:50;line-height:1.5;letter-spacing:0}
+.pbadge.ps{background:var(--bg-short);color:var(--c-short)}
+.pbadge.pm{background:var(--bg-medium);color:var(--c-medium)}
+.pbadge.pl{background:var(--bg-long);color:var(--c-long)}
+.pbadge.pb{background:var(--bg-breath);color:var(--c-breath)}
+.script-section{margin-top:28px;padding-top:24px;border-top:1px solid var(--bdr)}
+.ssec-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+
+/* CONVINCE TECHNIQUES */
+.technique-list{display:flex;flex-direction:column;gap:16px}
+.tech-card{background:var(--sur);border:1px solid var(--bdr);border-radius:var(--r);padding:22px;border-left:3px solid var(--gold);transition:border-color .2s}
+.tech-card:hover{border-color:var(--gold)}
+.tech-num{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:.15em;margin-bottom:8px}
+.tech-card h3{font-size:16px;font-weight:600;margin-bottom:8px;color:var(--text)}
+.tech-card p{font-size:14px;color:var(--muted);line-height:1.7}
+.tech-card .example{margin-top:12px;padding:12px 14px;background:rgba(201,168,76,.06);border-radius:8px;font-size:13px;color:var(--soft);font-style:italic;border-left:2px solid var(--gold)}
+
+/* TOUGH QUESTIONS */
+.tough-list{display:flex;flex-direction:column;gap:12px}
+.tq-card{background:var(--sur);border:1px solid var(--bdr);border-radius:var(--r);overflow:hidden;transition:border-color .2s}
+.tq-card:hover{border-color:rgba(201,168,76,.2)}
+.tq-hdr{display:flex;justify-content:space-between;align-items:flex-start;padding:16px 18px;cursor:pointer;gap:12px;-webkit-tap-highlight-color:transparent}
+.tq-q{font-size:15px;font-weight:500;line-height:1.5;flex:1}
+.tq-badge{font-size:10px;font-family:'JetBrains Mono',monospace;padding:3px 8px;border-radius:100px;flex-shrink:0;margin-top:3px}
+.tq-badge.hostile{background:rgba(232,75,75,.1);color:#E87070}
+.tq-badge.blank{background:rgba(45,212,191,.1);color:var(--teal)}
+.tq-badge.trap{background:rgba(201,168,76,.1);color:var(--gold)}
+.tq-tog{width:26px;height:26px;display:grid;place-items:center;color:var(--muted);font-size:20px;background:var(--bdr);border-radius:50%;transition:transform .25s;flex-shrink:0;margin-top:2px}
+.tq-card.open .tq-tog{transform:rotate(45deg);color:var(--gold)}
+.tq-body{display:none;padding:0 18px 18px;border-top:1px solid var(--bdr)}
+.tq-card.open .tq-body{display:block}
+.tq-a{font-size:14px;color:var(--soft);line-height:1.85;padding-top:14px}
+.tq-a strong{color:var(--text)}
+.tq-a .step{display:flex;gap:12px;margin-bottom:12px;align-items:flex-start}
+.step-n{width:26px;height:26px;background:rgba(201,168,76,.12);border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:600;color:var(--gold);flex-shrink:0;margin-top:2px}
+
+/* EYE CONTACT GUIDE */
+.eye-guide{background:var(--sur2);border:1px solid var(--bdr);border-radius:var(--r);padding:24px;margin-top:24px}
+.eye-row{display:flex;flex-direction:column;gap:16px}
+.eye-item{display:flex;gap:14px;align-items:flex-start}
+.eye-icon{width:40px;height:40px;background:rgba(201,168,76,.1);border-radius:10px;display:grid;place-items:center;font-size:18px;flex-shrink:0}
+.eye-item h4{font-size:14px;font-weight:600;margin-bottom:4px}
+.eye-item p{font-size:13px;color:var(--muted);line-height:1.5}
+
+/* VOICE GRID */
+.voice-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px}
+.voice-card{background:var(--sur2);border:1px solid var(--bdr);border-radius:10px;padding:18px}
+.voice-card h4{font-size:14px;font-weight:600;color:var(--gold);margin-bottom:8px}
+.voice-card p{font-size:13px;color:var(--muted);line-height:1.6}
+.voice-card .do{color:var(--teal);font-size:12px;margin-top:8px}
+.voice-card .dont{color:#E87070;font-size:12px}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal.vis{opacity:1;transform:none}
+
+footer{background:var(--sur);border-top:1px solid var(--bdr);padding:36px 24px;text-align:center}
+footer p{font-size:13px;color:var(--muted)}
+footer a{color:var(--gold)}
+
+@media(min-width:640px){
+  .badge-row{grid-template-columns:repeat(4,1fr)}
+  .voice-grid{grid-template-columns:repeat(2,1fr)}
+  .page-hero{padding:56px 40px 44px}
+  .sec{padding:72px 40px}
+  .toc-row{padding:0 40px}
+}
+@media(min-width:900px){
+  nav{padding:0 48px}
+  .hamburger{display:none}
+  .nav-desktop{display:flex}
+  .voice-grid{grid-template-columns:repeat(4,1fr)}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">GKP</a>
+  <ul class="nav-desktop">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="questions.html">Interview Q&amp;A</a></li>
+    <li><a href="coach.html">Interview Coach</a></li>
+    <li><a href="speaking.html" class="act">Speaking Guide</a></li>
+  </ul>
+  <button class="hamburger" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mmenu">
+  <a href="index.html">Home</a>
+  <a href="questions.html">Interview Q&amp;A</a>
+  <a href="speaking.html" class="act">Speaking Guide</a>
+  <a href="index.html#about">About</a>
+  <a href="questions.html" class="m-cta">Free Resources →</a>
+</div>
+
+<div class="page-hero">
+  <div class="ph-tag">// Speaking Mastery</div>
+  <h1>Speak with<br/><em>Confidence</em></h1>
+  <p>A practical guide to pausing, convincing, handling tough questions, and owning every room — whether an interview, a boardroom, or a stage.</p>
+  <div class="ph-tags">
+    <span class="ph-tag2">When &amp; Why to Pause</span>
+    <span class="ph-tag2">How to Convince</span>
+    <span class="ph-tag2">Tough Questions</span>
+    <span class="ph-tag2">Voice &amp; Tone</span>
+    <span class="ph-tag2">Eye Contact</span>
+    <span class="ph-tag2">AI Speech Script</span>
+  </div>
+</div>
+
+<div class="toc">
+  <div class="toc-row">
+    <a href="#pause" class="toc-link act">Pause Guide</a>
+    <a href="#speech" class="toc-link">AI Speech Script</a>
+    <a href="#convince" class="toc-link">How to Convince</a>
+    <a href="#tough" class="toc-link">Tough Questions</a>
+    <a href="#voice" class="toc-link">Voice &amp; Tone</a>
+    <a href="#eye" class="toc-link">Eye Contact</a>
+  </div>
+</div>
+
+<!-- SECTION 1: PAUSE -->
+<div class="sec" id="pause">
+  <div class="sec-max">
+    <div class="sec-tag reveal">01 / The Art of Pausing</div>
+    <h2 class="sec-h reveal">When to <em>Pause</em> — and Why</h2>
+    <p class="sec-sub reveal">A pause is not dead air. It is a tool. The best speakers pause on purpose — to let ideas land, to signal importance, and to give the audience time to think.</p>
+
+    <div class="badge-row reveal">
+      <div class="badge-card bs"><div class="badge-label">Short — 1 sec</div><div class="badge-desc">Let a single idea land. Before listing items. After a key name or number.</div></div>
+      <div class="badge-card bm"><div class="badge-label">Medium — 2 sec</div><div class="badge-desc">Shift between topics. Before revealing something important. Look at your audience.</div></div>
+      <div class="badge-card bl"><div class="badge-label">Long — 3 sec</div><div class="badge-desc">After a big statement. After a punch line. After saying "and this changes everything."</div></div>
+      <div class="badge-card bb"><div class="badge-label">Breath — inhale</div><div class="badge-desc">Start of a new section. After a long list. Reset your voice and posture.</div></div>
+    </div>
+
+    <div class="technique-list reveal">
+      <div class="tech-card">
+        <div class="tech-num">RULE 01</div>
+        <h3>Pause before the most important word</h3>
+        <p>Not after — before. The pause before creates anticipation. The pause after creates reflection. Use both for maximum impact.</p>
+        <div class="example">"The one thing that changed everything was…  [2 sec pause]  …accessibility."</div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-num">RULE 02</div>
+        <h3>Never fill silence with filler words</h3>
+        <p>"Um," "uh," "like," "you know" destroy your authority instantly. Train yourself to replace every filler with silence. Silence sounds confident. Fillers sound uncertain.</p>
+        <div class="example">Practice: record yourself for 2 minutes. Count your filler words. Work to reduce that number each week.</div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-num">RULE 03</div>
+        <h3>The 3-second pause after a big claim</h3>
+        <p>When you make a strong statement — a surprising statistic, a bold conclusion, a dramatic shift — pause for 3 full seconds. It feels long to you and perfect to the audience. They need that time to absorb.</p>
+        <div class="example">"AI will automate tasks that we thought only humans could do."  [3 sec]  Then continue.</div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-num">RULE 04</div>
+        <h3>Pause and make eye contact simultaneously</h3>
+        <p>During a long pause, don't look at your notes — look at one person in the audience for 2 seconds. Then move to another. This makes every individual feel personally addressed.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 2: SPEECH SCRIPT -->
+<div class="sec" id="speech" style="background:var(--sur)">
+  <div class="sec-max">
+    <div class="sec-tag reveal">02 / Practice Script</div>
+    <h2 class="sec-h reveal">AI Speech — <em>Marked Script</em></h2>
+    <p class="sec-sub reveal">Hover over any badge to see why that pause is placed there. Use this script for practice — read it aloud 3 times.</p>
+
+    <div class="script-wrap reveal">
+      <div class="ssec-label">Opening Hook — say this first</div>
+      <p>
+        <strong>"Think about the last time you typed a question into Google and got a useless answer. Now think about ChatGPT — and it actually <em>explained</em> it, like a person would."</strong>
+        <span class="pbadge pl">LONG<span class="ptip">3 seconds. Let them recall that personal experience. This is your emotional hook.</span></span>
+        <strong>"That shift — right there — is exactly what I want to talk about today."</strong>
+      </p>
+
+      <div class="script-section">
+        <div class="ssec-label">Traditional AI Constraints</div>
+        <p>
+          AI technologies are evolving with unprecedented speed, driven by massive investments around the world.
+          <span class="pbadge pm">MEDIUM<span class="ptip">Topic transition coming. Let the opening statement breathe.</span></span>
+          Traditional AI was driven forward by a relatively small number of highly qualified specialists — like data scientists and machine learning engineers.
+          <span class="pbadge ps">SHORT<span class="ptip">Short pause before explaining what they actually did.</span></span>
+          These specialists were designing and training AI models using available company data.
+          <span class="pbadge pm">MEDIUM<span class="ptip">About to introduce a key constraint. "Here comes something important."</span></span>
+          Therefore, traditional AI was constrained by two factors:
+          <span class="pbadge ps">SHORT<span class="ptip">Tiny pause before listing. Creates anticipation.</span></span>
+          the availability of highly qualified experts, and the availability of high quality, consistent data.
+          <span class="pbadge pl">LONG<span class="ptip">LONG pause. These two constraints are why GenAI was revolutionary. Let the audience absorb it.</span></span>
+        </p>
+      </div>
+
+      <div class="script-section">
+        <div class="ssec-label">The ChatGPT Moment</div>
+        <p>
+          This suddenly changed in 2022
+          <span class="pbadge ps">SHORT<span class="ptip">Pause after "in 2022" — like a storyteller about to reveal the twist.</span></span>
+          with the ChatGPT moment — and the rise of Generative AI.
+          <span class="pbadge pm">MEDIUM<span class="ptip">Let "ChatGPT moment" sink in. Many in the audience lived it.</span></span>
+          For the first time in history, powerful AI became easily accessible for literally
+          <span class="pbadge ps">SHORT<span class="ptip">Slow down before "billions".</span></span>
+          <strong>billions of normal people.</strong>
+          <span class="pbadge pl">LONG<span class="ptip">LONG pause. "Billions of normal people." The scale of this matters. Let it hit.</span></span>
+          This led to a major paradigm shift.
+          <span class="pbadge pm">MEDIUM<span class="ptip">Pause before you explain what kind of paradigm shift. Build suspense.</span></span>
+          AI could now be used by literally everyone to automate literally everything.
+          <span class="pbadge pl">LONG<span class="ptip">LONG pause. "Everyone. Everything." Punchy words. Say them slowly, then stop completely.</span></span>
+        </p>
+      </div>
+
+      <div class="script-section">
+        <div class="ssec-label">The Old Paradigm is Dead</div>
+        <p>
+          The old paradigm — that automation should focus only on simple, repetitive tasks — was practically dead.
+          <span class="pbadge pm">MEDIUM<span class="ptip">"Practically dead." Dramatic. Pause after this — don't rush past it.</span></span>
+          The new generation of AI could automate highly specialized tasks: researchers, engineers, programmers, designers, writers, composers, and even artists.
+          <span class="pbadge pb">BREATH<span class="ptip">Take a breath. Long list. Audience is processing which profession applies to them.</span></span>
+        </p>
+      </div>
+
+      <div class="script-section">
+        <div class="ssec-label">The Next Wave — Agentic AI</div>
+        <p>
+          The next AI wave is already fully underway, focusing on agentic AI.
+          <span class="pbadge ps">SHORT<span class="ptip">Pause before defining what agentic AI is.</span></span>
+          AI agents can be compared to virtual human specialists.
+          <span class="pbadge ps">SHORT<span class="ptip">Let the analogy land before expanding.</span></span>
+          They independently analyze problems, make decisions, and execute actions.
+          <span class="pbadge pm">MEDIUM<span class="ptip">Pause before the most impressive capability — self-learning.</span></span>
+          They can even <strong>learn independently</strong> from outcomes to optimize their future decisions.
+          <span class="pbadge pl">LONG<span class="ptip">LONG pause. "Agents that improve themselves." Very powerful idea. Give it space.</span></span>
+        </p>
+      </div>
+
+      <div class="script-section">
+        <div class="ssec-label">Closing — The Big Finish</div>
+        <p>
+          And that's not all.
+          <span class="pbadge pm">MEDIUM<span class="ptip">Classic technique. "And that's not all." Pause and look at the audience.</span></span>
+          There are already approaches leveraging entire agent swarms — comparable to virtual teams of specialists — orchestrated by master agents, comparable to human team leaders.
+          <span class="pbadge pb">BREATH<span class="ptip">Take a breath before your closing line. This is your big finish.</span></span>
+          And <strong>this</strong> —
+          <span class="pbadge pl">LONG — look at the room<span class="ptip">LONG pause after "And this —". Look slowly around the room. The repeated "this" is intentional and dramatic.</span></span>
+          this will open up even broader, and more fascinating, opportunities.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 3: CONVINCE -->
+<div class="sec" id="convince">
+  <div class="sec-max">
+    <div class="sec-tag reveal">03 / The Art of Persuasion</div>
+    <h2 class="sec-h reveal">How to <em>Convince</em></h2>
+    <p class="sec-sub reveal">Convincing someone is not about being louder or repeating yourself. It is about understanding what they need to hear — and delivering it in a way that feels like their own conclusion.</p>
+
+    <div class="technique-list reveal">
+      <div class="tech-card">
+        <div class="tech-num">TECHNIQUE 01</div>
+        <h3>Start with agreement, not argument</h3>
+        <p>Before you make your case, find something genuine to agree with in the other person's position. This disarms defensiveness and signals that you have listened. People are far more open to changing their mind when they feel heard first.</p>
+        <div class="example">"You're absolutely right that cost is a critical constraint. And that's exactly why I want to show you why this investment pays back in 13 months."</div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-num">TECHNIQUE 02</div>
+        <h3>Use "because" — always give a reason</h3>
+        <p>Research shows that people are significantly more likely to comply with a request when a reason is given — even a simple one. Never make a recommendation without the word "because" followed by a clear rationale.</p>
+        <div class="example">"I recommend we prioritize Feature B first because its payback period is 40% shorter than Feature A, which directly reduces our Q3 cash risk."</div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-num">TECHNIQUE 03</div>
+        <h3>The "so that" bridge — connect feature to outcome</h3>
+        <p>Never pitch a feature — pitch the outcome. Everything you propose must end in a business consequence. Use the bridge: "[feature] so that [business outcome]." This forces you to articulate value, not capability.</p>
+        <div class="example">"We integrate PLM with SAP in real time so that engineering change cycles drop from 5 days to 1 — which means 80% faster time to market."</div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-num">TECHNIQUE 04</div>
+        <h3>The Rule of Three — group your arguments</h3>
+        <p>Present exactly three reasons for your recommendation. Not one — too thin. Not five — they'll forget. Three is the cognitive sweet spot for persuasion. Name them before you explain them: "There are three reasons I recommend this approach. First…"</p>
+        <div class="example">"There are three reasons to choose agentic AI now: cost reduction, cycle time improvement, and competitive differentiation."</div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-num">TECHNIQUE 05</div>
+        <h3>Acknowledge the objection before they raise it</h3>
+        <p>The most powerful persuasion move is to name the other person's objection before they do. It signals you have thought about it, removes their ammunition, and lets you answer it on your terms. "You might be wondering about the cost…"</p>
+        <div class="example">"I know what you're thinking — this sounds expensive. Let me show you the three-year ROI first, and then we can discuss the investment."</div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-num">TECHNIQUE 06</div>
+        <h3>The "what would it take?" close</h3>
+        <p>When someone is reluctant, don't push harder — ask what evidence would change their mind. "What would it take for you to feel confident about this?" This shifts the conversation from disagreement to requirements, which is solvable.</p>
+        <div class="example">"I understand you're not convinced yet. What information or evidence would help you feel more confident about this direction?"</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 4: TOUGH QUESTIONS -->
+<div class="sec" id="tough" style="background:var(--sur)">
+  <div class="sec-max">
+    <div class="sec-tag reveal">04 / Tough Situations</div>
+    <h2 class="sec-h reveal">Handling <em>Tough Questions</em></h2>
+    <p class="sec-sub reveal">Every speaker faces questions they didn't expect. The difference between a confident speaker and a nervous one is not knowing every answer — it's knowing how to handle not knowing.</p>
+
+    <div class="tough-list reveal">
+      <div class="tq-card">
+        <div class="tq-hdr">
+          <div class="tq-q">You don't know the answer. What do you say?</div>
+          <span class="tq-badge blank">I don't know</span>
+          <div class="tq-tog">+</div>
+        </div>
+        <div class="tq-body"><div class="tq-a">
+          <strong>Never bluff.</strong> An audience can often sense uncertainty, and being caught bluffing is far more damaging than admitting you don't know.<br><br>
+          <div class="step"><div class="step-n">1</div><div>Acknowledge the question directly: <em>"That's a great question — and I want to give you an accurate answer rather than a guessed one."</em></div></div>
+          <div class="step"><div class="step-n">2</div><div>Show your thinking process: <em>"What I do know is [related context you can offer], which suggests the answer is likely in the direction of [reasoned guess]."</em></div></div>
+          <div class="step"><div class="step-n">3</div><div>Commit to follow up: <em>"I'll confirm the exact figure and get back to you by end of today."</em> Then actually do it.</div></div>
+          <br>Admitting you don't know builds more credibility than a confident wrong answer. Leaders who can say "I don't know, but I'll find out" are trusted more than those who pretend to know everything.
+        </div></div>
+      </div>
+
+      <div class="tq-card">
+        <div class="tq-hdr">
+          <div class="tq-q">Someone challenges you aggressively or tries to embarrass you in front of others.</div>
+          <span class="tq-badge hostile">Hostile</span>
+          <div class="tq-tog">+</div>
+        </div>
+        <div class="tq-body"><div class="tq-a">
+          The audience is watching how you react more than what you say. Stay calm — your composure is your strongest response.<br><br>
+          <div class="step"><div class="step-n">1</div><div><strong>Pause before responding.</strong> A 2-second pause while maintaining eye contact signals confidence, not fear. Do not react immediately.</div></div>
+          <div class="step"><div class="step-n">2</div><div><strong>Separate the tone from the content.</strong> Respond to the question, not the aggression. <em>"That's an important challenge — let me address the substance of it."</em></div></div>
+          <div class="step"><div class="step-n">3</div><div><strong>Never escalate.</strong> If they get louder, get quieter. Lowering your voice forces them and the audience to lean in, which shifts the power dynamic to you.</div></div>
+          <div class="step"><div class="step-n">4</div><div><strong>Redirect if necessary:</strong> <em>"I think we might have a difference of context here — let's take this offline so I can walk you through the full picture."</em></div></div>
+        </div></div>
+      </div>
+
+      <div class="tq-card">
+        <div class="tq-hdr">
+          <div class="tq-q">You get a "gotcha" question designed to make you look bad.</div>
+          <span class="tq-badge trap">Trap</span>
+          <div class="tq-tog">+</div>
+        </div>
+        <div class="tq-body"><div class="tq-a">
+          "Gotcha" questions often contain a false premise or force a binary answer on a complex issue. Don't accept the framing.<br><br>
+          <div class="step"><div class="step-n">1</div><div><strong>Identify and name the false premise:</strong> <em>"I'd push back slightly on the framing of that question — it assumes [X], but in practice [Y] is also true."</em></div></div>
+          <div class="step"><div class="step-n">2</div><div><strong>Reframe before answering:</strong> <em>"The more useful question is [reframe], and the answer to that is…"</em></div></div>
+          <div class="step"><div class="step-n">3</div><div><strong>Stay constructive</strong> — don't make the questioner an enemy in front of the group. Reframe the question as "understandable confusion" rather than a trick.</div></div>
+        </div></div>
+      </div>
+
+      <div class="tq-card">
+        <div class="tq-hdr">
+          <div class="tq-q">Your mind goes blank mid-sentence during a presentation.</div>
+          <span class="tq-badge blank">Blank</span>
+          <div class="tq-tog">+</div>
+        </div>
+        <div class="tq-body"><div class="tq-a">
+          This happens to everyone, including the most experienced speakers. How you handle it determines whether the audience notices.<br><br>
+          <div class="step"><div class="step-n">1</div><div><strong>Pause and breathe.</strong> Do not panic. Take one slow breath. The audience interprets a pause as thoughtfulness, not failure.</div></div>
+          <div class="step"><div class="step-n">2</div><div><strong>Use a bridging phrase:</strong> <em>"Let me come back to the key point here…"</em> or <em>"What's most important to remember from this section is…"</em> These buy you 3–5 seconds and refocus both you and the audience.</div></div>
+          <div class="step"><div class="step-n">3</div><div><strong>Return to structure.</strong> Every presentation has a structure — when you go blank, return to the big picture: "So we've covered X, and next I want to talk about Y."</div></div>
+          Prevention: Never memorize word-for-word. Memorize your three main points and let the words come naturally. If you lose the words, you still have the points.
+        </div></div>
+      </div>
+
+      <div class="tq-card">
+        <div class="tq-hdr">
+          <div class="tq-q">Someone asks a question completely outside your topic or expertise.</div>
+          <span class="tq-badge blank">Off-topic</span>
+          <div class="tq-tog">+</div>
+        </div>
+        <div class="tq-body"><div class="tq-a">
+          <div class="step"><div class="step-n">1</div><div><strong>Acknowledge and scope:</strong> <em>"That's an interesting area — it's slightly outside what I've focused on today, but let me share what I do know about it."</em></div></div>
+          <div class="step"><div class="step-n">2</div><div><strong>Bridge to your strength:</strong> Offer what you can from your domain, then bridge: <em>"From a PLM/portfolio management perspective, this connects to [your expertise area]."</em></div></div>
+          <div class="step"><div class="step-n">3</div><div><strong>Redirect to the session focus</strong> if needed: <em>"I'd love to discuss this further after the session — let me make a note to connect with you about it."</em></div></div>
+          Knowing the limits of your expertise and naming them confidently is a sign of seniority, not weakness.
+        </div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 5: VOICE -->
+<div class="sec" id="voice">
+  <div class="sec-max">
+    <div class="sec-tag reveal">05 / Voice &amp; Tone</div>
+    <h2 class="sec-h reveal">Master Your <em>Voice</em></h2>
+    <p class="sec-sub reveal">Your voice is an instrument. Most speakers use only one setting — medium volume, medium speed, medium energy. Variation is what creates impact.</p>
+
+    <div class="voice-grid reveal">
+      <div class="voice-card">
+        <h4>Speed</h4>
+        <p>Vary your speed deliberately. Fast for excitement and momentum. Slow for gravity and importance.</p>
+        <div class="do">✓ Slow down on power phrases</div>
+        <div class="dont">✗ Never speak at one constant speed</div>
+      </div>
+      <div class="voice-card">
+        <h4>Volume</h4>
+        <p>Lower your voice to make people lean in. Raise it to signal energy. Whispering a key point makes it feel confidential and memorable.</p>
+        <div class="do">✓ Go quieter on climax moments</div>
+        <div class="dont">✗ Never get louder to win an argument</div>
+      </div>
+      <div class="voice-card">
+        <h4>Pitch</h4>
+        <p>Drop your pitch at the end of statements. Rising pitch at the end of sentences sounds like questions — it undermines authority.</p>
+        <div class="do">✓ End statements with a downward pitch</div>
+        <div class="dont">✗ Never end a statement on an upward note</div>
+      </div>
+      <div class="voice-card">
+        <h4>Emphasis</h4>
+        <p>Stress one key word per sentence — not several. Emphasis on too many words means nothing is emphasized.</p>
+        <div class="do">✓ One stressed word per sentence</div>
+        <div class="dont">✗ Never stress 3+ words per sentence</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 6: EYE CONTACT -->
+<div class="sec" id="eye" style="background:var(--sur)">
+  <div class="sec-max">
+    <div class="sec-tag reveal">06 / Eye Contact</div>
+    <h2 class="sec-h reveal">Command the <em>Room</em></h2>
+    <p class="sec-sub reveal">Eye contact is the single most powerful tool for connecting with an audience. Most speakers get it wrong — they either stare at one person or nervously scan the room.</p>
+
+    <div class="eye-guide reveal">
+      <div class="eye-row">
+        <div class="eye-item"><div class="eye-icon">👁️</div><div><h4>One person at a time — complete a thought</h4><p>Give one person eye contact for the full length of a thought — not a glance, not a scan. One thought = one person. Then move to the next person for the next thought.</p></div></div>
+        <div class="eye-item"><div class="eye-icon">📐</div><div><h4>Cover the triangle</h4><p>In a group or interview panel, make a triangle — left, right, center. Return to each point. Nobody feels ignored and everyone feels addressed.</p></div></div>
+        <div class="eye-item"><div class="eye-icon">⏸️</div><div><h4>Eye contact during pauses is power</h4><p>During your LONG pauses, slowly look around the room without speaking. This is uncomfortable for you and magnetic for the audience. Practice holding silence with eye contact.</p></div></div>
+        <div class="eye-item"><div class="eye-icon">📝</div><div><h4>Notes are not a shield</h4><p>If you must use notes, look at them between thoughts — not while speaking. Your eyes should be on the audience when words are coming out of your mouth.</p></div></div>
+        <div class="eye-item"><div class="eye-icon">💻</div><div><h4>Video calls — look at the camera, not the screen</h4><p>On video calls, looking at the other person's face on your screen means your camera sees you looking down. Look directly at the camera lens to make eye contact. Place a sticky note with a dot next to your camera as a reminder.</p></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p><a href="index.html">← Back to Portfolio</a> &nbsp;·&nbsp; <a href="questions.html">Interview Q&amp;A →</a></p>
+  <p style="margin-top:8px">Free knowledge shared from 20+ years of enterprise experience.</p>
+</footer>
+
+<script>
+const hbg=document.getElementById('hbg'),mm=document.getElementById('mmenu');
+hbg.addEventListener('click',()=>{hbg.classList.toggle('open');mm.classList.toggle('open');document.body.style.overflow=mm.classList.contains('open')?'hidden':''});
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hbg.classList.remove('open');mm.classList.remove('open');document.body.style.overflow=''}));
+document.querySelectorAll('.tq-hdr').forEach(h=>h.addEventListener('click',()=>h.closest('.tq-card').classList.toggle('open')));
+
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+const tocLinks=document.querySelectorAll('.toc-link');
+const sections=document.querySelectorAll('.sec');
+const tocObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const id=e.target.id;
+      tocLinks.forEach(l=>{l.classList.remove('act');if(l.getAttribute('href')==='#'+id)l.classList.add('act')});
+    }
+  });
+},{threshold:.3});
+sections.forEach(s=>tocObs.observe(s));
+</script>
+</body>
+</html>

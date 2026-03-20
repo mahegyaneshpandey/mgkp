@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Director Interview Q&A — Gyanesh Kumar Pandey</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#0C0E14;--sur:#13161F;--sur2:#1A1E2A;--bdr:#232838;--gold:#C9A84C;--gold2:#E8C872;--teal:#2DD4BF;--text:#E8E6E0;--muted:#7A7A8A;--soft:#B0ADA6;--r:12px;--nh:64px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+/* NAV */
+nav{position:sticky;top:0;z-index:200;height:var(--nh);display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:rgba(12,14,20,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--bdr)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--gold)}
+.nav-desktop{display:none;gap:28px;list-style:none}
+.nav-desktop a{font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);transition:color .2s}
+.nav-desktop a:hover,.nav-desktop a.act{color:var(--gold)}
+.hamburger{background:none;border:none;cursor:pointer;padding:8px;display:flex;flex-direction:column;gap:5px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:transform .25s,opacity .25s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;top:var(--nh);left:0;right:0;bottom:0;z-index:190;background:var(--bg);padding:32px 24px;display:flex;flex-direction:column;gap:8px;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1)}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{font-size:18px;font-weight:500;color:var(--soft);padding:16px 0;border-bottom:1px solid var(--bdr);display:block}
+.mobile-menu a.act{color:var(--gold)}
+.mobile-menu .m-cta{margin-top:24px;background:var(--gold);color:#0C0E14;padding:16px;border-radius:var(--r);text-align:center;font-weight:600;font-size:16px;border-bottom:none}
+/* HERO */
+.page-hero{padding:36px 24px 32px;background:var(--sur);border-bottom:1px solid var(--bdr);position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;top:-40%;right:-10%;width:50vw;height:50vw;max-width:400px;max-height:400px;background:radial-gradient(circle,rgba(201,168,76,.06) 0%,transparent 65%);pointer-events:none}
+.ph-ey{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--teal);letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px}
+.page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,8vw,52px);font-weight:700;line-height:1.05;margin-bottom:10px}
+.page-hero h1 em{color:var(--gold);font-style:normal}
+.page-hero p{font-size:14px;color:var(--muted);max-width:580px;line-height:1.7}
+.sp{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.sp span{background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.18);border-radius:100px;padding:5px 13px;font-size:12px;color:var(--gold2)}
+/* NUMBERS */
+.nb-bar{background:var(--sur2);border-bottom:1px solid var(--bdr);padding:12px 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.nb{text-align:center}
+.nb-n{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--gold);line-height:1}
+.nb-l{font-size:10px;color:var(--muted);margin-top:2px;line-height:1.2}
+/* CONTROLS */
+.controls{padding:14px 24px;background:var(--sur);border-bottom:1px solid var(--bdr);position:sticky;top:var(--nh);z-index:100}
+.si{width:100%;background:var(--bg);border:1px solid var(--bdr);border-radius:10px;padding:11px 16px 11px 40px;font-family:'Inter',sans-serif;font-size:14px;color:var(--text);outline:none;transition:border-color .2s;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%237A7A8A' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:14px center}
+.si:focus{border-color:var(--gold)}
+.si::placeholder{color:var(--muted)}
+.fs{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin-top:10px}
+.fs::-webkit-scrollbar{display:none}
+.fr{display:flex;gap:7px;width:max-content;padding-bottom:2px}
+.ft{background:var(--sur2);border:1px solid var(--bdr);color:var(--muted);padding:6px 13px;border-radius:100px;font-size:12px;font-weight:500;cursor:pointer;white-space:nowrap;transition:all .2s;-webkit-tap-highlight-color:transparent}
+.ft.act{background:rgba(201,168,76,.15);color:var(--gold);border-color:rgba(201,168,76,.3)}
+.rc{font-size:11px;color:var(--muted);margin-top:8px;font-family:'JetBrains Mono',monospace}
+/* CONTENT */
+.content{padding:24px;max-width:900px;margin:0 auto}
+/* POWER NUMBERS */
+.pcard{background:linear-gradient(135deg,rgba(201,168,76,.07),rgba(45,212,191,.04));border:1px solid rgba(201,168,76,.2);border-radius:var(--r);padding:18px 20px;margin-bottom:32px}
+.pc-lbl{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.pc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.pc-item{background:rgba(0,0,0,.25);border-radius:8px;padding:10px 12px}
+.pc-n{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--gold);line-height:1}
+.pc-l{font-size:11px;color:var(--muted);margin-top:2px}
+/* TELL ME SECTION */
+.tmay{background:var(--sur);border:1px solid var(--bdr);border-radius:var(--r);margin-bottom:32px;overflow:hidden}
+.tmay-hdr{padding:20px 20px 0;border-bottom:1px solid var(--bdr);padding-bottom:16px;display:flex;align-items:center;gap:10px}
+.tmay-hdr h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700}
+.tmay-body{padding:20px}
+.script-box{background:var(--bg);border:1px solid var(--bdr);border-radius:10px;padding:18px;font-size:14px;color:var(--soft);line-height:1.9}
+.script-box .seg{margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--bdr)}
+.script-box .seg:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.seg-tag{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--teal);letter-spacing:.15em;text-transform:uppercase;margin-bottom:6px}
+.seg-time{float:right;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);background:var(--sur2);padding:2px 8px;border-radius:100px}
+.seg-text{font-size:14px;color:var(--soft);line-height:1.85}
+.seg-text strong{color:var(--text)}
+.key-nums{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.kn{background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);border-radius:8px;padding:6px 12px;font-size:12px;color:var(--gold2)}
+/* CATEGORY SECTIONS */
+.cat-sec{margin-bottom:48px}
+.cat-hdr{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid var(--bdr)}
+.cat-ico{font-size:18px}
+.cat-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700}
+.cat-cnt{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--teal);margin-left:auto}
+/* Q CARDS */
+.qcard{background:var(--sur);border:1px solid var(--bdr);border-radius:10px;margin-bottom:9px;overflow:hidden;transition:border-color .2s}
+.qcard:hover{border-color:rgba(201,168,76,.22)}
+.qcard.tq{border-left:2px solid #E87070}
+.qhdr{display:flex;justify-content:space-between;align-items:flex-start;padding:15px 17px;cursor:pointer;gap:12px;-webkit-tap-highlight-color:transparent;user-select:none}
+.qq{font-size:14px;font-weight:500;line-height:1.5;flex:1}
+.qtog{width:26px;height:26px;flex-shrink:0;display:grid;place-items:center;color:var(--muted);font-size:19px;background:var(--bdr);border-radius:50%;transition:transform .25s,color .2s;margin-top:1px}
+.qcard.open .qtog{transform:rotate(45deg);color:var(--gold)}
+.qbody{display:none;padding:0 17px 18px;border-top:1px solid var(--bdr)}
+.qcard.open .qbody{display:block}
+.qa{font-size:14px;color:var(--soft);line-height:1.85;padding-top:12px}
+.qa p{margin-bottom:11px}
+.qa p:last-child{margin-bottom:0}
+.qa strong{color:var(--text)}
+/* SWIMLANE LINK */
+.swimlane-cta{background:var(--sur);border:1px solid rgba(45,212,191,.25);border-radius:var(--r);padding:20px 24px;display:flex;align-items:center;gap:16px;margin-bottom:40px;transition:border-color .2s;cursor:pointer}
+.swimlane-cta:hover{border-color:rgba(45,212,191,.5)}
+.sw-icon{font-size:28px;flex-shrink:0}
+.sw-text h4{font-size:15px;font-weight:600;color:var(--teal);margin-bottom:4px}
+.sw-text p{font-size:13px;color:var(--muted);line-height:1.5}
+.sw-arr{margin-left:auto;color:var(--teal);font-size:20px;flex-shrink:0}
+/* NO RESULTS */
+.no-res{text-align:center;padding:64px 20px;color:var(--muted)}
+.no-res h3{font-size:20px;color:var(--text);margin-bottom:8px}
+footer{background:var(--sur);border-top:1px solid var(--bdr);padding:32px 24px;text-align:center}
+footer p{font-size:13px;color:var(--muted);line-height:2}
+footer a{color:var(--gold)}
+/* RESPONSIVE */
+@media(min-width:640px){.pc-grid{grid-template-columns:repeat(3,1fr)}.nb-bar{grid-template-columns:repeat(8,1fr)}.page-hero{padding:48px 40px 36px}.controls{padding:18px 40px}.content{padding:28px 40px}}
+@media(min-width:900px){nav{padding:0 48px}.hamburger{display:none}.nav-desktop{display:flex}.pc-grid{grid-template-columns:repeat(5,1fr)}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">GKP</a>
+  <ul class="nav-desktop">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="questions.html" class="act">Interview Q&amp;A</a></li>
+    <li><a href="coach.html">Interview Coach</a></li>
+    <li><a href="speaking.html">Speaking Guide</a></li>
+  </ul>
+  <button class="hamburger" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mmenu">
+  <a href="index.html">Home</a>
+  <a href="questions.html" class="act">Interview Q&amp;A</a>
+  <a href="coach.html">Interview Coach</a>
+  <a href="coach.html">Interview Coach</a>
+  <a href="speaking.html">Speaking Guide</a>
+  <a href="index.html#about">About</a>
+  <a href="mailto:mahegyaneshpandey@gmail.com" class="m-cta">Contact Me</a>
+</div>
+
+<div class="page-hero">
+  <div class="ph-ey">// Director-Level · Real Questions · Real Answers</div>
+  <h1>Interview <em>Q&amp;A</em><br/>Director Edition</h1>
+  <p>39 real director-level questions with polished answers — curated from 20 years of experience. Drop your key numbers in every answer. Click any question to reveal the full answer.</p>
+  <div class="sp">
+    <span><strong>39</strong> Questions</span>
+    <span><strong>9</strong> Categories</span>
+    <span><strong>$2.4B</strong> Portfolio</span>
+    <span><strong>20 yrs</strong> Experience</span>
+    <span>No login · No paywall</span>
+  </div>
+</div>
+
+<div class="nb-bar">
+  <div class="nb"><div class="nb-n">$2.4B</div><div class="nb-l">Portfolio Size</div></div>
+  <div class="nb"><div class="nb-n">20 yrs</div><div class="nb-l">Experience</div></div>
+  <div class="nb"><div class="nb-n">14 yrs</div><div class="nb-l">Schneider</div></div>
+  <div class="nb"><div class="nb-n">16</div><div class="nb-l">Releases Led</div></div>
+  <div class="nb"><div class="nb-n">3</div><div class="nb-l">GCC Roles</div></div>
+  <div class="nb"><div class="nb-n">MTech</div><div class="nb-l">AI · Manipal</div></div>
+  <div class="nb"><div class="nb-n">PO</div><div class="nb-l">Certified 4 yrs</div></div>
+  <div class="nb"><div class="nb-n">90s</div><div class="nb-l">Max / Answer</div></div>
+</div>
+
+<div class="controls">
+  <input class="si" type="text" id="si" placeholder="Search… GCC, stakeholder, roadmap, AI, failure, leadership…" oninput="doFilter()"/>
+  <div class="fs"><div class="fr" id="fr"></div></div>
+  <div class="rc" id="rc"></div>
+</div>
+
+<div class="content" id="qc"></div>
+
+<footer>
+  <p><a href="index.html">← Portfolio</a> &nbsp;·&nbsp; <a href="speaking.html">Speaking Guide →</a></p>
+  <p>Real answers from 20 years of enterprise experience. Use freely — no login, no paywall.</p>
+</footer>
+
+<script>
+const qs = [
+  {c:'intro',q:`Tell me about yourself.`,a:`<p>I'm Gyanesh Pandey — a technology and product leader with 20 years of experience. My career has three clear chapters.</p><p>I started in a startup, building software for telecom clients like Verizon, AT&T, and AccuWeather. That taught me speed and problem-solving with limited resources.</p><p>Then HP — where I worked on HP OpenView and learned what it means to build for millions of enterprise users.</p><p>For 14 years at Schneider Electric, I grew from Technical Leader to Capabilities Leader — managing a $2.4 billion global R&D portfolio, building a GCC from zero, delivering 16 releases on our Future-Ready R&D Platform.</p><p>I also completed a Master's in AI while working full time — because I believe leaders must keep learning.</p><p>I'm now ready for the Director level. This role is the right next step.</p>`},
+  {c:'intro',q:`Walk me through your career progression.`,a:`<p>Every move I made was deliberate — not accidental.</p><p>I started in a startup to get real hands-on experience fast. Then HP to understand enterprise scale. Then Schneider Electric — where I stayed 14 years because I kept growing: Technical Leader, then Program Manager for OCP migration and tech-debt, then Certified Product Owner delivering 16 platform releases, then Capabilities Leader managing a $2.4 billion portfolio.</p><p>Each role prepared me for the next. Now the next step is Director — and everything I've built points toward that.</p>`},
+  {c:'intro',q:`How would your current team describe you as a leader?`,a:`<p>They would say I'm a leader who gives clarity and then trusts the team to deliver.</p><p>I don't micromanage. I set clear goals, explain the why behind the work, and then give people ownership. But I'm always available when they're stuck.</p><p>They would also say I have high standards — I push the team to deliver quality. But I do it by coaching, not criticizing.</p><p>And they would say I'm consistent — I show up the same way every day. No drama, no politics. Just focus on the work and the people.</p>`},
+  {c:'intro',q:`What are your top 3 strengths?`,a:`<p>Three things I've proven consistently.</p><p>First — connecting strategy to execution. I manage a $2.4 billion portfolio at the strategic level but I also know when to go deep into the details. Most people do one or the other. I do both.</p><p>Second — cross-border leadership. Building a GCC from zero, migrating complex projects from France to India, integrating two different teams across time zones — I've done this for real, not in a case study.</p><p>Third — continuous learning. I completed a Master's in AI while working full time at Schneider. That tells you how I operate under pressure — I don't slow down, I level up.</p>`},
+  {c:'intro',q:`What is your biggest weakness?`,a:`<p>I have very high standards — for myself and for my team. In the past, this meant I sometimes held on to work too long before delegating, because I wanted it done right.</p><p>But I learned that great leadership is about building people who can deliver to your standard — not doing it yourself.</p><p>Over the last four years as Product Owner and Capabilities Leader, I deliberately practiced letting go — giving ownership to my team, coaching them, and stepping back. The quality of outcomes actually improved.</p><p>So what was a weakness became a leadership skill.</p>`},
+  {c:'why',q:`Why are you looking for a new job?`,a:`<p>Schneider has been a great 14 years. I grew a lot and I'm proud of what I built.</p><p>But I've reached a point where I'm ready for more — Director level. The path to that in my specific domain at Schneider is not open right now.</p><p>So instead of waiting, I decided to move forward. I want to bring everything I've built to a role where I can make a bigger impact.</p><p>This is not about leaving Schneider. This is about arriving at the next level of my career.</p>`},
+  {c:'why',q:`Why did you apply for this specific role and company?`,a:`<p>Three clear reasons.</p><p>First — the scope matches where I already am. I manage a $2.4 billion portfolio today. I'm not stepping into Director complexity for the first time. I just need the title and authority to match the accountability I'm already carrying.</p><p>Second — the domain fits. My work in digital transformation, product management, and cross-border programs maps directly to what this role needs. I won't need six months to understand the work.</p><p>Third — I made this decision carefully. I looked at the company, the role, and the growth potential. Everything pointed here.</p><p>This was a deliberate choice — not a desperate one.</p>`},
+  {c:'why',q:`Why not stay at Schneider after 14 years?`,a:`<p>14 years is a long time — and I stayed because I kept growing and the work was meaningful.</p><p>But there comes a point where staying becomes the comfortable choice, not the right choice.</p><p>I've delivered 16 platform releases, built a GCC from zero, managed a $2.4 billion portfolio, and completed a Master's in AI while working full time. The track record is strong.</p><p>The Director path in my domain at Schneider is blocked right now — not because of any conflict, just the structure. So I asked myself: do I wait, or do I take everything I've built and apply it where there is a real opening?</p><p>I chose to move forward. That's not disloyalty — that's self-awareness.</p>`},
+  {c:'why',q:`What motivates you every day at work?`,a:`<p>Three things motivate me every day.</p><p>First — seeing real impact. When a platform release goes live and it changes how engineers work, or when a decision I made saves weeks of time — that energy is real.</p><p>Second — growing people. When someone on my team solves a problem they couldn't solve six months ago — that is deeply satisfying. Coaching people is one of my favourite parts of leadership.</p><p>Third — hard problems. I don't enjoy easy days. When the problem is complex — cross-border, cross-system, high-stakes — that's when I'm at my best.</p>`},
+  {c:'why',q:`Why do you want to be a Director?`,a:`<p>I want to be a Director because I'm already operating at that level — and I want the authority to match the responsibility I carry.</p><p>Managing a $2.4 billion portfolio, aligning cross-functional global teams, building capability from zero — these are Director-level activities. I've been doing them.</p><p>What a Director title gives me is the seat at the table to make decisions faster, influence strategy earlier, and build a stronger team with more authority.</p><p>I'm not chasing a title. I'm seeking the platform to create more impact — and Director is that platform.</p>`},
+  {c:'leadership',q:`Tell me about your leadership style.`,a:`<p>I lead with clarity and trust.</p><p>First I make sure the team knows the goal, the why behind it, and what success looks like. Once that's clear — I step back and let them lead their own work. I don't stand over people.</p><p>But I'm a coach — always available, always asking questions to help them think better, never giving them the answer directly.</p><p>And I am consistent. I show up the same way every day. No mood swings, no politics, no favoritism. People know what to expect from me — and that predictability builds trust over time.</p>`},
+  {c:'leadership',q:`How do you make tough decisions with incomplete information?`,a:`<p>In my $2.4 billion portfolio, I make tough calls regularly — often without complete information.</p><p>My process is: first, gather the best available data quickly — not perfectly. Second, identify the key risk: what happens if I'm wrong? Third, make the decision with a clear review point — so if new information arrives, I can adjust.</p><p>I've learned that waiting for perfect information is itself a decision — and often the wrong one. Speed with a review point beats slow perfection.</p><p>The GCC build taught me this. We had to make 20 decisions without full data. We were right on 17 of them — and we recovered fast on the other 3 because we built in adjustment points.</p>`},
+  {c:'leadership',q:`How do you manage and develop your team?`,a:`<p>I believe every person on my team should have a clear answer to two questions: what am I building toward, and how is my manager helping me get there?</p><p>I have individual conversations with each person — not just about tasks, but about their career goals. Then I assign work that stretches them toward those goals.</p><p>I also believe in giving real ownership — not just tasks. When someone owns a deliverable, they think differently about it. They care more.</p><p>In my Product Owner years, I coached 3 senior POs including a Director-level person. The coaching worked because it was honest — I told them what I saw, not what they wanted to hear.</p>`},
+  {c:'leadership',q:`Tell me about a time you led a team through a major change.`,a:`<p>The biggest change I led was building a Global Capability Center in India while migrating a complex project from France — all at the same time.</p><p>The France team was worried. The India team was new and nervous. Nobody felt certain.</p><p>I did three things. First — I was completely transparent. I told both teams exactly what was happening, why, and what the timeline was. No surprises.</p><p>Second — I created the buddy model. France engineers were paired with India counterparts. They built relationships, not just processes.</p><p>Third — I celebrated small wins publicly. Every time India delivered something independently, I made sure leadership saw it.</p><p>Result — India went from zero to fully independent. Both teams now work as one. The change succeeded because we treated it as a people challenge first.</p>`},
+  {c:'leadership',q:`How do you prioritize when everything feels urgent?`,a:`<p>In a $2.4 billion portfolio, everything feels urgent all the time. So I use one filter — business impact versus effort.</p><p>I ask: if this doesn't get done this week, what breaks? If the answer is 'nothing critical' — it waits. If the answer is 'a customer is affected' or 'a regulatory deadline is missed' — it moves to the top.</p><p>I also protect my team from false urgency. A lot of things that feel urgent are just noisy — not truly important. Part of my job as a leader is absorbing that noise so the team can focus.</p><p>I communicate priority clearly. My team always knows the top 3 things that matter this week — not a list of 20 things that are all 'priority one.'</p>`},
+  {c:'challenge',q:`Tell me about your biggest professional challenge.`,a:`<p>The biggest challenge was building a Global Capability Center in India from zero — as part of a C-Level vision at Schneider.</p><p>Nothing existed. No team, no process, no knowledge. And at the same time I had to migrate a complex project from France to India.</p><p>I played three roles — Country Manager to build the team, Program Manager to migrate the project, and Integration Leader to connect the two systems across two countries.</p><p>I created a buddy model — pairing France and India engineers. I documented everything. I coached senior POs including a Director-level person. I built a RACI matrix so everyone knew their responsibility.</p><p>Result — India went from zero to fully independent. Migration completed without major failure. GCC became a productive hub.</p><p>Learning — building across borders is a people problem first, technology second.</p>`},
+  {c:'challenge',q:`Tell me about a time you failed. What did you learn?`,a:`<p>Early in the GCC build, I underestimated how long cultural alignment would take compared to technical onboarding.</p><p>I planned the technical knowledge transfer carefully — architecture maps, documentation, buddy model. But I didn't put the same structure around building cultural trust between the France and India teams.</p><p>Six weeks in, I noticed the teams were technically capable but still not collaborating naturally. The trust wasn't there.</p><p>I acknowledged this openly in a team session — I said: 'I planned the technical side well. I didn't plan the human side well enough. Here's what we're going to do differently.'</p><p>I introduced structured social touchpoints — not just work syncs. Within four weeks the dynamic changed.</p><p>Learning — you cannot document culture. You have to build it deliberately, just like you build a system.</p>`},
+  {c:'challenge',q:`Describe a situation where you had to manage conflict.`,a:`<p>During the France-India integration, both teams had real tension. Different expectations, different working styles, different time zones — and unclear ownership on decisions.</p><p>People were frustrated — but when I dug in, I realized they weren't being difficult. They were confused. Nobody knew who had the final say on what.</p><p>I solved this with a RACI matrix — Responsible, Accountable, Consulted, Informed — for every key decision. One person on each side became the single DRI — Directly Responsible Individual.</p><p>I also moved difficult conversations to a structured weekly call — not ad hoc emails where tone gets misread.</p><p>Within three weeks the tension dropped significantly. Both teams started working with each other, not against each other.</p><p>The lesson — most conflict in cross-border teams is structural, not personal. Fix the structure, and relationships often fix themselves.</p>`},
+  {c:'challenge',q:`Tell me about a time you delivered results under pressure.`,a:`<p>During the OCP migration at Schneider, we had a hard deadline — regulatory and business both. And midway through, we discovered the complexity was 40% higher than initially assessed.</p><p>I did three things immediately. First — I re-baselined the plan with the actual complexity data. No wishful thinking, just reality. Second — I went to leadership with the updated picture before they came to me. Transparency first. Third — I reorganized the team into parallel workstreams so we could compress the timeline.</p><p>We delivered on the revised date — and the quality held. No shortcuts on testing.</p><p>The key was not panicking. Pressure reveals character — and I've learned that the first response to a crisis should be clarity, not noise.</p>`},
+  {c:'challenge',q:`Tell me about a time you influenced without authority.`,a:`<p>During the GCC migration, I had to coach three senior Product Owners — including a Director-level and an Account Head. I had no formal authority over them.</p><p>They were making product decisions without full understanding of the system's technical constraints. This was creating misalignment downstream.</p><p>I didn't tell them they were wrong. Instead, I built technical briefing sessions — framed as 'here is what the system can and cannot do, so you can decide better.'</p><p>Within a few weeks, they started consulting me before making major decisions. Not because I was their boss — but because my input was consistently useful and honest.</p><p>Influence without authority is built through consistent value — not position.</p>`},
+  {c:'strategy',q:`How do you build and communicate a strategic roadmap?`,a:`<p>I use a 3-horizon approach — what we stabilize now, what we optimize in 6 months, and what we transform in 12 to 24 months.</p><p>I build the roadmap with data first — what's the business impact of each initiative, what's the effort, what's the risk. Then I prioritize based on value, not volume.</p><p>Communication depends on the audience. With C-Level stakeholders — I present outcomes and risks, not activities. With product and engineering teams — I go deeper into milestones and dependencies.</p><p>For the $2.4 billion portfolio, I run a regular cadence — monthly portfolio reviews with senior leaders, weekly operational syncs with teams. The roadmap is never a static document — it's a living conversation.</p>`},
+  {c:'strategy',q:`How do you balance short-term delivery with long-term strategy?`,a:`<p>This tension is real — and managing it is one of the most important things a leader does.</p><p>My approach: I protect capacity for strategic work. If 100% of the team is always on short-term delivery, the long-term never gets built. So I ring-fence a percentage of capacity — usually around 20% — for strategic and tech-debt work.</p><p>I also make the trade-offs visible to stakeholders. When a business team wants everything fast, I show them the cost — what gets delayed, what accumulates as tech debt, what risks we carry.</p><p>Most stakeholders make better decisions when the trade-offs are clear. The problem is most leaders never show them the trade-offs — they just say yes and hope for the best.</p>`},
+  {c:'strategy',q:`How do you manage a large portfolio with competing priorities?`,a:`<p>I manage a $2.4 billion portfolio today — so this is not a hypothetical for me.</p><p>My framework: every initiative gets assessed on three dimensions — strategic alignment, business value, and delivery risk. I score them and rank them. The ranking drives the conversation — not politics, not who shouts loudest.</p><p>When priorities conflict — which they always do — I bring the decision to the right stakeholder level with full data. I don't decide alone what the business prioritizes. I provide the analysis and facilitate the decision.</p><p>I also run a regular portfolio review cadence — so stakeholders are never surprised. Surprises in a large portfolio are always expensive.</p>`},
+  {c:'strategy',q:`How do you measure success in your role?`,a:`<p>I measure success on three levels.</p><p>First — business outcomes. Is the portfolio delivering the value it was funded for? Are releases happening on time and with quality? Is tech debt going down or up?</p><p>Second — team health. Are my people growing? Is turnover low? Do they have clarity about their goals? A leader who hits numbers but burns out the team has not succeeded.</p><p>Third — stakeholder trust. Do the leaders I work with come to me proactively — or only when there's a problem? Trust is the most valuable currency in a senior role — and it shows in that pattern.</p><p>In my current role, I track all three. The $2.4 billion portfolio has clear KPIs — and I review them monthly.</p>`},
+  {c:'people',q:`How do you build trust with a new team quickly?`,a:`<p>I follow a simple rule in the first 30 days — listen more than I speak.</p><p>I have one-on-one conversations with every person on the team. I ask three questions: What's working well? What's frustrating you? What would you change if you could? I listen carefully — and I act on at least one thing I hear within the first two weeks.</p><p>That action matters more than any speech. It shows the team that I actually listened.</p><p>Then I am consistent — I show up the same way every day, I do what I say I will do, I'm honest about what I don't know. Trust isn't built in one big moment. It's built in hundreds of small ones.</p>`},
+  {c:'people',q:`How do you handle an underperforming team member?`,a:`<p>I address it directly and early — not after months of hoping it will improve.</p><p>First I have an honest conversation. I describe specifically what I'm observing — not my judgment, just the observable facts. Then I ask: is there something I can do to help? Is there something happening that I don't know about?</p><p>Sometimes underperformance has a root cause — unclear expectations, wrong role, personal situation. I try to understand that first.</p><p>If it's capability — I create a development plan with clear milestones. If it's attitude or effort — I'm very direct about what needs to change and by when.</p><p>If there's no improvement after support — then the harder conversation happens. It's not kind to let poor performance continue. It hurts the whole team.</p>`},
+  {c:'people',q:`How do you manage stakeholders at different levels?`,a:`<p>My rule is: same facts, different focus — based on what that stakeholder cares about.</p><p>With C-Level leaders — I talk about outcomes, risks, and strategic alignment. No implementation details unless asked. They want to know: are we on track, what are the risks, do we need any decisions from them?</p><p>With middle management and product leaders — I share milestones, dependencies, and trade-offs. They need enough detail to coordinate their teams.</p><p>With my own team — full transparency. They need the complete picture to make good decisions.</p><p>I also have a rule about proactive communication — I never let a stakeholder find out about a problem before I do. If something is going wrong, I am the first one to tell them — with a plan.</p>`},
+  {c:'people',q:`Tell me about a time you had to manage a difficult stakeholder.`,a:`<p>During the GCC build, one senior France stakeholder was strongly resistant. They felt the India team would not be ready — and that the migration was moving too fast.</p><p>Instead of pushing back, I first tried to understand their concern fully. In a one-on-one conversation, I asked them what would need to be true for them to feel confident. They gave me three specific criteria.</p><p>I then built a structured progress report showing exactly those three criteria — updated weekly. Every week they could see India's capability growing with real data.</p><p>By month three, that same stakeholder became one of the biggest advocates for the India team — because their concerns were taken seriously and answered with evidence.</p><p>Difficult stakeholders are usually not unreasonable — they are often the most invested in the outcome.</p>`},
+  {c:'technical',q:`How do you stay technical as you move into leadership?`,a:`<p>I stay technical deliberately — not accidentally.</p><p>I completed a Master's in AI while working full time as a Capabilities Leader. That wasn't just for a certificate — it was to stay current and apply those concepts to real portfolio decisions at Schneider.</p><p>I also stay connected to architecture conversations. I don't write code anymore — but I can read a system architecture, understand dependencies, and ask the right questions. That's the level of technical depth a senior leader needs.</p><p>I've found that the most dangerous leaders are those who lose technical grounding and start making decisions based on optimism rather than reality. I protect against that with deliberate, ongoing learning.</p>`},
+  {c:'technical',q:`How do you manage tech debt in a large portfolio?`,a:`<p>Tech debt in a $2.4 billion portfolio is a real and constant challenge. I've learned you can't eliminate it — you can only manage it intelligently.</p><p>My approach: first, make it visible. Tech debt that's hidden is debt that never gets paid. I create a clear tech-debt register with business impact — not just technical metrics. I translate it into language the business understands: 'this debt increases delivery risk by X' or 'this limits our ability to launch Y capability.'</p><p>Second, I protect capacity for debt reduction — typically 15-20% of quarterly engineering capacity. If everything goes to features, the platform slowly breaks.</p><p>Third — I present tech-debt reduction as a business case, not a technical request. Business leaders fund what they understand.</p>`},
+  {c:'technical',q:`How do you approach digital transformation?`,a:`<p>I've led digital transformation at Schneider for years — and the biggest lesson is this: digital transformation is 30% technology and 70% people and process.</p><p>Most transformations fail not because the technology doesn't work — but because people don't change how they work.</p><p>My approach: start with the business outcome you want, not the technology you want to implement. Then design the people and process changes needed. Then bring in the technology to enable those changes.</p><p>I also use a phased roadmap — stabilize first, then optimize, then transform. Trying to transform everything at once creates chaos.</p><p>In the OCP migration and the GCC build at Schneider — I applied this approach. Both succeeded because we treated the human change as carefully as the technical change.</p>`},
+  {c:'future',q:`Where do you see yourself in 5 years?`,a:`<p>In five years I want to be an established, high-impact Director — someone who has built a strong team, delivered measurable business outcomes, and earned a seat at the senior leadership table.</p><p>I also want to bring AI and data-driven thinking deeper into how the organization makes product and portfolio decisions. That's where I see the biggest untapped value — and my MTech in AI gives me a real foundation to lead that.</p><p>My goal is not the next title after Director. My goal is to be genuinely excellent at this level first — and let the results create the next opportunity.</p><p>I've always believed that careers are built by doing exceptional work at each level — not by planning your path two levels ahead.</p>`},
+  {c:'future',q:`How will you add value in the first 90 days?`,a:`<p>I follow a clear 30-60-90 structure.</p><p>First 30 days — I listen and learn. One-on-one meetings with every key stakeholder. Understand the business context, the team dynamics, the current challenges. I don't make changes in the first month — I earn the right to change things by understanding them first.</p><p>Days 30 to 60 — I identify 2 to 3 quick wins. Things that are clearly broken or blocked that I can fix with my experience and the relationships I've built. Quick wins build credibility with the team and with leadership.</p><p>Days 60 to 90 — I present my strategic view. Based on what I've learned, here is what I think the priorities should be for the next 12 months, here are the risks, here is what success looks like.</p><p>By day 90, the team should feel clarity — and leadership should feel they made the right hire.</p>`},
+  {c:'future',q:`How do you see AI changing your field in the next 3 years?`,a:`<p>AI is going to fundamentally change how we make portfolio and product decisions — and it's already starting.</p><p>In three years, I expect AI to be embedded in how we assess tech debt, predict delivery risk, and identify capability gaps before they become problems. The teams that use AI for these decisions will have a significant speed and quality advantage.</p><p>For product management specifically — AI will move us from reactive analysis to predictive strategy. Instead of reviewing last quarter's data, we'll be acting on next quarter's predicted trends.</p><p>I'm genuinely excited about this — not worried. My MTech in AI wasn't defensive. It was me positioning to lead this shift rather than manage through it.</p><p>The leaders who will struggle are those who see AI as a threat to their judgment. The leaders who will win are those who use AI to make their judgment sharper.</p>`},
+  {c:'tough',q:`Why should we hire you over other candidates?`,a:`<p>Three reasons.</p><p>One — I'm already operating at Director-level scope. Managing a $2.4 billion portfolio, leading cross-border transformations, building capability from zero. You're not hiring someone who needs to grow into the role. I'm already there.</p><p>Two — I bring 20 years of progressive experience — startup speed, HP enterprise scale, and Schneider's global complexity. That combination is rare. Most candidates have depth in one environment. I have depth across three very different ones.</p><p>Three — my track record removes your risk. 16 platform releases delivered. GCC built from zero. MTech in AI completed while working full time. These are evidence, not promises.</p><p>You're not taking a chance on potential. You're investing in a proven pattern.</p>`},
+  {c:'tough',q:`You\\`,a:`<p>That's a fair question — and I understand why someone might ask it.</p><p>But 14 years at Schneider was not 14 years of the same job. I've had seven different roles — Technical Leader, Program Manager, Tech Debt Lead, Country Manager, Product Owner, Capabilities Leader. Each required learning new skills, new stakeholders, new systems.</p><p>I also built a team across two countries with completely different cultures — India and France. That required significant adaptability — not just technically, but personally.</p><p>And I completed a Master's in AI while working full time — something that requires enormous personal adaptability.</p><p>Staying at one company while constantly reinventing your role is arguably harder than changing companies every three years. I've done it seven times.</p>`},
+  {c:'tough',q:`What would your manager say about you — positive and negative?`,a:`<p>On the positive side — my manager would say I am someone who takes full ownership. When I say I will deliver something, it gets delivered. They don't have to follow up.</p><p>They would also say I communicate proactively — I bring problems to them before they become surprises. For a senior leader, that is very valuable.</p><p>On the development side — my manager would probably say I sometimes take too long to escalate when I think I can solve it myself. I try to protect the team and handle issues at my level — but occasionally something needed senior attention earlier.</p><p>I've been actively working on this — asking myself 'should leadership know about this now?' rather than 'can I solve this myself?'</p>`},
+  {c:'tough',q:`This role is a step up — what makes you confident you\\`,a:`<p>I understand the question — but let me challenge the premise gently.</p><p>This role is Director. I currently manage a $2.4 billion global portfolio, lead cross-functional international teams, and set strategic roadmaps that align with C-Level priorities. The activities of this role are not new to me — the title is.</p><p>Every step in my career has looked like a stretch from the outside — but I've consistently delivered at each new level. Startup to HP. HP to Schneider. Technical Leader to Product Owner to Capabilities Leader.</p><p>The pattern is consistent — I enter a new level, deliver, and then grow beyond it. This Director role is the next point on that same pattern.</p><p>I'm not confident because I think it will be easy. I'm confident because I have a track record of getting to the answer — even when the path isn't clear.</p>`},
+  {c:'tough',q:`Do you have any questions for us?`,a:`<p>Yes — I always come with questions, because they tell me as much about the role as the interview itself.</p><p>First — what does success look like in this role at 6 months and 12 months? I want to understand how you'll measure whether I'm the right person.</p><p>Second — what is the biggest challenge the person in this role will face in the first year? I want to go in with open eyes.</p><p>Third — how does this Director role connect to the broader strategic direction of the organization over the next 3 years? I want to understand where this role sits in the larger picture.</p><p>And finally — what is the culture of decision-making here? Are Directors expected to recommend and align, or to decide and execute? That distinction matters to me.</p>`}
+];
+
+const cats = {
+  all:       {l:'All (39)',              i:'📋'},
+  intro:     {l:'About You',             i:'👤'},
+  why:       {l:'Why / Motivation',      i:'🎯'},
+  leadership:{l:'Leadership',            i:'🏆'},
+  challenge: {l:'Challenges',            i:'💪'},
+  strategy:  {l:'Strategy',              i:'📊'},
+  people:    {l:'People & Teams',        i:'🤝'},
+  technical: {l:'Technical',             i:'⚙️'},
+  future:    {l:'Future',                i:'🚀'},
+  tough:     {l:'Tough / Tricky',        i:'🔥'},
+};
+const catOrder = ['intro','why','leadership','challenge','strategy','people','technical','future','tough'];
+
+// Tell Me About Yourself script
+const tmayScript = [
+  {tag:'Open — First 8 seconds', time:'~20 sec', text:'<strong>"Hi, I'm Gyanesh Pandey — a technology and product leader with 20 years of experience, based in Bangalore. My career spans three distinct phases, each one building deliberately on the last."</strong>'},
+  {tag:'Chapter 1 — Startup', time:'~30 sec', text:'"I began in a startup environment, building end-to-end software products for global telecom clients — including <strong>AccuWeather, Verizon, and AT&T</strong>. That experience gave me something large organizations rarely teach: the ability to move fast, wear multiple hats, and solve problems without a safety net."'},
+  {tag:'Chapter 2 — HP', time:'~25 sec', text:'"I then moved to HP, where I focused on scaling and optimizing the <strong>HP OpenView</strong> product framework — improving performance, cross-platform reliability, and enterprise-grade scalability. That's where I learned what it means to build for millions of users."'},
+  {tag:'Chapter 3 — Schneider', time:'~50 sec', text:'"For the last <strong>14 years at Schneider Electric</strong>, I've grown through every layer of technology and product leadership — Technical Leader, Program Manager for OCP migration, Certified Product Owner delivering <strong>16 WebOnyx releases</strong>, then Capabilities Leader. A defining moment was building the <strong>Global Capability Center in India from zero</strong> — migrating complex systems from France, transferring institutional knowledge, integrating two cross-border teams. Three roles: Country Manager, Program Manager, and Integration Leader."'},
+  {tag:'Today + Close', time:'~35 sec', text:'"Today I manage a <strong>$2.4 billion global R&D and business portfolio</strong>, collaborating with group product, technology, and business leaders. I hold a <strong>Master's in AI</strong> — completed while working full-time. What draws me to this Director role is the opportunity to operate at the intersection of strategic vision and execution — which is exactly where I've spent the last several years."'},
+];
+
+let curCat = 'all', curSearch = '';
+
+function buildFilters() {
+  const fr = document.getElementById('fr');
+  Object.entries(cats).forEach(([k,v]) => {
+    const b = document.createElement('button');
+    b.className = 'ft' + (k==='all' ? ' act' : '');
+    const cnt = k==='all' ? qs.length : qs.filter(q=>q.c===k).length;
+    b.textContent = v.i + ' ' + v.l + (k!=='all' ? ' ('+cnt+')' : '');
+    b.onclick = () => {
+      curCat = k;
+      document.querySelectorAll('.ft').forEach(x=>x.classList.remove('act'));
+      b.classList.add('act');
+      render();
+    };
+    fr.appendChild(b);
+  });
+}
+
+function doFilter() {
+  curSearch = document.getElementById('si').value.toLowerCase();
+  render();
+}
+
+function buildTmay() {
+  const segs = tmayScript.map(s => `
+    <div class="seg">
+      <div class="seg-tag">${s.tag} <span class="seg-time">${s.time}</span></div>
+      <div class="seg-text">${s.text}</div>
+    </div>`).join('');
+  const nums = ['$2.4B Portfolio','16 WebOnyx Releases','GCC Built from Zero','OCP Migration Lead','Certified PO · 4 Years','MTech AI (while working)','Telecom Clients: Verizon, AT&T','14 Years Schneider Electric'].map(n=>`<span class="kn">${n}</span>`).join('');
+  return `
+    <div class="tmay">
+      <div class="tmay-hdr">
+        <span style="font-size:20px">⭐</span>
+        <h3>Tell Me About Yourself — Director Script</h3>
+        <span style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--teal);background:rgba(45,212,191,.08);border:1px solid rgba(45,212,191,.2);padding:4px 10px;border-radius:100px">3–3.5 min</span>
+      </div>
+      <div class="tmay-body">
+        <div style="font-size:13px;color:var(--muted);margin-bottom:14px">Full polished script segmented by time. Stop at 3.5 min — always leave room for their questions.</div>
+        <div class="script-box">${segs}</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:14px;margin-bottom:8px;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.12em">Key numbers woven in:</div>
+        <div class="key-nums">${nums}</div>
+      </div>
+    </div>`;
+}
+
+function render() {
+  const qc = document.getElementById('qc');
+  const filtered = qs.filter(q => {
+    const cm = curCat === 'all' || q.c === curCat;
+    const sm = !curSearch || q.q.toLowerCase().includes(curSearch) || q.a.toLowerCase().replace(/<[^>]+>/g,'').includes(curSearch);
+    return cm && sm;
+  });
+
+  document.getElementById('rc').textContent = `${filtered.length} of ${qs.length} questions`;
+
+  if (!filtered.length) {
+    qc.innerHTML = '<div class="no-res"><h3>No questions found</h3><p>Try a different search term or category.</p></div>';
+    return;
+  }
+
+  let html = '';
+
+  // Show Tell Me About Yourself + power card only when all or intro is showing, and no active search
+  if ((curCat === 'all' || curCat === 'intro') && !curSearch) {
+    html += `
+      <div class="pcard">
+        <div class="pc-lbl">⚡ Your 5 key numbers — drop these in every answer</div>
+        <div class="pc-grid">
+          <div class="pc-item"><div class="pc-n">$2.4B</div><div class="pc-l">Portfolio Size</div></div>
+          <div class="pc-item"><div class="pc-n">20 yrs</div><div class="pc-l">Experience</div></div>
+          <div class="pc-item"><div class="pc-n">14 yrs</div><div class="pc-l">At Schneider</div></div>
+          <div class="pc-item"><div class="pc-n">16</div><div class="pc-l">Platform Releases</div></div>
+          <div class="pc-item"><div class="pc-n">3</div><div class="pc-l">Roles in GCC Build</div></div>
+        </div>
+      </div>`;
+    html += buildTmay();
+
+    // Swimlane diagram link
+    html += `
+      <a href="swimlane.html" class="swimlane-cta">
+        <div class="sw-icon">🏊</div>
+        <div class="sw-text">
+          <h4>Product Lifecycle Swimlane Diagram</h4>
+          <p>End-to-end visual: from Strategy & Portfolio → Engineering → Production → Customer Service. Use in interviews to explain your domain.</p>
+        </div>
+        <div class="sw-arr">→</div>
+      </a>`;
+  }
+
+  // Group by category
+  const grouped = {};
+  filtered.forEach(q => {
+    if (!grouped[q.c]) grouped[q.c] = [];
+    grouped[q.c].push(q);
+  });
+
+  const order = curCat === 'all' ? catOrder : [curCat];
+  order.forEach(c => {
+    if (!grouped[c]) return;
+    const catInfo = cats[c];
+    html += `<div class="cat-sec" id="sec-${c}">
+      <div class="cat-hdr">
+        <span class="cat-ico">${catInfo.i}</span>
+        <span class="cat-title">${catInfo.l.replace(/ \(\d+\)/,'')}</span>
+        <span class="cat-cnt">${grouped[c].length} Q&A</span>
+      </div>`;
+    grouped[c].forEach((q, i) => {
+      const isTough = c === 'tough';
+      html += `<div class="qcard${isTough?' tq':''}" id="q-${c}-${i}">
+        <div class="qhdr"><div class="qq">${isTough?'🔥 ':''}${q.q}</div><div class="qtog">+</div></div>
+        <div class="qbody"><div class="qa">${q.a}</div></div>
+      </div>`;
+    });
+    html += `</div>`;
+  });
+
+  qc.innerHTML = html;
+  qc.querySelectorAll('.qhdr').forEach(h => h.addEventListener('click', () => h.closest('.qcard').classList.toggle('open')));
+}
+
+buildFilters();
+render();
+
+const hbg = document.getElementById('hbg'), mm = document.getElementById('mmenu');
+hbg.addEventListener('click', () => {
+  hbg.classList.toggle('open');
+  mm.classList.toggle('open');
+  document.body.style.overflow = mm.classList.contains('open') ? 'hidden' : '';
+});
+mm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  hbg.classList.remove('open'); mm.classList.remove('open'); document.body.style.overflow = '';
+}));
+</script>
+</body>
+</html>
