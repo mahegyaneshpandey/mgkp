@@ -5,825 +5,603 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Interview Coach — Gyanesh Kumar Pandey</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Figtree:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
-:root{--bg:#0C0E14;--sur:#13161F;--sur2:#1A1E2A;--bdr:#232838;--gold:#C9A84C;--gold2:#E8C872;--teal:#2DD4BF;--text:#E8E6E0;--muted:#7A7A8A;--soft:#B0ADA6;--r:12px;--nh:64px;--red:#E87070;--purple:#818cf8;--green:#4ade80}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden}
-a{color:inherit;text-decoration:none}
-/* NAV */
-nav{position:sticky;top:0;z-index:200;height:var(--nh);display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:rgba(12,14,20,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--bdr)}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--gold)}
-.nav-desktop{display:none;gap:24px;list-style:none}
-.nav-desktop a{font-size:13px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);transition:color .2s}
-.nav-desktop a:hover,.nav-desktop a.act{color:var(--gold)}
-.hamburger{background:none;border:none;cursor:pointer;padding:8px;display:flex;flex-direction:column;gap:5px}
-.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:transform .25s,opacity .25s}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.hamburger.open span:nth-child(2){opacity:0}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mmenu{position:fixed;top:var(--nh);left:0;right:0;bottom:0;z-index:190;background:var(--bg);padding:32px 24px;display:flex;flex-direction:column;gap:8px;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1)}
-.mmenu.open{transform:translateX(0)}
-.mmenu a{font-size:18px;font-weight:500;color:var(--soft);padding:16px 0;border-bottom:1px solid var(--bdr);display:block}
-.mmenu a.act{color:var(--gold)}
-.mmenu .m-cta{margin-top:24px;background:var(--gold);color:#0C0E14;padding:16px;border-radius:var(--r);text-align:center;font-weight:600;font-size:16px;border-bottom:none}
 
-/* ── MODE SELECTOR SCREEN ── */
-#modeScreen{display:block}
-#mainContent{display:none}
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Figtree:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
-.hero-coach{padding:40px 24px 32px;background:var(--sur);border-bottom:1px solid var(--bdr);position:relative;overflow:hidden;text-align:center}
-.hero-coach::before{content:'';position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:70vw;height:70vw;max-width:500px;max-height:500px;background:radial-gradient(circle,rgba(201,168,76,.07) 0%,transparent 65%);pointer-events:none}
-.hc-ey{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--teal);letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px}
-.hero-coach h1{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,8vw,54px);font-weight:700;line-height:1.05;margin-bottom:10px}
-.hero-coach h1 em{color:var(--gold);font-style:normal}
-.hero-coach p{font-size:14px;color:var(--muted);max-width:520px;margin:0 auto 24px;line-height:1.7}
+:root {
+  --white: #ffffff;
+  --bg: #fbfbfd;
+  --light: #f5f5f7;
+  --mid-light: #e8e8ed;
+  --border: #d2d2d7;
+  --mid: #6e6e73;
+  --dark: #1d1d1f;
+  --blue: #0071e3;
+  --blue-h: #0077ed;
+  --blue-light: #e8f0fe;
+  --green: #30d158;
+  --red: #ff453a;
+  --amber: #ffd60a;
+  --r: 18px;
+  --r-sm: 12px;
+  --nh: 52px;
+  --shadow: 0 2px 20px rgba(0,0,0,.06), 0 0 0 1px rgba(0,0,0,.03);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,.12), 0 0 0 1px rgba(0,0,0,.04);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { background: var(--bg); color: var(--dark); font-family: 'Figtree', -apple-system, sans-serif; font-size: 17px; line-height: 1.6; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 200;
+  height: var(--nh);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 22px;
+  background: rgba(251,251,253,.85);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px; font-weight: 800;
+  color: var(--dark); letter-spacing: -.02em;
+}
+.nav-logo span { color: var(--blue); }
+.nav-desktop { display: none; gap: 0; list-style: none; align-items: center; }
+.nav-desktop a {
+  font-size: 13px; font-weight: 500;
+  color: var(--mid);
+  padding: 6px 14px;
+  border-radius: 100px;
+  transition: color .15s, background .15s;
+  white-space: nowrap;
+}
+.nav-desktop a:hover { color: var(--dark); background: rgba(0,0,0,.04); }
+.nav-desktop a.act { color: var(--dark); font-weight: 600; }
+.nav-cta-btn {
+  display: none;
+  background: var(--blue);
+  color: #fff;
+  font-size: 13px; font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 100px;
+  transition: background .15s, transform .1s;
+  white-space: nowrap;
+}
+.nav-cta-btn:hover { background: var(--blue-h); transform: scale(1.02); }
+.hamburger {
+  background: none; border: none; cursor: pointer;
+  width: 36px; height: 36px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+  border-radius: 50%;
+  transition: background .15s;
+}
+.hamburger:hover { background: rgba(0,0,0,.06); }
+.hamburger span { display: block; width: 18px; height: 1.5px; background: var(--dark); border-radius: 2px; transition: transform .25s, opacity .2s; }
+.hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.mmenu {
+  position: fixed; top: var(--nh); left: 0; right: 0; bottom: 0; z-index: 190;
+  background: rgba(251,251,253,.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 24px 22px;
+  display: flex; flex-direction: column; gap: 2px;
+  transform: translateY(-8px); opacity: 0; pointer-events: none;
+  transition: transform .25s, opacity .25s;
+}
+.mmenu.open { transform: none; opacity: 1; pointer-events: all; }
+.mmenu a {
+  font-size: 17px; font-weight: 500; color: var(--dark);
+  padding: 14px 16px;
+  border-radius: var(--r-sm);
+  transition: background .15s;
+  display: block;
+}
+.mmenu a:hover, .mmenu a.act { background: var(--light); }
+.mmenu .m-cta {
+  margin-top: 12px;
+  background: var(--blue); color: #fff;
+  text-align: center; font-weight: 600;
+  border-radius: var(--r);
+  padding: 16px;
+}
+.mmenu .m-cta:hover { background: var(--blue-h); }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.vis { opacity: 1; transform: none; }
+.reveal.d1 { transition-delay: .1s; }
+.reveal.d2 { transition-delay: .2s; }
+.reveal.d3 { transition-delay: .3s; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--light);
+  border-top: 1px solid var(--border);
+  padding: 40px 22px;
+}
+.footer-inner { max-width: 1100px; margin: 0 auto; }
+.footer-logo { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; color: var(--dark); letter-spacing: -.02em; margin-bottom: 6px; }
+.footer-logo span { color: var(--blue); }
+.footer-sub { font-size: 13px; color: var(--mid); margin-bottom: 20px; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+.footer-links a { font-size: 13px; color: var(--mid); padding: 5px 12px; border-radius: 100px; border: 1px solid var(--border); transition: color .15s, border-color .15s; }
+.footer-links a:hover { color: var(--blue); border-color: var(--blue); }
+.footer-copy { font-size: 12px; color: var(--mid); border-top: 1px solid var(--border); padding-top: 16px; }
+
+/* ── TABLET / DESKTOP ── */
+@media (min-width: 640px) {
+  nav { padding: 0 40px; }
+  .mmenu { padding: 24px 40px; }
+  footer { padding: 48px 40px; }
+}
+@media (min-width: 900px) {
+  nav { padding: 0 52px; }
+  .hamburger { display: none; }
+  .nav-desktop { display: flex; }
+  .nav-cta-btn { display: block; }
+  footer { padding: 56px 52px; }
+}
+
+
+/* MODE SELECTOR */
+#modeScreen{display:block;}
+#mainContent{display:none;}
+
+.coach-hero{
+  background:var(--dark);padding:52px 22px 44px;
+  position:relative;overflow:hidden;text-align:center;
+}
+.coach-hero::before{
+  content:'';position:absolute;top:-30%;left:50%;transform:translateX(-50%);
+  width:80vw;height:80vw;max-width:600px;max-height:600px;
+  background:radial-gradient(circle,rgba(0,113,227,.15) 0%,transparent 60%);
+  pointer-events:none;
+}
+.ch-ey{font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(0,113,227,.7);letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px;}
+.coach-hero h1{font-family:'Syne',sans-serif;font-size:clamp(36px,9vw,64px);font-weight:800;line-height:.95;letter-spacing:-.04em;color:#fff;margin-bottom:10px;}
+.coach-hero h1 span{color:var(--blue);}
+.coach-hero p{font-size:14px;color:rgba(255,255,255,.5);max-width:480px;margin:0 auto 24px;line-height:1.7;}
 
 /* POWER STATEMENT */
-.ps-box{background:linear-gradient(135deg,rgba(201,168,76,.08),rgba(45,212,191,.04));border:1px solid rgba(201,168,76,.25);border-radius:var(--r);padding:18px 20px;max-width:680px;margin:0 auto 32px;text-align:left}
-.ps-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
-.ps-text{font-size:14px;color:var(--soft);line-height:1.85;font-style:italic}
-.ps-text strong{color:var(--text);font-style:normal}
+.ps-wrap{max-width:720px;margin:0 auto;padding:0 22px;}
+.ps-card{
+  background:rgba(0,113,227,.08);border:1px solid rgba(0,113,227,.2);
+  border-radius:var(--r);padding:20px 22px;margin-bottom:28px;
+  text-align:left;
+}
+.ps-lbl{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--blue);letter-spacing:.18em;text-transform:uppercase;margin-bottom:10px;font-weight:500;}
+.ps-text{font-size:14px;color:var(--mid);line-height:1.85;font-style:italic;}
+.ps-text strong{color:var(--dark);font-style:normal;}
 
-/* MODE CARDS GRID */
-.mode-title{font-size:14px;color:var(--muted);text-align:center;margin-bottom:20px;font-weight:500}
-.modes-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:680px;margin:0 auto;padding:0 24px 48px}
-.mode-card{background:var(--sur);border:1px solid var(--bdr);border-radius:var(--r);padding:20px 16px;cursor:pointer;transition:border-color .2s,transform .15s;text-align:center;-webkit-tap-highlight-color:transparent;position:relative;overflow:hidden}
-.mode-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;opacity:0;transition:opacity .2s}
-.mode-card:hover{transform:translateY(-3px);border-color:rgba(201,168,76,.3)}
-.mode-card:hover::before{opacity:1}
-.mode-card.c-teal::before{background:var(--teal)}
-.mode-card.c-gold::before{background:var(--gold)}
-.mode-card.c-purple::before{background:var(--purple)}
-.mode-card.c-red::before{background:var(--red)}
-.mode-card.c-green::before{background:var(--green)}
-.mode-card.c-blue::before{background:#60a5fa}
-.mode-icon{font-size:28px;margin-bottom:10px;line-height:1}
-.mode-card h3{font-size:14px;font-weight:600;margin-bottom:6px;color:var(--text)}
-.mode-card p{font-size:12px;color:var(--muted);line-height:1.5}
-.mode-badge{position:absolute;top:10px;right:10px;font-size:10px;font-family:'JetBrains Mono',monospace;padding:2px 7px;border-radius:100px;background:rgba(201,168,76,.12);color:var(--gold);border:1px solid rgba(201,168,76,.2)}
+/* MODE CARDS */
+.mode-lbl{font-size:14px;color:var(--mid);text-align:center;margin:4px 0 18px;font-weight:500;}
+.modes-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:720px;margin:0 auto;padding:0 22px 48px;}
+.mode-card{
+  background:var(--white);border:1.5px solid var(--mid-light);
+  border-radius:var(--r);padding:20px 16px;cursor:pointer;
+  transition:border-color .15s,transform .12s,box-shadow .15s;
+  text-align:center;-webkit-tap-highlight-color:transparent;
+  box-shadow:var(--shadow); position:relative; overflow:hidden;
+}
+.mode-card::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  opacity:0;transition:opacity .2s;
+}
+.mode-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:rgba(0,113,227,.3);}
+.mode-card:hover::after{opacity:1;}
+.mc-teal::after{background:var(--blue);}
+.mc-gold::after{background:#ff9f0a;}
+.mc-green::after{background:var(--green);}
+.mc-red::after{background:var(--red);}
+.mc-purple::after{background:#bf5af2;}
+.mc-gray::after{background:var(--mid);}
+.mode-icon{font-size:26px;margin-bottom:10px;line-height:1;}
+.mode-card h3{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:var(--dark);margin-bottom:5px;letter-spacing:-.01em;}
+.mode-card p{font-size:12px;color:var(--mid);line-height:1.4;}
+.mc-badge{
+  position:absolute;top:10px;right:10px;
+  font-size:9px;font-family:'JetBrains Mono',monospace;font-weight:600;
+  padding:2px 7px;border-radius:100px;
+  background:var(--blue-light);color:var(--blue);border:1px solid rgba(0,113,227,.2);
+}
 
-/* ── MAIN CONTENT AREA ── */
-.back-btn{display:flex;align-items:center;gap:8px;padding:14px 24px;border-bottom:1px solid var(--bdr);background:var(--sur);cursor:pointer;font-size:13px;font-weight:500;color:var(--muted);transition:color .2s;-webkit-tap-highlight-color:transparent}
-.back-btn:hover{color:var(--gold)}
-.section-content{padding:24px;max-width:860px;margin:0 auto}
+/* MAIN CONTENT */
+.back-bar{
+  display:flex;align-items:center;gap:8px;
+  padding:13px 22px;background:var(--white);
+  border-bottom:1px solid var(--mid-light);
+  cursor:pointer;font-size:13px;font-weight:600;color:var(--mid);
+  transition:color .15s;-webkit-tap-highlight-color:transparent;
+  position:sticky;top:var(--nh);z-index:100;
+}
+.back-bar:hover{color:var(--blue);}
+.back-icon{font-size:16px;}
 
-/* SECTION HEADER */
-.sec-h{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,6vw,40px);font-weight:700;line-height:1.1;margin-bottom:8px}
-.sec-h em{color:var(--gold);font-style:normal}
-.sec-sub{font-size:14px;color:var(--muted);margin-bottom:28px;line-height:1.6}
-.sec-ey{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--teal);letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px}
+.sec-c{padding:28px 22px;max-width:860px;margin:0 auto;}
+.sec-ey{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--blue);letter-spacing:.15em;text-transform:uppercase;margin-bottom:8px;font-weight:500;}
+.sec-title{font-family:'Syne',sans-serif;font-size:clamp(24px,5vw,38px);font-weight:800;line-height:1.05;letter-spacing:-.03em;color:var(--dark);margin-bottom:6px;}
+.sec-title span{color:var(--blue);}
+.sec-sub{font-size:14px;color:var(--mid);margin-bottom:24px;line-height:1.7;}
 
-/* TELL ME ABOUT YOURSELF */
-.tmay-step{background:var(--sur);border:1px solid var(--bdr);border-radius:var(--r);margin-bottom:12px;overflow:hidden}
-.tmay-hdr{display:flex;justify-content:space-between;align-items:flex-start;padding:15px 18px;cursor:pointer;gap:12px;-webkit-tap-highlight-color:transparent}
-.tmay-num{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;flex-shrink:0;background:rgba(201,168,76,.12);color:var(--gold);font-family:'JetBrains Mono',monospace}
-.tmay-q{flex:1;font-size:14px;font-weight:600}
-.tmay-time{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);background:var(--sur2);padding:3px 8px;border-radius:100px;white-space:nowrap;flex-shrink:0;margin-top:3px}
-.tmay-body{display:none;padding:0 18px 18px;border-top:1px solid var(--bdr)}
-.tmay-step.open .tmay-body{display:block}
-.speech-text{font-size:14px;color:var(--soft);line-height:1.9;padding:14px 0 8px;border-bottom:1px solid var(--bdr);margin-bottom:10px;font-style:italic}
-.speech-text strong{color:var(--text);font-style:normal}
-.coach-tip{font-size:13px;color:var(--teal);background:rgba(45,212,191,.06);border:1px solid rgba(45,212,191,.15);border-radius:8px;padding:10px 14px;line-height:1.6}
-.coach-tip::before{content:'💡 '}
+/* EXPANDABLE CARDS */
+.exp-card{background:var(--white);border:1.5px solid var(--mid-light);border-radius:var(--r-sm);margin-bottom:10px;overflow:hidden;box-shadow:var(--shadow);transition:border-color .15s;}
+.exp-card:hover{border-color:rgba(0,113,227,.25);}
+.exp-hdr{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none;}
+.exp-icon{width:32px;height:32px;border-radius:8px;background:var(--blue-light);display:grid;place-items:center;font-size:13px;font-weight:800;color:var(--blue);font-family:'JetBrains Mono',monospace;flex-shrink:0;margin-top:1px;}
+.exp-title{flex:1;font-size:14px;font-weight:600;color:var(--dark);line-height:1.4;}
+.exp-meta{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--mid);background:var(--light);padding:3px 9px;border-radius:100px;white-space:nowrap;flex-shrink:0;margin-top:3px;}
+.exp-tog{width:26px;height:26px;background:var(--light);border:1px solid var(--mid-light);border-radius:50%;display:grid;place-items:center;font-size:18px;color:var(--mid);transition:transform .2s,background .15s,color .15s;flex-shrink:0;margin-top:1px;}
+.exp-card.open .exp-tog{transform:rotate(45deg);background:var(--blue);border-color:var(--blue);color:#fff;}
+.exp-body{display:none;padding:0 16px 16px;border-top:1px solid var(--mid-light);}
+.exp-card.open .exp-body{display:block;}
+.exp-text{font-size:14px;color:var(--mid);line-height:1.85;padding-top:12px;}
+.exp-text p{margin-bottom:10px;}
+.exp-text p:last-child{margin-bottom:0;}
+.exp-text strong{color:var(--dark);font-weight:600;}
+.exp-text em{color:var(--blue);font-style:normal;font-weight:500;}
+.coach-tip{font-size:13px;color:var(--blue);background:var(--blue-light);border-radius:8px;padding:10px 14px;margin-top:10px;line-height:1.6;}
+.coach-tip::before{content:'💡 ';}
+.speech-quote{font-style:italic;color:var(--mid);border-left:2px solid var(--blue);padding-left:14px;margin-bottom:10px;font-size:14px;line-height:1.85;}
 
-/* CHALLENGES */
-.ch-tabs{display:flex;gap:8px;margin-bottom:20px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px}
-.ch-tabs::-webkit-scrollbar{display:none}
-.ch-tab{background:var(--sur2);border:1px solid var(--bdr);color:var(--muted);padding:9px 16px;border-radius:100px;font-size:13px;font-weight:500;cursor:pointer;white-space:nowrap;transition:all .2s;-webkit-tap-highlight-color:transparent}
-.ch-tab.act{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,.1)}
-.challenge-block{display:none}
-.challenge-block.show{display:block}
+/* CHALLENGE TABS */
+.ch-tabs{display:flex;gap:8px;margin-bottom:18px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px;}
+.ch-tabs::-webkit-scrollbar{display:none;}
+.ch-tab{background:var(--white);border:1.5px solid var(--mid-light);color:var(--mid);padding:8px 16px;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .15s;-webkit-tap-highlight-color:transparent;font-family:'Figtree',sans-serif;}
+.ch-tab:hover{border-color:var(--blue);color:var(--blue);}
+.ch-tab.act{background:var(--blue);border-color:var(--blue);color:#fff;}
+.ch-block{display:none;}
+.ch-block.show{display:block;}
+.ch-header{background:var(--blue);border-radius:var(--r-sm);padding:14px 16px;margin-bottom:14px;}
+.ch-header.alt1{background:#ff9f0a;}
+.ch-header.alt2{background:#bf5af2;}
+.ch-htitle{font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:#fff;margin-bottom:2px;}
+.ch-hsub{font-size:12px;color:rgba(255,255,255,.7);}
 
-.carl-section{background:var(--sur);border:1px solid var(--bdr);border-radius:var(--r);margin-bottom:12px;overflow:hidden}
-.carl-hdr{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;-webkit-tap-highlight-color:transparent}
-.carl-letter{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;flex-shrink:0}
-.carl-letter.C{background:rgba(45,212,191,.12);color:var(--teal)}
-.carl-letter.A{background:rgba(201,168,76,.12);color:var(--gold)}
-.carl-letter.R{background:rgba(72,222,128,.12);color:var(--green)}
-.carl-letter.L{background:rgba(129,140,248,.12);color:var(--purple)}
-.carl-title{font-size:14px;font-weight:600;flex:1}
-.carl-tog{width:24px;height:24px;display:grid;place-items:center;color:var(--muted);background:var(--bdr);border-radius:50%;font-size:18px;transition:transform .2s,color .2s;flex-shrink:0}
-.carl-section.open .carl-tog{transform:rotate(45deg);color:var(--gold)}
-.carl-body{display:none;padding:0 18px 16px;border-top:1px solid var(--bdr)}
-.carl-section.open .carl-body{display:block}
-.carl-text{font-size:14px;color:var(--soft);line-height:1.85;padding-top:12px}
-.carl-text strong{color:var(--text)}
-.action-list{list-style:none;margin-top:10px}
-.action-list li{display:flex;gap:10px;font-size:14px;color:var(--soft);padding:5px 0;border-bottom:1px solid var(--bdr);line-height:1.5}
-.action-list li:last-child{border-bottom:none}
-.action-list li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;margin-top:2px}
-
-/* FULL SCRIPT */
-.script-part{background:var(--sur);border:1px solid var(--bdr);border-radius:var(--r);margin-bottom:12px;overflow:hidden}
-.sp-hdr{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;-webkit-tap-highlight-color:transparent}
-.sp-num{width:28px;height:28px;background:rgba(201,168,76,.12);border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:700;color:var(--gold);font-family:'JetBrains Mono',monospace;flex-shrink:0}
-.sp-title{flex:1;font-size:14px;font-weight:600}
-.sp-time{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);background:var(--sur2);padding:3px 8px;border-radius:100px;white-space:nowrap}
-.sp-tog{width:24px;height:24px;display:grid;place-items:center;color:var(--muted);background:var(--bdr);border-radius:50%;font-size:18px;transition:transform .2s,color .2s;flex-shrink:0}
-.script-part.open .sp-tog{transform:rotate(45deg);color:var(--gold)}
-.sp-body{display:none;padding:0 18px 16px;border-top:1px solid var(--bdr)}
-.script-part.open .sp-body{display:block}
-.sp-text{font-size:14px;color:var(--soft);line-height:1.9;padding-top:12px;font-style:italic;margin-bottom:10px;border-bottom:1px solid var(--bdr);padding-bottom:12px}
-.sp-text strong{color:var(--text);font-style:normal}
+/* CARL cards */
+.carl-card{background:var(--white);border:1.5px solid var(--mid-light);border-radius:var(--r-sm);margin-bottom:8px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.04);}
+.carl-hdr{display:flex;align-items:center;gap:12px;padding:13px 16px;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.carl-letter{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;flex-shrink:0;}
+.cl-c{background:#e8f8f0;color:#1a7a40;}
+.cl-a{background:#fff8e0;color:#7a5a00;}
+.cl-r{background:#e8f0fe;color:var(--blue);}
+.cl-l{background:#f8e8ff;color:#7030a0;}
+.carl-title{flex:1;font-size:13px;font-weight:600;color:var(--dark);}
+.carl-tog{width:24px;height:24px;background:var(--light);border:1px solid var(--mid-light);border-radius:50%;display:grid;place-items:center;font-size:16px;color:var(--mid);transition:transform .2s,background .15s,color .15s;flex-shrink:0;}
+.carl-card.open .carl-tog{transform:rotate(45deg);background:var(--blue);border-color:var(--blue);color:#fff;}
+.carl-body{display:none;padding:0 16px 14px;border-top:1px solid var(--mid-light);}
+.carl-card.open .carl-body{display:block;}
+.carl-text{font-size:14px;color:var(--mid);line-height:1.8;padding-top:12px;}
+.carl-text strong{color:var(--dark);font-weight:600;}
+.action-list{list-style:none;margin-top:8px;}
+.action-list li{display:flex;gap:10px;font-size:14px;color:var(--mid);padding:6px 0;border-bottom:1px solid var(--mid-light);line-height:1.5;}
+.action-list li:last-child{border-bottom:none;}
+.action-list li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;margin-top:2px;}
+.learning-quote{font-size:14px;color:var(--blue);line-height:1.7;font-style:italic;border-left:2px solid var(--blue);padding-left:14px;margin-top:10px;}
 
 /* QUIZ */
-.quiz-wrap{max-width:680px;margin:0 auto}
-.quiz-progress{background:var(--sur2);border-radius:100px;height:6px;margin-bottom:24px;overflow:hidden}
-.quiz-bar{height:100%;background:var(--gold);border-radius:100px;transition:width .4s ease}
-.quiz-meta{display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:8px}
-.qcard{background:var(--sur);border:1px solid var(--bdr);border-radius:var(--r);padding:24px;margin-bottom:16px}
-.qcard .qtext{font-size:15px;font-weight:600;color:var(--text);margin-bottom:20px;line-height:1.5}
-.options{display:flex;flex-direction:column;gap:10px}
-.opt{background:var(--sur2);border:1px solid var(--bdr);border-radius:10px;padding:13px 16px;cursor:pointer;font-size:14px;color:var(--soft);transition:all .2s;-webkit-tap-highlight-color:transparent;text-align:left;line-height:1.5}
-.opt:hover{border-color:rgba(201,168,76,.3);color:var(--text)}
-.opt.correct{background:rgba(74,222,128,.1);border-color:var(--green);color:var(--green)}
-.opt.wrong{background:rgba(232,112,112,.1);border-color:var(--red);color:var(--red)}
-.opt.reveal{background:rgba(74,222,128,.08);border-color:rgba(74,222,128,.3);color:var(--soft)}
-.quiz-feedback{font-size:13px;color:var(--soft);padding:12px 16px;background:var(--sur2);border-radius:8px;margin-top:10px;line-height:1.6;display:none}
-.quiz-next{margin-top:16px;background:var(--gold);color:#0C0E14;border:none;padding:13px 28px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;width:100%;display:none;-webkit-tap-highlight-color:transparent}
-.quiz-next:hover{background:var(--gold2)}
-.quiz-result{text-align:center;padding:40px 20px}
-.score-circle{width:120px;height:120px;border-radius:50%;display:grid;place-items:center;margin:0 auto 20px;border:3px solid var(--gold)}
-.score-n{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:700;color:var(--gold);line-height:1}
-.score-label{font-size:12px;color:var(--muted)}
-.retry-btn{background:var(--sur);border:1px solid var(--bdr);color:var(--text);padding:12px 28px;border-radius:10px;font-size:14px;font-weight:500;cursor:pointer;margin-top:8px}
+.quiz-prog{background:var(--mid-light);border-radius:100px;height:4px;margin-bottom:20px;overflow:hidden;}
+.quiz-bar{height:100%;background:var(--blue);border-radius:100px;transition:width .4s ease;}
+.qmeta{display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mid);margin-bottom:8px;}
+.quiz-card{background:var(--white);border:1.5px solid var(--mid-light);border-radius:var(--r);padding:22px;box-shadow:var(--shadow);}
+.quiz-q{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--dark);margin-bottom:18px;line-height:1.4;letter-spacing:-.01em;}
+.opts{display:flex;flex-direction:column;gap:9px;}
+.opt{
+  background:var(--light);border:1.5px solid var(--mid-light);
+  border-radius:10px;padding:12px 16px;cursor:pointer;
+  font-size:14px;color:var(--mid);transition:all .15s;
+  text-align:left;line-height:1.5;font-family:'Figtree',sans-serif;
+}
+.opt:hover{border-color:var(--blue);color:var(--dark);background:var(--blue-light);}
+.opt.correct{background:#e8f8f0;border-color:var(--green);color:#1a7a40;}
+.opt.wrong{background:#fff0ee;border-color:var(--red);color:#a03020;}
+.opt.reveal{background:var(--light);border-color:var(--mid-light);color:var(--mid);cursor:default;}
+.quiz-fb{font-size:13px;color:var(--mid);padding:12px 16px;background:var(--blue-light);border-radius:8px;margin-top:10px;line-height:1.6;display:none;border-left:2px solid var(--blue);}
+.quiz-next{margin-top:16px;background:var(--blue);color:#fff;border:none;padding:13px 24px;border-radius:100px;font-size:14px;font-weight:600;cursor:pointer;width:100%;display:none;font-family:'Figtree',sans-serif;transition:background .15s;}
+.quiz-next:hover{background:var(--blue-h);}
+.score-wrap{text-align:center;padding:40px 20px;}
+.score-ring{width:110px;height:110px;border-radius:50%;border:3px solid var(--blue);display:grid;place-items:center;margin:0 auto 18px;background:var(--blue-light);}
+.score-n{font-family:'Syne',sans-serif;font-size:36px;font-weight:800;color:var(--blue);line-height:1;}
+.score-l{font-size:11px;color:var(--mid);font-family:'JetBrains Mono',monospace;}
+.retry-btn{background:var(--light);border:1.5px solid var(--mid-light);color:var(--dark);padding:11px 24px;border-radius:100px;font-size:14px;font-weight:600;cursor:pointer;margin-top:10px;font-family:'Figtree',sans-serif;}
 
 /* CHEATSHEET */
-.cheat-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:20px}
-.cheat-card{background:var(--sur);border:1px solid var(--bdr);border-radius:var(--r);padding:18px 20px}
-.cheat-card h4{font-size:13px;font-weight:600;color:var(--gold);margin-bottom:12px;font-family:'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase}
-.person-item{display:flex;gap:12px;margin-bottom:10px;align-items:flex-start}
-.person-name{font-size:14px;font-weight:700;color:var(--text);min-width:80px;flex-shrink:0}
-.person-role{font-size:13px;color:var(--muted);line-height:1.5}
-.role-row{display:grid;grid-template-columns:auto 1fr;gap:12px;margin-bottom:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--bdr)}
-.role-row:last-child{border-bottom:none}
-.role-icon{font-size:18px;margin-top:2px}
-.role-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px}
-.role-desc{font-size:12px;color:var(--muted);line-height:1.5}
-.kw-grid{display:flex;flex-wrap:wrap;gap:8px}
-.kw{background:rgba(45,212,191,.07);border:1px solid rgba(45,212,191,.15);color:var(--teal);padding:5px 12px;border-radius:100px;font-size:12px;font-weight:500}
-.learning-item{padding:12px 0;border-bottom:1px solid var(--bdr)}
-.learning-item:last-child{border-bottom:none}
-.li-ch{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--gold);margin-bottom:4px;letter-spacing:.1em}
-.li-text{font-size:14px;color:var(--soft);line-height:1.6;font-style:italic}
-.carl-ref{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:4px}
-.carl-ref-item{background:var(--sur2);border-radius:8px;padding:10px 12px}
-.carl-ref-item .letter{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--gold);margin-bottom:3px}
-.carl-ref-item p{font-size:12px;color:var(--muted);line-height:1.4}
-.power-end{background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);border-radius:var(--r);padding:16px 18px;margin-top:14px;font-size:14px;color:var(--soft);line-height:1.8;font-style:italic;text-align:center}
-.power-end strong{color:var(--gold);font-style:normal}
+.cheat-grid{display:grid;grid-template-columns:1fr;gap:12px;}
+.cheat-card{background:var(--white);border:1.5px solid var(--mid-light);border-radius:var(--r-sm);padding:18px;box-shadow:var(--shadow);}
+.cheat-h{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:var(--dark);letter-spacing:.04em;text-transform:uppercase;margin-bottom:14px;}
+.person-item{display:flex;gap:12px;margin-bottom:10px;align-items:flex-start;padding-bottom:10px;border-bottom:1px solid var(--mid-light);}
+.person-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.pname{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:var(--dark);min-width:90px;flex-shrink:0;}
+.prole{font-size:12px;color:var(--mid);line-height:1.5;}
+.kw-wrap{display:flex;flex-wrap:wrap;gap:7px;}
+.kw{background:var(--blue-light);border:1px solid rgba(0,113,227,.2);color:var(--blue);padding:4px 12px;border-radius:100px;font-size:12px;font-weight:600;}
+.carl-ref-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;}
+.crf{background:var(--light);border-radius:8px;padding:10px 12px;}
+.crf-l{font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:var(--blue);margin-bottom:3px;}
+.crf-d{font-size:12px;color:var(--mid);}
+.learning-item{padding:12px 0;border-bottom:1px solid var(--mid-light);}
+.learning-item:last-child{border-bottom:none;}
+.li-ch{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--blue);margin-bottom:4px;letter-spacing:.1em;font-weight:500;}
+.li-text{font-size:13px;color:var(--mid);line-height:1.6;font-style:italic;}
+.role-row{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--mid-light);align-items:flex-start;}
+.role-row:last-child{border-bottom:none;}
+.role-ico{font-size:18px;margin-top:1px;flex-shrink:0;}
+.role-t{font-size:13px;font-weight:700;color:var(--dark);margin-bottom:2px;}
+.role-d{font-size:12px;color:var(--mid);line-height:1.4;}
+.power-close{background:var(--dark);border-radius:var(--r);padding:18px 22px;margin-top:20px;font-size:14px;color:rgba(255,255,255,.55);line-height:1.8;font-style:italic;text-align:center;}
+.power-close strong{color:#fff;font-style:normal;}
 
-/* FOLLOW-UP */
-.fu-group{margin-bottom:28px}
-.fu-group-title{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:600;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--bdr)}
-.fu-card{background:var(--sur);border:1px solid var(--bdr);border-radius:10px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
-.fu-card:hover{border-color:rgba(201,168,76,.22)}
-.fu-hdr{display:flex;justify-content:space-between;align-items:flex-start;padding:14px 17px;cursor:pointer;gap:12px;-webkit-tap-highlight-color:transparent}
-.fu-q{font-size:14px;font-weight:500;line-height:1.5;flex:1}
-.fu-tog{width:26px;height:26px;display:grid;place-items:center;color:var(--muted);background:var(--bdr);border-radius:50%;font-size:18px;transition:transform .2s,color .2s;flex-shrink:0}
-.fu-card.open .fu-tog{transform:rotate(45deg);color:var(--gold)}
-.fu-body{display:none;padding:0 17px 16px;border-top:1px solid var(--bdr)}
-.fu-card.open .fu-body{display:block}
-.fu-a{font-size:13px;color:var(--soft);line-height:1.85;padding-top:12px}
-.fu-a strong{color:var(--text)}
-
-footer{background:var(--sur);border-top:1px solid var(--bdr);padding:28px 24px;text-align:center;margin-top:40px}
-footer p{font-size:13px;color:var(--muted);line-height:2}
-footer a{color:var(--gold)}
-
-@media(min-width:480px){.modes-grid{grid-template-columns:repeat(3,1fr)}}
-@media(min-width:640px){.modes-grid{grid-template-columns:repeat(3,1fr);padding:0 40px 48px}.section-content{padding:28px 40px}.cheat-grid{grid-template-columns:repeat(2,1fr)}.hero-coach{padding:56px 40px 40px}.carl-ref{grid-template-columns:repeat(4,1fr)}}
-@media(min-width:900px){nav{padding:0 48px}.hamburger{display:none}.nav-desktop{display:flex}}
+@media(min-width:480px){.modes-grid{grid-template-columns:repeat(3,1fr);}}
+@media(min-width:640px){
+  .modes-grid{padding:0 40px 48px;}
+  .ps-wrap{padding:0 40px;}
+  .sec-c{padding:32px 40px;}
+  .cheat-grid{grid-template-columns:repeat(2,1fr);}
+  .carl-ref-grid{grid-template-columns:repeat(4,1fr);}
+  .coach-hero{padding:68px 40px 52px;}
+  .back-bar{padding:13px 40px;}
+}
+@media(min-width:900px){nav{padding:0 52px;} .hamburger{display:none;} .nav-desktop{display:flex;}}
 </style>
 </head>
 <body>
-
-<nav>
-  <a class="nav-logo" href="index.html">GKP</a>
+<nav id="nav">
+  <a class="nav-logo" href="index.html">GKP<span>.</span></a>
   <ul class="nav-desktop">
     <li><a href="index.html">Home</a></li>
-    <li><a href="questions.html">Interview Q&amp;A</a></li>
+    <li><a href="questions.html">Interview Q&A</a></li>
     <li><a href="coach.html" class="act">Interview Coach</a></li>
     <li><a href="speaking.html">Speaking Guide</a></li>
+    
   </ul>
-  <button class="hamburger" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+  <a class="nav-cta-btn" href="questions.html">Free Resources</a>
+  <button class="hamburger" id="hbg" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 <div class="mmenu" id="mmenu">
   <a href="index.html">Home</a>
-  <a href="questions.html">Interview Q&amp;A</a>
+  <a href="questions.html">Interview Q&A</a>
   <a href="coach.html" class="act">Interview Coach</a>
   <a href="speaking.html">Speaking Guide</a>
-  <a href="swimlane.html">Swimlane Diagram</a>
-  <a href="index.html#about" class="m-cta">About Me</a>
+  
+  <a href="questions.html" class="m-cta">Free Resources →</a>
 </div>
 
-<!-- ══════════════════════════════
-     MODE SELECTOR SCREEN
-══════════════════════════════ -->
+<!-- MODE SELECTOR -->
 <div id="modeScreen">
-  <div class="hero-coach">
-    <div class="hc-ey">// Your Personal Interview Coach</div>
-    <h1>Master Your <em>Story</em></h1>
-    <p>20+ years. 3 challenges. One transformation story. Pick a mode below to practice, study, or quick-review before your interview.</p>
+  <div class="coach-hero">
+    <div class="ch-ey">Your Personal Interview Coach</div>
+    <h1>Master Your<br/><span>Story.</span></h1>
+    <p>20+ years. 3 challenges. One transformation story. Pick a mode below to practice, study, or quick-review.</p>
   </div>
 
-  <div style="padding:28px 24px 16px;max-width:680px;margin:0 auto">
-    <div class="ps-box">
-      <div class="ps-label">⚡ Power Statement — Memorize This First</div>
-      <div class="ps-text">"I didn't just manage a project — I helped build a country-level capability from zero, aligned to a C-Level vision, and saw it through three stages: team building, knowledge migration, and cross-border integration. At every stage, I was the person who held the technical knowledge, coached the people, and kept strategic vision connected to ground-level execution."</div>
+  <div class="ps-wrap" style="margin-top:28px;">
+    <div class="ps-card">
+      <div class="ps-lbl">⚡ Power Statement — Memorize This First</div>
+      <div class="ps-text">"I didn't just manage a project — I helped build a country-level capability from zero, aligned to a C-Level vision, and saw it through three stages: team building, knowledge migration, and cross-border integration. At every stage, I was the person who held the technical knowledge, coached the people, and kept <strong>strategic vision connected to ground-level execution.</strong>"</div>
     </div>
   </div>
 
-  <div class="mode-title">Choose what you want to practice today</div>
-
+  <div class="mode-lbl">Choose what you want to practice today</div>
   <div class="modes-grid">
-    <div class="mode-card c-teal" onclick="openMode('tmay')">
-      <div class="mode-icon">📖</div>
-      <h3>Tell Me About Yourself</h3>
-      <p>Full director script, segment by segment with coach tips</p>
-    </div>
-    <div class="mode-card c-gold" onclick="openMode('challenges')">
-      <div class="mode-icon">🏆</div>
-      <h3>3 Challenges</h3>
-      <p>GCC build, project migration, cross-border integration</p>
-      <span class="mode-badge">CARL</span>
-    </div>
-    <div class="mode-card c-purple" onclick="openMode('script')">
-      <div class="mode-icon">📝</div>
-      <h3>Full Interview Script</h3>
-      <p>Word-for-word answer. Read 3× then speak without looking</p>
-      <span class="mode-badge">3.5 min</span>
-    </div>
-    <div class="mode-card c-red" onclick="openMode('followup')">
-      <div class="mode-icon">🎯</div>
-      <h3>Follow-Up Q&amp;A</h3>
-      <p>Tough follow-up questions per challenge + wild cards</p>
-    </div>
-    <div class="mode-card c-green" onclick="openMode('quiz')">
-      <div class="mode-icon">🧠</div>
-      <h3>Knowledge Quiz</h3>
-      <p>Test yourself. Aim for 8/10 before interview day</p>
-      <span class="mode-badge">10 Qs</span>
-    </div>
-    <div class="mode-card c-blue" onclick="openMode('cheatsheet')">
-      <div class="mode-icon">⚡</div>
-      <h3>Cheatsheet</h3>
-      <p>Scan 5 minutes before walking into the interview room</p>
-    </div>
+    <div class="mode-card mc-teal" onclick="openMode('tmay')"><div class="mode-icon">📖</div><h3>Tell Me About Yourself</h3><p>Full director script, segment by segment with coach tips</p></div>
+    <div class="mode-card mc-gold" onclick="openMode('challenges')"><span class="mc-badge">CARL</span><div class="mode-icon">🏆</div><h3>3 Challenges</h3><p>GCC build, project migration, cross-border integration</p></div>
+    <div class="mode-card mc-green" onclick="openMode('script')"><span class="mc-badge">3.5 min</span><div class="mode-icon">📝</div><h3>Full Script</h3><p>Word-for-word answer. Read 3× then speak without notes</p></div>
+    <div class="mode-card mc-red" onclick="openMode('followup')"><div class="mode-icon">🎯</div><h3>Follow-Up Q&amp;A</h3><p>Tough follow-ups per challenge + wild cards</p></div>
+    <div class="mode-card mc-purple" onclick="openMode('quiz')"><span class="mc-badge">10 Qs</span><div class="mode-icon">🧠</div><h3>Knowledge Quiz</h3><p>Test yourself. Aim for 8/10 before interview day</p></div>
+    <div class="mode-card mc-gray" onclick="openMode('cheatsheet')"><div class="mode-icon">⚡</div><h3>Cheatsheet</h3><p>Scan 5 minutes before walking into the interview room</p></div>
   </div>
 </div>
 
-<!-- ══════════════════════════════
-     MAIN CONTENT AREA
-══════════════════════════════ -->
+<!-- MAIN CONTENT -->
 <div id="mainContent">
-  <div class="back-btn" onclick="goBack()">← Back to Mode Selection</div>
+  <div class="back-bar" onclick="goBack()"><span class="back-icon">←</span> Back to Mode Selection</div>
 
   <!-- TELL ME ABOUT YOURSELF -->
   <div id="sec-tmay" class="sec-panel" style="display:none">
-    <div class="section-content">
-      <div class="sec-ey">01 / Tell Me About Yourself</div>
-      <h2 class="sec-h">Your Director <em>Script</em></h2>
-      <p class="sec-sub">Reveal each part in sequence — speak it out loud every time. Target: 2–3 minutes total. Parts 1, 2, 4, 5 are essential. Part 3 only if asked for more detail.</p>
-
-      <div class="tmay-step" id="ts1">
-        <div class="tmay-hdr" onclick="toggleEl('ts1')">
-          <div class="tmay-num">①</div>
-          <div class="tmay-q">Opening Line</div>
-          <div class="tmay-time">~20 sec</div>
-        </div>
-        <div class="tmay-body">
-          <div class="speech-text">"I am a technology leader with 20+ years of experience driving digital transformation for global enterprises. My career spans three distinct phases, each one building deliberately on the last."</div>
-          <div class="coach-tip">The phrase "three distinct phases, each building deliberately" signals strategic self-awareness — a Director trait. Avoid saying "I have been working for 20 years" — passive, not powerful.</div>
-        </div>
-      </div>
-
-      <div class="tmay-step" id="ts2">
-        <div class="tmay-hdr" onclick="toggleEl('ts2')">
-          <div class="tmay-num">②</div>
-          <div class="tmay-q">Core Identity</div>
-          <div class="tmay-time">~20 sec</div>
-        </div>
-        <div class="tmay-body">
-          <div class="speech-text">"I am a <strong>Certified Product Owner and Capability Leader</strong> specialising in Strategic Portfolio Management, PLM, distributed systems integration, and multi-tool workflow architecture. I connect technical architecture to real business outcomes."</div>
-          <div class="coach-tip">End with "I connect technical architecture to real business outcomes" — this is your value proposition in one sentence. Directors don't just build things, they create outcomes.</div>
-        </div>
-      </div>
-
-      <div class="tmay-step" id="ts3">
-        <div class="tmay-hdr" onclick="toggleEl('ts3')">
-          <div class="tmay-num">③</div>
-          <div class="tmay-q">20-Year Journey (use only if asked for more detail)</div>
-          <div class="tmay-time">~50 sec optional</div>
-        </div>
-        <div class="tmay-body">
-          <div class="speech-text">
-            <strong>2006–09 · Medisoft:</strong> Built core database architecture and PLM modules<br>
-            <strong>2009–11 · HP:</strong> Led distributed workflow enhancements, HP OpenView enterprise transitions<br>
-            <strong>2011–18 · Schneider — Technical Lead:</strong> Architected multi-tool workflows and cross-system integrations<br>
-            <strong>2018–20 · Schneider — Country Manager:</strong> Led 14-member team, global digital migration<br>
-            <strong>2020–22 · Schneider — Portfolio Expert:</strong> PLM roadmaps and cross-system data governance<br>
-            <strong>2022–Now · Schneider — Certified PO + Capability Leader:</strong> Multi-year PLM roadmaps and GCC transformation
-          </div>
-          <div class="coach-tip">Each role was a deliberate step — say that. "Each role prepared me for the next." Do not recite dates unless they ask for the timeline.</div>
-        </div>
-      </div>
-
-      <div class="tmay-step" id="ts4">
-        <div class="tmay-hdr" onclick="toggleEl('ts4')">
-          <div class="tmay-num">④</div>
-          <div class="tmay-q">Bridge → GCC Transformation Story</div>
-          <div class="tmay-time">~30 sec</div>
-        </div>
-        <div class="tmay-body">
-          <div class="speech-text">"Most recently, I was part of a C-Level strategic initiative — <strong>Raghu's vision</strong> to build a Global Capability Center in India. I played three progressive roles: <strong>Country Manager</strong> building the India team, <strong>Program Manager</strong> leading complex project migration from France, and <strong>Integration Leader</strong> bridging two systems across two countries. My VP <strong>Michel Francis</strong> was closely aligned throughout."</div>
-          <div class="coach-tip">Say "Raghu" and "Michel Francis" clearly — named leadership proves you operated at that level. The three roles in one sentence shows progression without being long.</div>
-        </div>
-      </div>
-
-      <div class="tmay-step" id="ts5">
-        <div class="tmay-hdr" onclick="toggleEl('ts5')">
-          <div class="tmay-num">⑤</div>
-          <div class="tmay-q">Closing — What Drives You</div>
-          <div class="tmay-time">~20 sec</div>
-        </div>
-        <div class="tmay-body">
-          <div class="speech-text">"What excites me most is connecting technical architecture to business outcomes — building roadmaps that deliver real ROI, not just working software. I hold a <strong>Master's in AI</strong>, completed while working full-time, because I believe leaders must keep learning."</div>
-          <div class="coach-tip">End here. Stop talking. The interviewer will respond. Silence after a strong close is powerful — do not fill it with more words.</div>
-        </div>
-      </div>
-
-      <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);border-radius:var(--r);padding:16px 18px;margin-top:8px">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:.15em;text-transform:uppercase;margin-bottom:10px">Key numbers woven in</div>
-        <div style="display:flex;flex-wrap:wrap;gap:8px">
-          <span style="background:rgba(0,0,0,.2);border-radius:8px;padding:5px 12px;font-size:12px;color:var(--gold2)">$2.4B Portfolio</span>
-          <span style="background:rgba(0,0,0,.2);border-radius:8px;padding:5px 12px;font-size:12px;color:var(--gold2)">16 WebOnyx Releases</span>
-          <span style="background:rgba(0,0,0,.2);border-radius:8px;padding:5px 12px;font-size:12px;color:var(--gold2)">GCC Built from Zero</span>
-          <span style="background:rgba(0,0,0,.2);border-radius:8px;padding:5px 12px;font-size:12px;color:var(--gold2)">OCP Migration Lead</span>
-          <span style="background:rgba(0,0,0,.2);border-radius:8px;padding:5px 12px;font-size:12px;color:var(--gold2)">Certified PO · 4 Years</span>
-          <span style="background:rgba(0,0,0,.2);border-radius:8px;padding:5px 12px;font-size:12px;color:var(--gold2)">MTech AI (while working)</span>
-          <span style="background:rgba(0,0,0,.2);border-radius:8px;padding:5px 12px;font-size:12px;color:var(--gold2)">Verizon, AT&amp;T, AccuWeather</span>
-        </div>
+    <div class="sec-c">
+      <div class="sec-ey">Tell Me About Yourself</div>
+      <h2 class="sec-title">Your Director <span>Script</span></h2>
+      <p class="sec-sub">Reveal each part in sequence — speak it aloud every time. Target: 2–3 minutes. Parts 1, 2, 4, 5 are essential.</p>
+      <div class="exp-card" id="tm1"><div class="exp-hdr" onclick="tog('tm1')"><div class="exp-icon">①</div><div class="exp-title">Opening Line</div><span class="exp-meta">~20 sec</span><div class="exp-tog">+</div></div><div class="exp-body"><div class="speech-quote">"I am a technology leader with 20+ years of experience driving digital transformation for global enterprises. My career spans three distinct phases, each one building deliberately on the last."</div><div class="coach-tip">The phrase "three distinct phases, each building deliberately" signals strategic self-awareness — a Director trait. Avoid saying "I have been working for 20 years" — passive, not powerful.</div></div></div>
+      <div class="exp-card" id="tm2"><div class="exp-hdr" onclick="tog('tm2')"><div class="exp-icon">②</div><div class="exp-title">Core Identity</div><span class="exp-meta">~20 sec</span><div class="exp-tog">+</div></div><div class="exp-body"><div class="speech-quote">"I am a <strong>Certified Product Owner and Capability Leader</strong> specialising in Strategic Portfolio Management, PLM, distributed systems integration, and multi-tool workflow architecture. I connect technical architecture to real business outcomes."</div><div class="coach-tip">End with "I connect technical architecture to real business outcomes" — this is your value proposition in one sentence.</div></div></div>
+      <div class="exp-card" id="tm3"><div class="exp-hdr" onclick="tog('tm3')"><div class="exp-icon">③</div><div class="exp-title">20-Year Journey (only if asked for detail)</div><span class="exp-meta">~50 sec optional</span><div class="exp-tog">+</div></div><div class="exp-body"><div class="exp-text"><p><strong>2006–09 · Medisoft:</strong> Built core database architecture and PLM modules for global telecom clients — Verizon, AT&T, AccuWeather</p><p><strong>2009–11 · HP:</strong> Led distributed workflow enhancements, HP OpenView enterprise product transitions</p><p><strong>2011–18 · Schneider — Technical Lead:</strong> Architected multi-tool workflows and cross-system integrations</p><p><strong>2018–20 · Schneider — Country Manager:</strong> Led 14-member team, global digital migration</p><p><strong>2022–Now · Schneider — Certified PO + Capability Leader:</strong> Multi-year PLM roadmaps, $2.4B portfolio, GCC transformation</p></div><div class="coach-tip">Each role was a deliberate step. Say: "Each role prepared me for the next." Do not recite dates unless they ask for the timeline.</div></div></div>
+      <div class="exp-card" id="tm4"><div class="exp-hdr" onclick="tog('tm4')"><div class="exp-icon">④</div><div class="exp-title">Bridge → GCC Transformation Story</div><span class="exp-meta">~30 sec</span><div class="exp-tog">+</div></div><div class="exp-body"><div class="speech-quote">"Most recently, I was part of a C-Level strategic initiative — <strong>Raghu's vision</strong> to build a Global Capability Center in India. I played three progressive roles: <strong>Country Manager</strong> building the India team, <strong>Program Manager</strong> leading complex project migration from France, and <strong>Integration Leader</strong> bridging two systems across two countries. My VP <strong>Michel Francis</strong> was closely aligned throughout."</div><div class="coach-tip">Say "Raghu" and "Michel Francis" clearly — named leadership proves you operated at that level.</div></div></div>
+      <div class="exp-card" id="tm5"><div class="exp-hdr" onclick="tog('tm5')"><div class="exp-icon">⑤</div><div class="exp-title">Closing — What Drives You</div><span class="exp-meta">~20 sec</span><div class="exp-tog">+</div></div><div class="exp-body"><div class="speech-quote">"What excites me most is connecting technical architecture to business outcomes — building roadmaps that deliver real ROI, not just working software. I hold a <strong>Master's in AI</strong>, completed while working full-time, because I believe leaders must keep learning."</div><div class="coach-tip">End here. Stop talking. The interviewer will respond. Silence after a strong close is powerful.</div></div></div>
+      <div style="background:var(--light);border:1px solid var(--mid-light);border-radius:var(--r-sm);padding:16px 18px;margin-top:14px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--blue);letter-spacing:.15em;text-transform:uppercase;margin-bottom:10px;font-weight:500;">Key numbers woven in</div>
+        <div style="display:flex;flex-wrap:wrap;gap:7px;"><span class="kw">$2.4B Portfolio</span><span class="kw">16 WebOnyx Releases</span><span class="kw">GCC Built from Zero</span><span class="kw">OCP Migration Lead</span><span class="kw">Certified PO · 4 Years</span><span class="kw">MTech AI (while working)</span></div>
       </div>
     </div>
   </div>
 
   <!-- 3 CHALLENGES -->
   <div id="sec-challenges" class="sec-panel" style="display:none">
-    <div class="section-content">
-      <div class="sec-ey">02 / Three Challenges</div>
-      <h2 class="sec-h">Your <em>GCC Story</em></h2>
-      <p class="sec-sub">Three progressive challenges. Each uses the CARL framework: Context → Actions → Result → Learning.</p>
-
+    <div class="sec-c">
+      <div class="sec-ey">Three Challenges — CARL Framework</div>
+      <h2 class="sec-title">Your <span>GCC Story</span></h2>
+      <p class="sec-sub">Context → Actions → Result → Learning. Each challenge builds on the last.</p>
       <div class="ch-tabs">
-        <button class="ch-tab act" onclick="showChallenge('ch1',this)">🏗️ Ch.1 — Build Team</button>
-        <button class="ch-tab" onclick="showChallenge('ch2',this)">🚀 Ch.2 — Migrate Project</button>
-        <button class="ch-tab" onclick="showChallenge('ch3',this)">🔗 Ch.3 — Integrate Systems</button>
+        <button class="ch-tab act" onclick="showCh('ch1',this)">🏗️ Ch.1 — Build Team</button>
+        <button class="ch-tab" onclick="showCh('ch2',this)">🚀 Ch.2 — Migrate Project</button>
+        <button class="ch-tab" onclick="showCh('ch3',this)">🔗 Ch.3 — Integrate Systems</button>
       </div>
-
-      <!-- Challenge 1 -->
-      <div class="challenge-block show" id="ch1">
-        <div style="background:rgba(45,212,191,.06);border:1px solid rgba(45,212,191,.2);border-radius:10px;padding:14px 16px;margin-bottom:16px">
-          <div style="font-size:13px;font-weight:600;color:var(--teal);margin-bottom:4px">🏗️ Challenge 1 · Country Manager</div>
-          <div style="font-size:13px;color:var(--muted)">Building the GCC Support Team in India · Strategic — C-Level Vision by Raghu</div>
-        </div>
-        <div class="carl-section" id="carl-c1">
-          <div class="carl-hdr" onclick="toggleEl('carl-c1')">
-            <div class="carl-letter C">C</div>
-            <div class="carl-title">Context — Set the scene</div>
-            <div class="carl-tog">+</div>
-          </div>
-          <div class="carl-body"><div class="carl-text">"The C-Level vision from <strong>Raghu</strong> was clear — build a GCC in India to replicate and eventually replace the France operations. Nothing existed in India. We had to build from zero — team, capability, process, and culture."</div></div>
-        </div>
-        <div class="carl-section" id="carl-a1">
-          <div class="carl-hdr" onclick="toggleEl('carl-a1')">
-            <div class="carl-letter A">A</div>
-            <div class="carl-title">Actions — What YOU specifically did</div>
-            <div class="carl-tog">+</div>
-          </div>
-          <div class="carl-body">
-            <ul class="action-list">
-              <li>Recruited and onboarded India support team from scratch</li>
-              <li>Designed the operating model — how India would mirror France operations</li>
-              <li>Coached team functionally and technically — I was the knowledge bridge between France expertise and India capability</li>
-              <li>Worked closely with VP Michel Francis to align on expectations and milestones</li>
-              <li>Ensured India team was not just a back-office — but a capable, empowered GCC</li>
-            </ul>
-          </div>
-        </div>
-        <div class="carl-section" id="carl-r1">
-          <div class="carl-hdr" onclick="toggleEl('carl-r1')">
-            <div class="carl-letter R">R</div>
-            <div class="carl-title">Result — Concrete outcome (Before → After)</div>
-            <div class="carl-tog">+</div>
-          </div>
-          <div class="carl-body"><div class="carl-text">"Successfully established a functioning GCC in India — team was built, trained, and operational. This became the foundation for challenges 2 and 3."</div></div>
-        </div>
-        <div class="carl-section" id="carl-l1">
-          <div class="carl-hdr" onclick="toggleEl('carl-l1')">
-            <div class="carl-letter L">L</div>
-            <div class="carl-title">Learning — One sentence, shows self-awareness</div>
-            <div class="carl-tog">+</div>
-          </div>
-          <div class="carl-body"><div class="carl-text" style="font-style:italic;color:var(--gold2)">"Building a GCC is not about hiring people — it's about transferring institutional knowledge and instilling ownership culture in a new geography."</div></div>
-        </div>
+      <div class="ch-block show" id="ch1">
+        <div class="ch-header"><div class="ch-htitle">🏗️ Challenge 1 · Country Manager</div><div class="ch-hsub">Building the GCC Support Team in India · C-Level Vision by Raghu</div></div>
+        <div class="carl-card" id="cc1"><div class="carl-hdr" onclick="tog('cc1')"><div class="carl-letter cl-c">C</div><div class="carl-title">Context — Set the scene</div><div class="carl-tog">+</div></div><div class="carl-body"><div class="carl-text">"The C-Level vision from <strong>Raghu</strong> was clear — build a GCC in India to replicate and eventually replace the France operations. Nothing existed in India. We had to build from zero — team, capability, process, and culture."</div></div></div>
+        <div class="carl-card" id="ca1"><div class="carl-hdr" onclick="tog('ca1')"><div class="carl-letter cl-a">A</div><div class="carl-title">Actions — What YOU specifically did</div><div class="carl-tog">+</div></div><div class="carl-body"><ul class="action-list"><li>Recruited and onboarded India support team from scratch</li><li>Designed the operating model — how India would mirror France operations</li><li>Coached team functionally and technically — I was the knowledge bridge between France expertise and India capability</li><li>Worked closely with VP Michel Francis to align on expectations and milestones</li><li>Ensured India team was not just a back-office — but a capable, empowered GCC</li></ul></div></div>
+        <div class="carl-card" id="cr1"><div class="carl-hdr" onclick="tog('cr1')"><div class="carl-letter cl-r">R</div><div class="carl-title">Result — Before → After</div><div class="carl-tog">+</div></div><div class="carl-body"><div class="carl-text">"Successfully established a functioning GCC in India — team built, trained, and operational. This became the foundation for challenges 2 and 3."</div></div></div>
+        <div class="carl-card" id="cl1"><div class="carl-hdr" onclick="tog('cl1')"><div class="carl-letter cl-l">L</div><div class="carl-title">Learning — One sentence</div><div class="carl-tog">+</div></div><div class="carl-body"><div class="learning-quote">"Building a GCC is not about hiring people — it's about transferring institutional knowledge and instilling ownership culture in a new geography."</div></div></div>
       </div>
-
-      <!-- Challenge 2 -->
-      <div class="challenge-block" id="ch2">
-        <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);border-radius:10px;padding:14px 16px;margin-bottom:16px">
-          <div style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:4px">🚀 Challenge 2 · Program Manager + Technical Coach</div>
-          <div style="font-size:13px;color:var(--muted)">Moving Complex Project France → India · Technical + People Leadership</div>
-        </div>
-        <div class="carl-section" id="carl-c2">
-          <div class="carl-hdr" onclick="toggleEl('carl-c2')">
-            <div class="carl-letter C">C</div><div class="carl-title">Context</div><div class="carl-tog">+</div>
-          </div>
-          <div class="carl-body"><div class="carl-text">"A highly complex, legacy-heavy project needed migration from France to India. The France team had years of deep knowledge. The India team was new to this system. The risk of knowledge loss was very high."</div></div>
-        </div>
-        <div class="carl-section" id="carl-a2">
-          <div class="carl-hdr" onclick="toggleEl('carl-a2')">
-            <div class="carl-letter A">A</div><div class="carl-title">Actions</div><div class="carl-tog">+</div>
-          </div>
-          <div class="carl-body">
-            <ul class="action-list">
-              <li>I was the longest-serving person on the system — personally led all knowledge transfer sessions</li>
-              <li>Created system complexity maps, architecture documentation, decision logs</li>
-              <li>Introduced a <strong>buddy model</strong> — France engineers paired with India counterparts</li>
-              <li>Coached India team both functionally (product understanding) and technically (system architecture)</li>
-              <li>Coached 3 senior POs — including a Director-level and Account Head</li>
-              <li>Managed stakeholder confidence with VP Michel Francis through structured regular updates</li>
-            </ul>
-          </div>
-        </div>
-        <div class="carl-section" id="carl-r2">
-          <div class="carl-hdr" onclick="toggleEl('carl-r2')">
-            <div class="carl-letter R">R</div><div class="carl-title">Result</div><div class="carl-tog">+</div>
-          </div>
-          <div class="carl-body"><div class="carl-text">"India team moved from fully dependent → <strong>independently capable</strong>. Project migrated successfully without major delivery failure. Knowledge was distributed, documented, and no longer a single-person risk."</div></div>
-        </div>
-        <div class="carl-section" id="carl-l2">
-          <div class="carl-hdr" onclick="toggleEl('carl-l2')">
-            <div class="carl-letter L">L</div><div class="carl-title">Learning</div><div class="carl-tog">+</div>
-          </div>
-          <div class="carl-body"><div class="carl-text" style="font-style:italic;color:var(--gold2)">"Migration is a people problem disguised as a technical problem. The technology can be documented — but confidence, capability, and culture must be built deliberately."</div></div>
-        </div>
+      <div class="ch-block" id="ch2">
+        <div class="ch-header alt1"><div class="ch-htitle">🚀 Challenge 2 · Program Manager + Technical Coach</div><div class="ch-hsub">Moving Complex Project France → India · Technical + People Leadership</div></div>
+        <div class="carl-card" id="cc2"><div class="carl-hdr" onclick="tog('cc2')"><div class="carl-letter cl-c">C</div><div class="carl-title">Context</div><div class="carl-tog">+</div></div><div class="carl-body"><div class="carl-text">"A highly complex, legacy-heavy project needed migration from France to India. The France team had years of deep knowledge. The India team was new to this system. The risk of knowledge loss was very high."</div></div></div>
+        <div class="carl-card" id="ca2"><div class="carl-hdr" onclick="tog('ca2')"><div class="carl-letter cl-a">A</div><div class="carl-title">Actions</div><div class="carl-tog">+</div></div><div class="carl-body"><ul class="action-list"><li>I was the longest-serving person on the system — personally led all knowledge transfer sessions</li><li>Created system complexity maps, architecture documentation, decision logs</li><li>Introduced a <strong>buddy model</strong> — France engineers paired with India counterparts</li><li>Coached 3 senior POs — including a Director-level and Account Head</li><li>Managed stakeholder confidence with VP Michel Francis through structured regular updates</li></ul></div></div>
+        <div class="carl-card" id="cr2"><div class="carl-hdr" onclick="tog('cr2')"><div class="carl-letter cl-r">R</div><div class="carl-title">Result</div><div class="carl-tog">+</div></div><div class="carl-body"><div class="carl-text">"India team moved from fully dependent → <strong>independently capable</strong>. Project migrated successfully without major delivery failure. Knowledge was distributed, documented, and no longer a single-person risk."</div></div></div>
+        <div class="carl-card" id="cl2"><div class="carl-hdr" onclick="tog('cl2')"><div class="carl-letter cl-l">L</div><div class="carl-title">Learning</div><div class="carl-tog">+</div></div><div class="carl-body"><div class="learning-quote">"Migration is a people problem disguised as a technical problem. The technology can be documented — but confidence, capability, and culture must be built deliberately."</div></div></div>
       </div>
-
-      <!-- Challenge 3 -->
-      <div class="challenge-block" id="ch3">
-        <div style="background:rgba(129,140,248,.06);border:1px solid rgba(129,140,248,.2);border-radius:10px;padding:14px 16px;margin-bottom:16px">
-          <div style="font-size:13px;font-weight:600;color:var(--purple);margin-bottom:4px">🔗 Challenge 3 · Integration Program Manager</div>
-          <div style="font-size:13px;color:var(--muted)">Integrating Two Systems India + France · Cross-border Technical Integration</div>
-        </div>
-        <div class="carl-section" id="carl-c3">
-          <div class="carl-hdr" onclick="toggleEl('carl-c3')">
-            <div class="carl-letter C">C</div><div class="carl-title">Context</div><div class="carl-tog">+</div>
-          </div>
-          <div class="carl-body"><div class="carl-text">"Even after migration, both teams needed to work together — India had the new system, France had the stable legacy system. Different maturity levels, time zones, and ways of working. No one was clearly owning the integration."</div></div>
-        </div>
-        <div class="carl-section" id="carl-a3">
-          <div class="carl-hdr" onclick="toggleEl('carl-a3')">
-            <div class="carl-letter A">A</div><div class="carl-title">Actions</div><div class="carl-tog">+</div>
-          </div>
-          <div class="carl-body">
-            <ul class="action-list">
-              <li>Mapped full integration architecture — data flows, APIs, dependency points</li>
-              <li>Created <strong>RACI matrix</strong> — assigned single DRI on each side</li>
-              <li>Established daily cross-border sync during overlapping time zones</li>
-              <li>Resolved team resistance by clarifying decision boundaries — people weren't refusing, they were confused</li>
-              <li>Built <strong>3-horizon roadmap</strong>: stabilize now → optimize in 6 months → R&amp;D migration in 12–24 months</li>
-            </ul>
-          </div>
-        </div>
-        <div class="carl-section" id="carl-r3">
-          <div class="carl-hdr" onclick="toggleEl('carl-r3')">
-            <div class="carl-letter R">R</div><div class="carl-title">Result</div><div class="carl-tog">+</div>
-          </div>
-          <div class="carl-body"><div class="carl-text">"Integration went from <strong>chaotic and unowned → structured and on-track</strong>. Both teams developed a collaborative working rhythm. Project moved from at-risk to controlled in portfolio reviews."</div></div>
-        </div>
-        <div class="carl-section" id="carl-l3">
-          <div class="carl-hdr" onclick="toggleEl('carl-l3')">
-            <div class="carl-letter L">L</div><div class="carl-title">Learning</div><div class="carl-tog">+</div>
-          </div>
-          <div class="carl-body"><div class="carl-text" style="font-style:italic;color:var(--gold2)">"Cross-border integrations break at the human layer before the technical layer. Timezone, trust, and clarity of ownership must be engineered as carefully as the systems themselves."</div></div>
-        </div>
+      <div class="ch-block" id="ch3">
+        <div class="ch-header alt2"><div class="ch-htitle">🔗 Challenge 3 · Integration Program Manager</div><div class="ch-hsub">Integrating Two Systems India + France · Cross-border Technical Integration</div></div>
+        <div class="carl-card" id="cc3"><div class="carl-hdr" onclick="tog('cc3')"><div class="carl-letter cl-c">C</div><div class="carl-title">Context</div><div class="carl-tog">+</div></div><div class="carl-body"><div class="carl-text">"Even after migration, both teams needed to work together — India had the new system, France had the legacy. Different maturity levels, time zones, ways of working. No one was clearly owning the integration."</div></div></div>
+        <div class="carl-card" id="ca3"><div class="carl-hdr" onclick="tog('ca3')"><div class="carl-letter cl-a">A</div><div class="carl-title">Actions</div><div class="carl-tog">+</div></div><div class="carl-body"><ul class="action-list"><li>Mapped full integration architecture — data flows, APIs, dependency points</li><li>Created <strong>RACI matrix</strong> — assigned single DRI on each side</li><li>Established daily cross-border sync during overlapping time zones</li><li>Resolved team resistance by clarifying decision boundaries</li><li>Built <strong>3-horizon roadmap</strong>: stabilize now → optimize in 6 months → R&D migration in 12–24 months</li></ul></div></div>
+        <div class="carl-card" id="cr3"><div class="carl-hdr" onclick="tog('cr3')"><div class="carl-letter cl-r">R</div><div class="carl-title">Result</div><div class="carl-tog">+</div></div><div class="carl-body"><div class="carl-text">"Integration went from <strong>chaotic and unowned → structured and on-track</strong>. Both teams developed a collaborative working rhythm. Project moved from at-risk to controlled in portfolio reviews."</div></div></div>
+        <div class="carl-card" id="cl3"><div class="carl-hdr" onclick="tog('cl3')"><div class="carl-letter cl-l">L</div><div class="carl-title">Learning</div><div class="carl-tog">+</div></div><div class="carl-body"><div class="learning-quote">"Cross-border integrations break at the human layer before the technical layer. Timezone, trust, and clarity of ownership must be engineered as carefully as the systems themselves."</div></div></div>
       </div>
     </div>
   </div>
 
   <!-- FULL SCRIPT -->
   <div id="sec-script" class="sec-panel" style="display:none">
-    <div class="section-content">
-      <div class="sec-ey">03 / Full Interview Script</div>
-      <h2 class="sec-h">Word-for-Word <em>Answer</em></h2>
-      <p class="sec-sub">Read this 3× out loud, then speak without looking. Target: 3.5–4 minutes. Stop at 4 minutes no matter what.</p>
-
-      <div class="script-part" id="sp1">
-        <div class="sp-hdr" onclick="toggleEl('sp1')">
-          <div class="sp-num">1</div><div class="sp-title">Opening</div><div class="sp-time">30 sec</div><div class="sp-tog">+</div>
-        </div>
-        <div class="sp-body">
-          <div class="sp-text">"I am a technology leader with 20+ years of experience driving digital transformation for global enterprises. I'm a Certified Product Owner and Capability Leader — my core expertise is Strategic Portfolio Management, PLM, distributed systems, and workflow architecture."</div>
-          <div class="coach-tip">Pause here. Make eye contact. Let it land.</div>
-        </div>
-      </div>
-
-      <div class="script-part" id="sp2">
-        <div class="sp-hdr" onclick="toggleEl('sp2')">
-          <div class="sp-num">2</div><div class="sp-title">The GCC Vision</div><div class="sp-time">20 sec</div><div class="sp-tog">+</div>
-        </div>
-        <div class="sp-body">
-          <div class="sp-text">"Most recently, I was part of a C-Level strategic initiative at Schneider Electric — a vision by our leadership, <strong>Raghu</strong>, to build a Global Capability Center in India, transitioning operations from France. My VP <strong>Michel Francis</strong> was closely aligned to this transformation."</div>
-          <div class="coach-tip">Say "Raghu" and "Michel Francis" clearly — named leadership shows you operated at that level.</div>
-        </div>
-      </div>
-
-      <div class="script-part" id="sp3">
-        <div class="sp-hdr" onclick="toggleEl('sp3')">
-          <div class="sp-num">3</div><div class="sp-title">Challenge 1 — Build Team</div><div class="sp-time">45 sec</div><div class="sp-tog">+</div>
-        </div>
-        <div class="sp-body">
-          <div class="sp-text">"I took on the Country Manager role. Nothing existed in India — <strong>zero team, zero process.</strong> I recruited and onboarded the India team from scratch, designed the operating model to mirror France operations, and personally served as the knowledge bridge. I coached the team both functionally and technically. The result — a fully functioning, empowered GCC that became the foundation for everything that followed."</div>
-          <div class="coach-tip">Stress "from scratch" and "knowledge bridge" — these are your differentiators.</div>
-        </div>
-      </div>
-
-      <div class="script-part" id="sp4">
-        <div class="sp-hdr" onclick="toggleEl('sp4')">
-          <div class="sp-num">4</div><div class="sp-title">Challenge 2 — Migrate Project</div><div class="sp-time">45 sec</div><div class="sp-tog">+</div>
-        </div>
-        <div class="sp-body">
-          <div class="sp-text">"Once the team was in place, the next challenge was migrating a highly complex, legacy-heavy project from France. The risk of knowledge loss was enormous. As the <strong>longest-serving person on the system</strong>, I personally led every knowledge transfer session. I created architecture maps, decision logs, and introduced a buddy model — France engineers paired with India counterparts. I also coached three senior POs, including a <strong>Director-level and Account Head</strong>. The India team went from fully dependent to independently capable — migration completed without major delivery failure."</div>
-          <div class="coach-tip">"Longest-serving person" establishes unique authority. "Director-level" shows executive impact.</div>
-        </div>
-      </div>
-
-      <div class="script-part" id="sp5">
-        <div class="sp-hdr" onclick="toggleEl('sp5')">
-          <div class="sp-num">5</div><div class="sp-title">Challenge 3 — Integrate Systems</div><div class="sp-time">45 sec</div><div class="sp-tog">+</div>
-        </div>
-        <div class="sp-body">
-          <div class="sp-text">"The final challenge — even after migration, both teams needed to work together. Different systems, different time zones, different maturity levels — and <strong>no one clearly owning the integration</strong>. I stepped in as Integration Program Manager. I mapped the full architecture, created a RACI matrix with a single DRI on each side, established daily cross-border syncs, and built a 3-horizon roadmap. Integration went from chaotic and unowned to <strong>structured and on-track</strong>. Both teams developed a genuine collaborative rhythm."</div>
-          <div class="coach-tip">RACI, DRI, 3-horizon roadmap — these show senior program management vocabulary.</div>
-        </div>
-      </div>
-
-      <div class="script-part" id="sp6">
-        <div class="sp-hdr" onclick="toggleEl('sp6')">
-          <div class="sp-num">6</div><div class="sp-title">Closing Power Statement</div><div class="sp-time">20 sec</div><div class="sp-tog">+</div>
-        </div>
-        <div class="sp-body">
-          <div class="sp-text">"At every stage — I was the person who held the technical knowledge, coached the people, and kept the strategic vision connected to ground-level execution. <strong>That is the kind of leader I am.</strong>"</div>
-          <div class="coach-tip">End here. Stop talking. Let the interviewer respond. Total target: 3.5–4 minutes.</div>
-        </div>
-      </div>
+    <div class="sec-c">
+      <div class="sec-ey">Full Interview Script</div>
+      <h2 class="sec-title">Word-for-Word <span>Answer</span></h2>
+      <p class="sec-sub">Read 3× out loud, then speak without looking. Target: 3.5–4 minutes. Stop at 4 min no matter what.</p>
+      <div class="exp-card" id="sp1"><div class="exp-hdr" onclick="tog('sp1')"><div class="exp-icon" style="font-family:'Syne',sans-serif;font-size:12px;">1</div><div class="exp-title">Opening</div><span class="exp-meta">30 sec</span><div class="exp-tog">+</div></div><div class="exp-body"><div class="speech-quote">"I am a technology leader with 20+ years of experience driving digital transformation for global enterprises. I'm a Certified Product Owner and Capability Leader — my core expertise is Strategic Portfolio Management, PLM, distributed systems, and workflow architecture."</div><div class="coach-tip">Pause here. Make eye contact. Let it land.</div></div></div>
+      <div class="exp-card" id="sp2"><div class="exp-hdr" onclick="tog('sp2')"><div class="exp-icon" style="font-family:'Syne',sans-serif;font-size:12px;">2</div><div class="exp-title">The GCC Vision</div><span class="exp-meta">20 sec</span><div class="exp-tog">+</div></div><div class="exp-body"><div class="speech-quote">"Most recently, I was part of a C-Level strategic initiative at Schneider Electric — a vision by our leadership, <strong>Raghu</strong>, to build a Global Capability Center in India. My VP <strong>Michel Francis</strong> was closely aligned throughout."</div><div class="coach-tip">Say "Raghu" and "Michel Francis" clearly — named leadership shows you operated at that level.</div></div></div>
+      <div class="exp-card" id="sp3"><div class="exp-hdr" onclick="tog('sp3')"><div class="exp-icon" style="font-family:'Syne',sans-serif;font-size:12px;">3</div><div class="exp-title">Challenge 1 — Build Team</div><span class="exp-meta">45 sec</span><div class="exp-tog">+</div></div><div class="exp-body"><div class="speech-quote">"I took on the Country Manager role. Nothing existed in India — <strong>zero team, zero process.</strong> I recruited and onboarded the India team from scratch, designed the operating model, and personally served as the knowledge bridge. The result — a fully functioning, empowered GCC."</div><div class="coach-tip">Stress "from scratch" and "knowledge bridge" — these are your differentiators.</div></div></div>
+      <div class="exp-card" id="sp4"><div class="exp-hdr" onclick="tog('sp4')"><div class="exp-icon" style="font-family:'Syne',sans-serif;font-size:12px;">4</div><div class="exp-title">Challenge 2 — Migrate Project</div><span class="exp-meta">45 sec</span><div class="exp-tog">+</div></div><div class="exp-body"><div class="speech-quote">"The next challenge — migrating a highly complex, legacy-heavy project from France. As the <strong>longest-serving person on the system</strong>, I personally led every knowledge transfer session. I created architecture maps, introduced a buddy model, and coached three senior POs including a <strong>Director-level and Account Head</strong>. India went from fully dependent to independently capable."</div><div class="coach-tip">"Longest-serving person" establishes unique authority. "Director-level" shows executive impact.</div></div></div>
+      <div class="exp-card" id="sp5"><div class="exp-hdr" onclick="tog('sp5')"><div class="exp-icon" style="font-family:'Syne',sans-serif;font-size:12px;">5</div><div class="exp-title">Challenge 3 — Integrate Systems</div><span class="exp-meta">45 sec</span><div class="exp-tog">+</div></div><div class="exp-body"><div class="speech-quote">"The final challenge — both teams needed to work together but <strong>no one clearly owned the integration</strong>. I mapped the full architecture, created a RACI matrix with a single DRI on each side, established daily cross-border syncs, and built a 3-horizon roadmap. Integration went from chaotic and unowned to <strong>structured and on-track</strong>."</div><div class="coach-tip">RACI, DRI, 3-horizon roadmap — senior program management vocabulary.</div></div></div>
+      <div class="exp-card" id="sp6"><div class="exp-hdr" onclick="tog('sp6')"><div class="exp-icon" style="font-family:'Syne',sans-serif;font-size:12px;">6</div><div class="exp-title">Closing Power Statement</div><span class="exp-meta">20 sec</span><div class="exp-tog">+</div></div><div class="exp-body"><div class="speech-quote">"At every stage — I was the person who held the technical knowledge, coached the people, and kept the strategic vision connected to ground-level execution. <strong>That is the kind of leader I am.</strong>"</div><div class="coach-tip">End here. Stop talking. Let the interviewer respond.</div></div></div>
     </div>
   </div>
 
-  <!-- FOLLOW-UP Q&A -->
+  <!-- FOLLOW-UP -->
   <div id="sec-followup" class="sec-panel" style="display:none">
-    <div class="section-content">
-      <div class="sec-ey">04 / Follow-Up Q&amp;A</div>
-      <h2 class="sec-h">Tough <em>Follow-Ups</em></h2>
+    <div class="sec-c">
+      <div class="sec-ey">Follow-Up Q&amp;A</div>
+      <h2 class="sec-title">Tough <span>Follow-Ups</span></h2>
       <p class="sec-sub">This is where interviews are won or lost. Think through your answer first — then reveal the coaching hint.</p>
-
-      <div class="fu-group">
-        <div class="fu-group-title"><span>🏗️</span> Challenge 1 Follow-Ups</div>
-        <div class="fu-card" id="fu1">
-          <div class="fu-hdr" onclick="toggleEl('fu1')"><div class="fu-q">How did you handle resistance from the France team when building the GCC?</div><div class="fu-tog">+</div></div>
-          <div class="fu-body"><div class="fu-a"><strong>Answer angle:</strong> Show alignment through VP Michel Francis. Use structured communication — regular updates showed India team capability growing, not threatening France roles. Frame it as <strong>expansion, not replacement</strong>. The France team's expertise was being preserved and multiplied, not eliminated.</div></div>
-        </div>
-        <div class="fu-card" id="fu2">
-          <div class="fu-hdr" onclick="toggleEl('fu2')"><div class="fu-q">How long did it take to make the India GCC fully operational?</div><div class="fu-tog">+</div></div>
-          <div class="fu-body"><div class="fu-a"><strong>Answer angle:</strong> Be specific — define what "operational" meant in phases: <strong>team hired → first independent delivery → consistently performing</strong>. Show you had measurable milestones, not just activity. This demonstrates that you managed to outcomes, not tasks.</div></div>
-        </div>
-      </div>
-
-      <div class="fu-group">
-        <div class="fu-group-title"><span>🚀</span> Challenge 2 Follow-Ups</div>
-        <div class="fu-card" id="fu3">
-          <div class="fu-hdr" onclick="toggleEl('fu3')"><div class="fu-q">What happened when a France engineer left during the migration?</div><div class="fu-tog">+</div></div>
-          <div class="fu-body"><div class="fu-a"><strong>Answer angle:</strong> Your <strong>buddy model and documentation</strong> was the answer. No single point of failure — the system map, decision logs, and paired counterparts meant knowledge was distributed. This is exactly why you built those risk mitigations before they were needed.</div></div>
-        </div>
-        <div class="fu-card" id="fu4">
-          <div class="fu-hdr" onclick="toggleEl('fu4')"><div class="fu-q">How did you coach senior POs including a Director-level person?</div><div class="fu-tog">+</div></div>
-          <div class="fu-body"><div class="fu-a"><strong>Answer angle:</strong> Show confidence — you had <strong>unique technical context they needed</strong>. It was collaborative, not hierarchical. You gave them system reality so their product decisions were grounded. Frame it as <strong>"enabling their decisions"</strong> not "teaching them".</div></div>
-        </div>
-      </div>
-
-      <div class="fu-group">
-        <div class="fu-group-title"><span>🔗</span> Challenge 3 Follow-Ups</div>
-        <div class="fu-card" id="fu5">
-          <div class="fu-hdr" onclick="toggleEl('fu5')"><div class="fu-q">What was the biggest technical risk in the integration?</div><div class="fu-tog">+</div></div>
-          <div class="fu-body"><div class="fu-a"><strong>Answer angle:</strong> Data consistency across systems with different release cycles. <strong>API versioning</strong> between India's newer system and France's legacy. You addressed this in the architecture mapping — show you identified and documented these risks proactively, not reactively.</div></div>
-        </div>
-        <div class="fu-card" id="fu6">
-          <div class="fu-hdr" onclick="toggleEl('fu6')"><div class="fu-q">How did you manage time zone conflicts between India and France?</div><div class="fu-tog">+</div></div>
-          <div class="fu-body"><div class="fu-a"><strong>Answer angle:</strong> Daily sync in overlapping window (IST afternoon = France morning). <strong>Async documentation</strong> so decisions weren't blocked waiting for calls. RACI clarity meant each side could act independently within their boundary — reducing unnecessary cross-border dependencies.</div></div>
-        </div>
-      </div>
-
-      <div class="fu-group">
-        <div class="fu-group-title"><span>⚡</span> Wild Card Questions</div>
-        <div class="fu-card" id="fu7">
-          <div class="fu-hdr" onclick="toggleEl('fu7')"><div class="fu-q">Why should we choose you over another candidate with similar experience?</div><div class="fu-tog">+</div></div>
-          <div class="fu-body"><div class="fu-a"><strong>Answer angle:</strong> Use your Power Statement. Then add: <strong>"Most people can manage projects OR coach people OR architect systems. I have done all three simultaneously, at scale, across geographies, aligned to a C-Level vision. That combination is rare."</strong></div></div>
-        </div>
-        <div class="fu-card" id="fu8">
-          <div class="fu-hdr" onclick="toggleEl('fu8')"><div class="fu-q">Tell me about a time you failed.</div><div class="fu-tog">+</div></div>
-          <div class="fu-body"><div class="fu-a"><strong>Answer angle:</strong> Early in the GCC build, underestimated how long <strong>cultural alignment</strong> would take vs. technical onboarding. Show what you changed: introduced structured cultural onboarding alongside technical training. <strong>Failure + specific learning = growth mindset signal</strong> that senior leaders love.</div></div>
-        </div>
-      </div>
-
-      <div class="power-end">"At every stage, I was the person who held the technical knowledge, coached the people, and kept the <strong>strategic vision connected to ground-level execution.</strong>"</div>
+      <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:var(--dark);margin:18px 0 10px;">🏗️ Challenge 1 Follow-Ups</div>
+      <div class="exp-card" id="fu1"><div class="exp-hdr" onclick="tog('fu1')"><div class="exp-title">How did you handle resistance from the France team when building the GCC?</div><div class="exp-tog">+</div></div><div class="exp-body"><div class="exp-text"><strong>Answer angle:</strong> Show alignment through VP Michel Francis. Regular updates showed India team capability growing, not threatening France roles. Frame it as <strong>expansion, not replacement</strong>.</div></div></div>
+      <div class="exp-card" id="fu2"><div class="exp-hdr" onclick="tog('fu2')"><div class="exp-title">How long did it take to make the India GCC fully operational?</div><div class="exp-tog">+</div></div><div class="exp-body"><div class="exp-text"><strong>Answer angle:</strong> Be specific — define "operational" in phases: team hired → first independent delivery → consistently performing. Show you had <strong>measurable milestones</strong>, not just activity.</div></div></div>
+      <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:var(--dark);margin:18px 0 10px;">🚀 Challenge 2 Follow-Ups</div>
+      <div class="exp-card" id="fu3"><div class="exp-hdr" onclick="tog('fu3')"><div class="exp-title">What happened when a France engineer left during the migration?</div><div class="exp-tog">+</div></div><div class="exp-body"><div class="exp-text"><strong>Answer angle:</strong> Your <strong>buddy model and documentation</strong> was the answer. No single point of failure — system maps, decision logs, and paired counterparts meant knowledge was distributed. This is exactly why you built those risk mitigations.</div></div></div>
+      <div class="exp-card" id="fu4"><div class="exp-hdr" onclick="tog('fu4')"><div class="exp-title">How did you coach senior POs including a Director-level person?</div><div class="exp-tog">+</div></div><div class="exp-body"><div class="exp-text"><strong>Answer angle:</strong> You had unique technical context they needed. It was collaborative, not hierarchical. Frame it as <strong>"enabling their decisions"</strong> — you gave them system reality so their product decisions were grounded.</div></div></div>
+      <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:var(--dark);margin:18px 0 10px;">🔗 Challenge 3 Follow-Ups</div>
+      <div class="exp-card" id="fu5"><div class="exp-hdr" onclick="tog('fu5')"><div class="exp-title">What was the biggest technical risk in the integration?</div><div class="exp-tog">+</div></div><div class="exp-body"><div class="exp-text"><strong>Answer angle:</strong> Data consistency across systems with different release cycles. <strong>API versioning</strong> between India's newer system and France's legacy. You addressed this proactively in the architecture mapping.</div></div></div>
+      <div class="exp-card" id="fu6"><div class="exp-hdr" onclick="tog('fu6')"><div class="exp-title">How did you manage time zone conflicts between India and France?</div><div class="exp-tog">+</div></div><div class="exp-body"><div class="exp-text"><strong>Answer angle:</strong> Daily sync in overlapping window (IST afternoon = France morning). <strong>Async documentation</strong> so decisions weren't blocked. RACI clarity meant each side could act independently within their boundary.</div></div></div>
+      <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:var(--dark);margin:18px 0 10px;">⚡ Wild Card Questions</div>
+      <div class="exp-card" id="fu7"><div class="exp-hdr" onclick="tog('fu7')"><div class="exp-title">Why should we choose you over another candidate with similar experience?</div><div class="exp-tog">+</div></div><div class="exp-body"><div class="exp-text">Use your Power Statement. Add: <strong>"Most people can manage projects OR coach people OR architect systems. I have done all three simultaneously, at scale, across geographies, aligned to a C-Level vision. That combination is rare."</strong></div></div></div>
+      <div class="exp-card" id="fu8"><div class="exp-hdr" onclick="tog('fu8')"><div class="exp-title">Tell me about a time you failed.</div><div class="exp-tog">+</div></div><div class="exp-body"><div class="exp-text">Pick early in the GCC build — underestimated how long <strong>cultural alignment</strong> would take vs. technical onboarding. Show what you changed: introduced structured cultural onboarding alongside technical training. <strong>Failure + specific learning = growth mindset signal</strong> that senior leaders love.</div></div></div>
+      <div class="power-close">"At every stage, I was the person who held the technical knowledge, coached the people, and kept the <strong>strategic vision connected to ground-level execution.</strong>"</div>
     </div>
   </div>
 
   <!-- QUIZ -->
   <div id="sec-quiz" class="sec-panel" style="display:none">
-    <div class="section-content">
-      <div class="sec-ey">05 / Knowledge Quiz</div>
-      <h2 class="sec-h">Test <em>Yourself</em></h2>
-      <p class="sec-sub">Aim for 8/10 before your interview day. Every answer matters.</p>
-      <div class="quiz-wrap" id="quizWrap"></div>
+    <div class="sec-c">
+      <div class="sec-ey">Knowledge Quiz</div>
+      <h2 class="sec-title">Test <span>Yourself</span></h2>
+      <p class="sec-sub">Aim for 8/10 before your interview day.</p>
+      <div id="quizWrap"></div>
     </div>
   </div>
 
   <!-- CHEATSHEET -->
   <div id="sec-cheatsheet" class="sec-panel" style="display:none">
-    <div class="section-content">
-      <div class="sec-ey">06 / Quick Reference</div>
-      <h2 class="sec-h">5-Minute <em>Cheatsheet</em></h2>
-      <p class="sec-sub">Scan this right before you walk into the interview room. Nothing new — just reminders of what you already know.</p>
-
+    <div class="sec-c">
+      <div class="sec-ey">Quick Reference</div>
+      <h2 class="sec-title">5-Minute <span>Cheatsheet</span></h2>
+      <p class="sec-sub">Scan this right before you walk into the interview room.</p>
       <div class="cheat-grid">
-        <div class="cheat-card">
-          <h4>Key People to Name-Drop</h4>
-          <div class="person-item"><div class="person-name">RAGHU</div><div class="person-role">C-Level leader · GCC Vision originator · Your strategic sponsor</div></div>
-          <div class="person-item"><div class="person-name">MICHEL FRANCIS</div><div class="person-role">Your VP · Closely aligned to transformation · Stakeholder you reported to</div></div>
-        </div>
-
-        <div class="cheat-card">
-          <h4>Your 3 Roles Summary</h4>
-          <div class="role-row"><div class="role-icon">🏗️</div><div><div class="role-title">Ch.1 — Country Manager</div><div class="role-desc">Built GCC from zero. Recruited, coached, designed operating model. → India team operational</div></div></div>
-          <div class="role-row"><div class="role-icon">🚀</div><div><div class="role-title">Ch.2 — Program Manager + Coach</div><div class="role-desc">Migrated complex legacy project. Buddy model. Coached Director-level POs. → India independent</div></div></div>
-          <div class="role-row"><div class="role-icon">🔗</div><div><div class="role-title">Ch.3 — Integration PM</div><div class="role-desc">RACI matrix. 3-horizon roadmap. Daily cross-border sync. → Chaotic → On-track</div></div></div>
-        </div>
-
-        <div class="cheat-card">
-          <h4>Power Keywords — Use These</h4>
-          <div class="kw-grid">
-            <span class="kw">GCC</span><span class="kw">PLM</span><span class="kw">RACI Matrix</span><span class="kw">3-Horizon Roadmap</span><span class="kw">Buddy Model</span><span class="kw">Knowledge Bridge</span><span class="kw">Distributed Systems</span><span class="kw">EPIC Owner</span><span class="kw">Single DRI</span><span class="kw">Cross-border Sync</span><span class="kw">Strategic Portfolio</span><span class="kw">C-Level Vision</span><span class="kw">Certified PO</span><span class="kw">Tech Debt</span>
-          </div>
-        </div>
-
-        <div class="cheat-card">
-          <h4>CARL Framework</h4>
-          <div class="carl-ref">
-            <div class="carl-ref-item"><div class="letter">C</div><p>Context — problem &amp; scale</p></div>
-            <div class="carl-ref-item"><div class="letter">A</div><p>Actions — use "I", not "we"</p></div>
-            <div class="carl-ref-item"><div class="letter">R</div><p>Result — Before → After</p></div>
-            <div class="carl-ref-item"><div class="letter">L</div><p>Learning — one sentence</p></div>
-          </div>
-        </div>
-
-        <div class="cheat-card" style="grid-column:1/-1">
-          <h4>3 Learnings — Memorize Word-for-Word</h4>
-          <div class="learning-item"><div class="li-ch">Ch.1 Learning</div><div class="li-text">"Building a GCC is not about hiring people — it's about transferring institutional knowledge and instilling ownership culture in a new geography."</div></div>
-          <div class="learning-item"><div class="li-ch">Ch.2 Learning</div><div class="li-text">"Migration is a people problem disguised as a technical problem. Technology can be documented — confidence and culture must be built deliberately."</div></div>
-          <div class="learning-item"><div class="li-ch">Ch.3 Learning</div><div class="li-text">"Cross-border integrations break at the human layer before the technical layer. Timezone, trust, and ownership must be engineered as carefully as the systems themselves."</div></div>
-        </div>
+        <div class="cheat-card"><div class="cheat-h">Key People to Name-Drop</div><div class="person-item"><div class="pname">RAGHU</div><div class="prole">C-Level leader · GCC Vision originator · Your strategic sponsor</div></div><div class="person-item"><div class="pname">MICHEL FRANCIS</div><div class="prole">Your VP · Closely aligned to transformation · Stakeholder you reported to</div></div></div>
+        <div class="cheat-card"><div class="cheat-h">Your 3 Roles</div><div class="role-row"><div class="role-ico">🏗️</div><div><div class="role-t">Ch.1 — Country Manager</div><div class="role-d">Built GCC from zero · Recruited, coached, designed operating model → India team operational</div></div></div><div class="role-row"><div class="role-ico">🚀</div><div><div class="role-t">Ch.2 — Program Manager</div><div class="role-d">Migrated complex legacy project · Buddy model · Coached Director-level POs → India independent</div></div></div><div class="role-row"><div class="role-ico">🔗</div><div><div class="role-t">Ch.3 — Integration PM</div><div class="role-d">RACI matrix · 3-horizon roadmap · Daily cross-border sync → Chaotic → On-track</div></div></div></div>
+        <div class="cheat-card"><div class="cheat-h">Power Keywords</div><div class="kw-wrap"><span class="kw">GCC</span><span class="kw">PLM</span><span class="kw">RACI Matrix</span><span class="kw">3-Horizon Roadmap</span><span class="kw">Buddy Model</span><span class="kw">Knowledge Bridge</span><span class="kw">Single DRI</span><span class="kw">Cross-border Sync</span><span class="kw">Strategic Portfolio</span><span class="kw">C-Level Vision</span><span class="kw">Certified PO</span><span class="kw">Tech Debt</span><span class="kw">EPIC Owner</span></div></div>
+        <div class="cheat-card"><div class="cheat-h">CARL Framework</div><div class="carl-ref-grid"><div class="crf"><div class="crf-l">C</div><div class="crf-d">Context — problem &amp; scale</div></div><div class="crf"><div class="crf-l">A</div><div class="crf-d">Actions — use "I", not "we"</div></div><div class="crf"><div class="crf-l">R</div><div class="crf-d">Result — Before → After</div></div><div class="crf"><div class="crf-l">L</div><div class="crf-d">Learning — one sentence</div></div></div></div>
+        <div class="cheat-card" style="grid-column:1/-1"><div class="cheat-h">3 Learnings — Memorize Word-for-Word</div><div class="learning-item"><div class="li-ch">Ch.1</div><div class="li-text">"Building a GCC is not about hiring people — it's about transferring institutional knowledge and instilling ownership culture in a new geography."</div></div><div class="learning-item"><div class="li-ch">Ch.2</div><div class="li-text">"Migration is a people problem disguised as a technical problem. Technology can be documented — confidence and culture must be built deliberately."</div></div><div class="learning-item"><div class="li-ch">Ch.3</div><div class="li-text">"Cross-border integrations break at the human layer before the technical layer. Timezone, trust, and ownership must be engineered as carefully as the systems themselves."</div></div></div>
       </div>
-
-      <div class="power-end">"At every stage, I was the person who held the technical knowledge, coached the people, and kept the <strong>strategic vision connected to ground-level execution.</strong>"</div>
+      <div class="power-close">"At every stage, I was the person who held the technical knowledge, coached the people, and kept the <strong>strategic vision connected to ground-level execution.</strong>"</div>
     </div>
   </div>
 </div>
 
 <footer>
-  <p><a href="index.html">← Portfolio</a> &nbsp;·&nbsp; <a href="questions.html">Interview Q&amp;A →</a></p>
-  <p>Your personal interview coach — free, no login, always available.</p>
+  <div class="footer-inner">
+    <div class="footer-logo">GKP<span>.</span></div>
+    <div class="footer-sub">Gyanesh Kumar Pandey · Capability Leader · Bangalore, India</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="questions.html">Interview Q&amp;A</a>
+      <a href="coach.html">Interview Coach</a>
+      <a href="speaking.html">Speaking Guide</a>
+      <a href="swimlane.html">Lifecycle Diagram</a>
+      <a href="mailto:mahegyaneshpandey@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/gyaneshkpandey" target="_blank">LinkedIn ↗</a>
+    </div>
+    <div class="footer-copy">Free knowledge · No login · No paywall · Shared from 20 years of enterprise experience.</div>
+  </div>
 </footer>
 
 <script>
-// ── QUIZ DATA ──
-const quizData = [
+const quizData=[
   {q:"Who originated the GCC vision that Gyanesh supported?",opts:["Michel Francis","Raghu","Gyanesh himself","The France team"],ans:1,exp:"Raghu was the C-Level leader with the GCC vision. Michel Francis was Gyanesh's VP who was closely aligned throughout the transformation."},
   {q:"What was Gyanesh's role in Challenge 1 — Building the India GCC?",opts:["Program Manager","Integration Lead","Country Manager","Product Owner"],ans:2,exp:"Country Manager — building the GCC from zero: recruiting the team, designing the operating model, and serving as the knowledge bridge."},
-  {q:"What model did Gyanesh introduce to reduce knowledge loss during the France → India migration?",opts:["RACI Matrix","Buddy Model","3-Horizon Roadmap","DRI Framework"],ans:1,exp:"The Buddy Model — France engineers were paired with India counterparts to transfer knowledge through direct collaboration, not just documentation."},
-  {q:"What framework did Gyanesh use to clarify ownership during the cross-border integration?",opts:["Buddy Model","CARL Framework","RACI Matrix","EPIC Framework"],ans:2,exp:"RACI Matrix — with a single DRI (Directly Responsible Individual) assigned on each side, eliminating ambiguity about who owned each decision."},
-  {q:"What was the key learning from Challenge 2 — the project migration?",opts:["Technology migration requires full documentation","Migration is a people problem disguised as a technical problem","Speed is more important than quality","France engineers are resistant to change"],ans:1,exp:"\"Migration is a people problem disguised as a technical problem. Technology can be documented — but confidence, capability, and culture must be built deliberately.\""},
-  {q:"Gyanesh's 3-horizon roadmap for Challenge 3 included which timeframes?",opts:["1 month, 3 months, 6 months","Now, 6 months, 12–24 months","Q1, Q2, Q3","Today, Next year, 5 years"],ans:1,exp:"Stabilize now → optimize in 6 months → R&D migration in 12–24 months. This structured approach transformed a chaotic integration into a planned roadmap."},
-  {q:"Who was Gyanesh's VP, closely aligned to the GCC transformation?",opts:["Raghu","Michel Francis","The France Country Head","The India Team Lead"],ans:1,exp:"Michel Francis was Gyanesh's VP — always mention both Raghu (C-Level vision) and Michel Francis (VP alignment) to show you operated at senior leadership levels."},
+  {q:"What model did Gyanesh introduce to reduce knowledge loss during the migration?",opts:["RACI Matrix","Buddy Model","3-Horizon Roadmap","DRI Framework"],ans:1,exp:"The Buddy Model — France engineers were paired with India counterparts to transfer knowledge through direct collaboration."},
+  {q:"What framework did Gyanesh use to clarify ownership during cross-border integration?",opts:["Buddy Model","CARL Framework","RACI Matrix","EPIC Framework"],ans:2,exp:"RACI Matrix — with a single DRI assigned on each side, eliminating ambiguity about who owned each decision."},
+  {q:"What was the key learning from Challenge 2 — the project migration?",opts:["Technology migration requires full documentation","Migration is a people problem disguised as a technical problem","Speed is more important than quality","France engineers are resistant to change"],ans:1,exp:"Migration is a people problem disguised as a technical problem. Technology can be documented — confidence, capability, and culture must be built deliberately."},
+  {q:"Gyanesh's 3-horizon roadmap for Challenge 3 included which timeframes?",opts:["1 month, 3 months, 6 months","Now, 6 months, 12–24 months","Q1, Q2, Q3","Today, Next year, 5 years"],ans:1,exp:"Stabilize now → optimize in 6 months → R&D migration in 12–24 months."},
+  {q:"Who was Gyanesh's VP, closely aligned to the GCC transformation?",opts:["Raghu","Michel Francis","The France Country Head","The India Team Lead"],ans:1,exp:"Michel Francis was Gyanesh's VP — always mention both Raghu (C-Level vision) and Michel Francis (VP alignment)."},
   {q:"How many senior POs did Gyanesh coach during Challenge 2?",opts:["1","2","3","4"],ans:2,exp:"3 senior POs — including a Director-level and an Account Head. Coaching upward shows executive influence and unique technical authority."},
-  {q:"What was the result of Challenge 3 — the cross-border integration?",opts:["Both teams merged into one","Integration went from chaotic and unowned to structured and on-track","France team was replaced by India team","System was rebuilt from scratch"],ans:1,exp:"\"Integration went from chaotic and unowned → structured and on-track.\" Both teams developed a collaborative working rhythm and the project moved from at-risk to controlled."},
-  {q:"What makes Gyanesh's power statement unique?",opts:["His 14 years at Schneider","He managed projects, coached people AND architected systems simultaneously — at scale, across geographies","His MTech degree","His portfolio size of $2.4B"],ans:1,exp:"\"Most people can manage projects OR coach people OR architect systems. Gyanesh did all three simultaneously, at scale, across geographies, aligned to a C-Level vision. That combination is rare.\""},
+  {q:"What was the result of Challenge 3 — the cross-border integration?",opts:["Both teams merged into one","Integration went from chaotic and unowned to structured and on-track","France team was replaced","System was rebuilt from scratch"],ans:1,exp:"Integration went from chaotic and unowned → structured and on-track. Both teams developed a collaborative working rhythm."},
+  {q:"What makes Gyanesh's power statement unique?",opts:["His 14 years at Schneider","He managed projects, coached people AND architected systems simultaneously — at scale, across geographies","His MTech degree","His portfolio size"],ans:1,exp:"Most people can manage projects OR coach people OR architect systems. Gyanesh did all three simultaneously, at scale, across geographies, aligned to a C-Level vision."}
 ];
 
-let currentQ = 0, score = 0, answered = false;
-
-function buildQuiz() {
-  const wrap = document.getElementById('quizWrap');
-  wrap.innerHTML = `
-    <div class="quiz-meta">
-      <span id="qnum">Question 1 of ${quizData.length}</span>
-      <span id="qscore">Score: 0 / 0</span>
-    </div>
-    <div class="quiz-progress"><div class="quiz-bar" id="qbar" style="width:0%"></div></div>
-    <div id="qContent"></div>`;
+let cQ=0,score=0,answered=false;
+function buildQuiz(){
+  const w=document.getElementById('quizWrap');
+  w.innerHTML=`<div class="qmeta"><span id="qnum">Question 1 of 10</span><span id="qsc">Score: 0/0</span></div><div class="quiz-prog"><div class="quiz-bar" id="qbar" style="width:0%"></div></div><div id="qcon"></div>`;
   renderQ();
 }
-
-function renderQ() {
-  const q = quizData[currentQ];
-  answered = false;
-  document.getElementById('qnum').textContent = `Question ${currentQ+1} of ${quizData.length}`;
-  document.getElementById('qbar').style.width = `${(currentQ/quizData.length)*100}%`;
-  document.getElementById('qContent').innerHTML = `
-    <div class="qcard">
-      <div class="qtext">${q.q}</div>
-      <div class="options" id="opts">
-        ${q.opts.map((o,i)=>`<button class="opt" onclick="pickOpt(${i})">${o}</button>`).join('')}
-      </div>
-      <div class="quiz-feedback" id="qfb"></div>
-      <button class="quiz-next" id="qnext" onclick="nextQ()">${currentQ===quizData.length-1?'See Results →':'Next Question →'}</button>
-    </div>`;
+function renderQ(){
+  answered=false;
+  const q=quizData[cQ];
+  document.getElementById('qnum').textContent=`Question ${cQ+1} of ${quizData.length}`;
+  document.getElementById('qbar').style.width=`${(cQ/quizData.length)*100}%`;
+  document.getElementById('qcon').innerHTML=`<div class="quiz-card"><div class="quiz-q">${q.q}</div><div class="opts" id="opts">${q.opts.map((o,i)=>`<button class="opt" onclick="pick(${i})">${o}</button>`).join('')}</div><div class="quiz-fb" id="qfb"></div><button class="quiz-next" id="qnext" onclick="nextQ()">${cQ===quizData.length-1?'See Results →':'Next Question →'}</button></div>`;
 }
-
-function pickOpt(idx) {
-  if (answered) return;
-  answered = true;
-  const q = quizData[currentQ];
-  const opts = document.querySelectorAll('.opt');
-  opts.forEach((o,i) => {
-    if (i===q.ans) o.classList.add('correct');
-    else if (i===idx && i!==q.ans) o.classList.add('wrong');
+function pick(idx){
+  if(answered)return;answered=true;
+  const q=quizData[cQ];
+  document.querySelectorAll('.opt').forEach((o,i)=>{
+    if(i===q.ans)o.classList.add('correct');
+    else if(i===idx&&i!==q.ans)o.classList.add('wrong');
     else o.classList.add('reveal');
     o.style.pointerEvents='none';
   });
-  if (idx===q.ans) score++;
-  const fb = document.getElementById('qfb');
-  fb.textContent = q.exp;
-  fb.style.display='block';
+  if(idx===q.ans)score++;
+  const fb=document.getElementById('qfb');fb.textContent=q.exp;fb.style.display='block';
   document.getElementById('qnext').style.display='block';
-  document.getElementById('qscore').textContent = `Score: ${score} / ${currentQ+1}`;
+  document.getElementById('qsc').textContent=`Score: ${score}/${cQ+1}`;
 }
-
-function nextQ() {
-  currentQ++;
-  if (currentQ>=quizData.length) {
-    showResult(); return;
-  }
-  renderQ();
-}
-
-function showResult() {
-  const pct = Math.round(score/quizData.length*100);
-  const msg = score>=9?'Excellent! You\'re ready.':score>=7?'Good — review the ones you missed.':'Keep practicing — aim for 8+.';
-  document.getElementById('qContent').innerHTML = `
-    <div class="quiz-result">
-      <div class="score-circle"><div><div class="score-n">${score}/${quizData.length}</div><div class="score-label">${pct}%</div></div></div>
-      <h3 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;margin-bottom:8px">${msg}</h3>
-      <p style="font-size:14px;color:var(--muted);margin-bottom:20px">Each wrong answer — go back to that challenge section and review.</p>
-      <button class="retry-btn" onclick="currentQ=0;score=0;buildQuiz()">🔄 Retake Quiz</button>
-    </div>`;
+function nextQ(){cQ++;if(cQ>=quizData.length){showResult();return;}renderQ();}
+function showResult(){
+  const pct=Math.round(score/quizData.length*100);
+  const msg=score>=9?'Excellent! You're ready.':score>=7?'Good — review the ones you missed.':'Keep practicing — aim for 8+.';
+  document.getElementById('qcon').innerHTML=`<div class="score-wrap"><div class="score-ring"><div><div class="score-n">${score}/${quizData.length}</div><div class="score-l">${pct}%</div></div></div><div style="font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:var(--dark);margin-bottom:8px">${msg}</div><p style="font-size:14px;color:var(--mid);margin-bottom:18px">Review wrong answers in the Challenges section.</p><button class="retry-btn" onclick="cQ=0;score=0;buildQuiz()">🔄 Retake Quiz</button></div>`;
   document.getElementById('qbar').style.width='100%';
 }
 
-// ── NAVIGATION ──
-function openMode(mode) {
-  document.getElementById('modeScreen').style.display='none';
-  document.getElementById('mainContent').style.display='block';
-  document.querySelectorAll('.sec-panel').forEach(p=>p.style.display='none');
-  document.getElementById('sec-'+mode).style.display='block';
-  if (mode==='quiz') buildQuiz();
-  window.scrollTo(0,0);
-}
-
-function goBack() {
-  document.getElementById('mainContent').style.display='none';
-  document.getElementById('modeScreen').style.display='block';
-  window.scrollTo(0,0);
-}
-
-function toggleEl(id) {
-  document.getElementById(id).classList.toggle('open');
-}
-
-function showChallenge(id, btn) {
-  document.querySelectorAll('.challenge-block').forEach(b=>b.classList.remove('show'));
-  document.querySelectorAll('.ch-tab').forEach(t=>t.classList.remove('act'));
-  document.getElementById(id).classList.add('show');
-  btn.classList.add('act');
-}
-
-// NAV
-const hbg=document.getElementById('hbg'), mm=document.getElementById('mmenu');
-hbg.addEventListener('click',()=>{hbg.classList.toggle('open');mm.classList.toggle('open');document.body.style.overflow=mm.classList.contains('open')?'hidden':''});
-mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hbg.classList.remove('open');mm.classList.remove('open');document.body.style.overflow=''}));
+function tog(id){document.getElementById(id).classList.toggle('open');}
+function openMode(m){document.getElementById('modeScreen').style.display='none';document.getElementById('mainContent').style.display='block';document.querySelectorAll('.sec-panel').forEach(p=>p.style.display='none');document.getElementById('sec-'+m).style.display='block';if(m==='quiz')buildQuiz();window.scrollTo(0,0);}
+function goBack(){document.getElementById('mainContent').style.display='none';document.getElementById('modeScreen').style.display='block';window.scrollTo(0,0);}
+function showCh(id,btn){document.querySelectorAll('.ch-block').forEach(b=>b.classList.remove('show'));document.querySelectorAll('.ch-tab').forEach(t=>t.classList.remove('act'));document.getElementById(id).classList.add('show');btn.classList.add('act');}
+</script>
+<script>
+const hbg=document.getElementById('hbg'),mm=document.getElementById('mmenu');
+hbg.addEventListener('click',()=>{hbg.classList.toggle('open');mm.classList.toggle('open');document.body.style.overflow=mm.classList.contains('open')?'hidden':'';});
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hbg.classList.remove('open');mm.classList.remove('open');document.body.style.overflow='';}));
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>

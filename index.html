@@ -3,226 +3,487 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="Gyanesh Kumar Pandey — Capability Leader, Certified Product Owner, PLM Expert. Free interview resources."/>
-<title>Gyanesh Kumar Pandey</title>
+<title>Gyanesh Kumar Pandey — Technology Leader</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Figtree:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
-:root{--bg:#0C0E14;--sur:#13161F;--sur2:#1A1E2A;--bdr:#232838;--gold:#C9A84C;--gold2:#E8C872;--teal:#2DD4BF;--text:#E8E6E0;--muted:#7A7A8A;--soft:#B0ADA6;--r:12px;--nh:64px}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nh);display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:rgba(12,14,20,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--bdr)}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--gold);letter-spacing:.03em}
-.nav-desktop{display:none;gap:32px;list-style:none}
-.nav-desktop a{font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);transition:color .2s}
-.nav-desktop a:hover,.nav-desktop a.act{color:var(--gold)}
-.nav-cta{display:none;background:var(--gold);color:#0C0E14;padding:9px 20px;border-radius:8px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;transition:background .2s}
-.nav-cta:hover{background:var(--gold2)}
-.hamburger{background:none;border:none;cursor:pointer;padding:8px;display:flex;flex-direction:column;gap:5px}
-.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:transform .25s,opacity .25s}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.hamburger.open span:nth-child(2){opacity:0}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mobile-menu{position:fixed;top:var(--nh);left:0;right:0;bottom:0;z-index:190;background:var(--bg);padding:32px 24px;display:flex;flex-direction:column;gap:8px;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1)}
-.mobile-menu.open{transform:translateX(0)}
-.mobile-menu a{font-size:18px;font-weight:500;color:var(--soft);padding:16px 0;border-bottom:1px solid var(--bdr);display:block;transition:color .2s}
-.mobile-menu a:hover,.mobile-menu a.act{color:var(--gold)}
-.mobile-menu .m-cta{margin-top:24px;background:var(--gold);color:#0C0E14;padding:16px;border-radius:var(--r);text-align:center;font-weight:600;font-size:16px;border-bottom:none}
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Figtree:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --white: #ffffff;
+  --bg: #fbfbfd;
+  --light: #f5f5f7;
+  --mid-light: #e8e8ed;
+  --border: #d2d2d7;
+  --mid: #6e6e73;
+  --dark: #1d1d1f;
+  --blue: #0071e3;
+  --blue-h: #0077ed;
+  --blue-light: #e8f0fe;
+  --green: #30d158;
+  --red: #ff453a;
+  --amber: #ffd60a;
+  --r: 18px;
+  --r-sm: 12px;
+  --nh: 52px;
+  --shadow: 0 2px 20px rgba(0,0,0,.06), 0 0 0 1px rgba(0,0,0,.03);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,.12), 0 0 0 1px rgba(0,0,0,.04);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { background: var(--bg); color: var(--dark); font-family: 'Figtree', -apple-system, sans-serif; font-size: 17px; line-height: 1.6; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 200;
+  height: var(--nh);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 22px;
+  background: rgba(251,251,253,.85);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px; font-weight: 800;
+  color: var(--dark); letter-spacing: -.02em;
+}
+.nav-logo span { color: var(--blue); }
+.nav-desktop { display: none; gap: 0; list-style: none; align-items: center; }
+.nav-desktop a {
+  font-size: 13px; font-weight: 500;
+  color: var(--mid);
+  padding: 6px 14px;
+  border-radius: 100px;
+  transition: color .15s, background .15s;
+  white-space: nowrap;
+}
+.nav-desktop a:hover { color: var(--dark); background: rgba(0,0,0,.04); }
+.nav-desktop a.act { color: var(--dark); font-weight: 600; }
+.nav-cta-btn {
+  display: none;
+  background: var(--blue);
+  color: #fff;
+  font-size: 13px; font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 100px;
+  transition: background .15s, transform .1s;
+  white-space: nowrap;
+}
+.nav-cta-btn:hover { background: var(--blue-h); transform: scale(1.02); }
+.hamburger {
+  background: none; border: none; cursor: pointer;
+  width: 36px; height: 36px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+  border-radius: 50%;
+  transition: background .15s;
+}
+.hamburger:hover { background: rgba(0,0,0,.06); }
+.hamburger span { display: block; width: 18px; height: 1.5px; background: var(--dark); border-radius: 2px; transition: transform .25s, opacity .2s; }
+.hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.mmenu {
+  position: fixed; top: var(--nh); left: 0; right: 0; bottom: 0; z-index: 190;
+  background: rgba(251,251,253,.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 24px 22px;
+  display: flex; flex-direction: column; gap: 2px;
+  transform: translateY(-8px); opacity: 0; pointer-events: none;
+  transition: transform .25s, opacity .25s;
+}
+.mmenu.open { transform: none; opacity: 1; pointer-events: all; }
+.mmenu a {
+  font-size: 17px; font-weight: 500; color: var(--dark);
+  padding: 14px 16px;
+  border-radius: var(--r-sm);
+  transition: background .15s;
+  display: block;
+}
+.mmenu a:hover, .mmenu a.act { background: var(--light); }
+.mmenu .m-cta {
+  margin-top: 12px;
+  background: var(--blue); color: #fff;
+  text-align: center; font-weight: 600;
+  border-radius: var(--r);
+  padding: 16px;
+}
+.mmenu .m-cta:hover { background: var(--blue-h); }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.vis { opacity: 1; transform: none; }
+.reveal.d1 { transition-delay: .1s; }
+.reveal.d2 { transition-delay: .2s; }
+.reveal.d3 { transition-delay: .3s; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--light);
+  border-top: 1px solid var(--border);
+  padding: 40px 22px;
+}
+.footer-inner { max-width: 1100px; margin: 0 auto; }
+.footer-logo { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; color: var(--dark); letter-spacing: -.02em; margin-bottom: 6px; }
+.footer-logo span { color: var(--blue); }
+.footer-sub { font-size: 13px; color: var(--mid); margin-bottom: 20px; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+.footer-links a { font-size: 13px; color: var(--mid); padding: 5px 12px; border-radius: 100px; border: 1px solid var(--border); transition: color .15s, border-color .15s; }
+.footer-links a:hover { color: var(--blue); border-color: var(--blue); }
+.footer-copy { font-size: 12px; color: var(--mid); border-top: 1px solid var(--border); padding-top: 16px; }
+
+/* ── TABLET / DESKTOP ── */
+@media (min-width: 640px) {
+  nav { padding: 0 40px; }
+  .mmenu { padding: 24px 40px; }
+  footer { padding: 48px 40px; }
+}
+@media (min-width: 900px) {
+  nav { padding: 0 52px; }
+  .hamburger { display: none; }
+  .nav-desktop { display: flex; }
+  .nav-cta-btn { display: block; }
+  footer { padding: 56px 52px; }
+}
+
+
+/* ── INDEX-SPECIFIC ── */
 
 /* HERO */
-.hero{min-height:100svh;display:flex;align-items:center;padding:calc(var(--nh)+40px) 24px 60px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-20%;right:-30%;width:70vw;height:70vw;max-width:600px;max-height:600px;background:radial-gradient(circle,rgba(201,168,76,.07) 0%,transparent 65%);pointer-events:none}
-.hero::after{content:'';position:absolute;bottom:-20%;left:-20%;width:60vw;height:60vw;max-width:500px;max-height:500px;background:radial-gradient(circle,rgba(45,212,191,.04) 0%,transparent 65%);pointer-events:none}
-.hero-inner{max-width:900px;margin:0 auto;width:100%}
-.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--teal);letter-spacing:.2em;text-transform:uppercase;margin-bottom:20px;opacity:0;animation:fadeUp .6s .1s ease forwards}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,12vw,88px);font-weight:700;line-height:1;margin-bottom:10px;opacity:0;animation:fadeUp .6s .25s ease forwards}
-.hero h1 em{color:var(--gold);font-style:normal}
-.hero-sub{font-size:clamp(13px,3vw,15px);color:var(--muted);letter-spacing:.05em;font-weight:400;margin-bottom:28px;line-height:1.6;opacity:0;animation:fadeUp .6s .4s ease forwards}
-.hero-desc{font-size:clamp(15px,3.5vw,17px);color:var(--soft);line-height:1.85;max-width:600px;margin-bottom:40px;opacity:0;animation:fadeUp .6s .55s ease forwards}
-.hero-btns{display:flex;flex-wrap:wrap;gap:12px;opacity:0;animation:fadeUp .6s .7s ease forwards}
-.btn-p{background:var(--gold);color:#0C0E14;padding:14px 28px;border-radius:var(--r);font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;transition:background .2s,transform .15s;display:inline-block}
-.btn-p:hover{background:var(--gold2);transform:translateY(-2px)}
-.btn-o{border:1px solid var(--bdr);color:var(--soft);padding:14px 28px;border-radius:var(--r);font-weight:500;font-size:14px;letter-spacing:.06em;text-transform:uppercase;transition:border-color .2s,color .2s,transform .15s;display:inline-block}
-.btn-o:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
-.stats-row{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:48px;opacity:0;animation:fadeUp .6s .85s ease forwards}
-.stat-box{background:var(--sur);border:1px solid var(--bdr);border-radius:var(--r);padding:20px 16px}
-.stat-n{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;color:var(--gold);line-height:1}
-.stat-l{font-size:12px;color:var(--muted);margin-top:4px}
+.hero {
+  min-height: 100svh;
+  display: flex; align-items: center;
+  padding: 80px 22px 60px;
+  position: relative; overflow: hidden;
+  background: var(--white);
+}
+.hero-mesh {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 20%, rgba(0,113,227,.06) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(48,209,88,.04) 0%, transparent 50%);
+}
+.hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--blue-light); color: var(--blue);
+  font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
+  padding: 5px 12px; border-radius: 100px;
+  margin-bottom: 24px;
+  opacity: 0; animation: fadeUp .5s .1s ease forwards;
+}
+.hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--blue); border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{ opacity:1 } 50%{ opacity:.4 } }
+.hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(48px, 9vw, 96px);
+  font-weight: 800; line-height: .95; letter-spacing: -.04em;
+  color: var(--dark);
+  margin-bottom: 8px;
+  opacity: 0; animation: fadeUp .6s .2s ease forwards;
+}
+.hero h1 .grad {
+  background: linear-gradient(135deg, #0071e3 0%, #30d158 50%, #0071e3 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+@keyframes shimmer { to { background-position: 200% center; } }
+.hero-role {
+  font-size: clamp(15px, 3vw, 19px); color: var(--mid); font-weight: 400;
+  margin-bottom: 24px; line-height: 1.4;
+  opacity: 0; animation: fadeUp .6s .35s ease forwards;
+}
+.hero-desc {
+  font-size: clamp(15px, 3vw, 18px); color: var(--mid); line-height: 1.7;
+  max-width: 580px; margin-bottom: 40px;
+  opacity: 0; animation: fadeUp .6s .5s ease forwards;
+}
+.hero-btns {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  opacity: 0; animation: fadeUp .6s .65s ease forwards;
+}
+.btn-blue {
+  background: var(--blue); color: #fff;
+  padding: 14px 28px; border-radius: 100px;
+  font-size: 15px; font-weight: 600;
+  transition: background .15s, transform .12s, box-shadow .15s;
+  box-shadow: 0 2px 12px rgba(0,113,227,.3);
+}
+.btn-blue:hover { background: var(--blue-h); transform: scale(1.02); box-shadow: 0 4px 20px rgba(0,113,227,.4); }
+.btn-ghost {
+  background: transparent; color: var(--blue);
+  padding: 14px 28px; border-radius: 100px;
+  font-size: 15px; font-weight: 600;
+  border: 1.5px solid rgba(0,113,227,.3);
+  transition: background .15s, border-color .15s, transform .12s;
+}
+.btn-ghost:hover { background: var(--blue-light); border-color: var(--blue); transform: scale(1.02); }
+.hero-stats {
+  display: grid; grid-template-columns: repeat(2,1fr); gap: 12px;
+  margin-top: 56px;
+  opacity: 0; animation: fadeUp .6s .8s ease forwards;
+}
+.stat-box {
+  background: var(--light);
+  border-radius: var(--r-sm);
+  padding: 18px 20px;
+  border: 1px solid var(--mid-light);
+}
+.stat-n {
+  font-family: 'Syne', sans-serif;
+  font-size: 32px; font-weight: 800; color: var(--dark); line-height: 1;
+  letter-spacing: -.03em;
+}
+.stat-l { font-size: 12px; color: var(--mid); margin-top: 4px; font-weight: 500; }
 
 /* SECTIONS */
-section{padding:80px 24px}
-.sec-max{max-width:1100px;margin:0 auto}
-.sec-tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:10px}
-.sec-h{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,8vw,54px);font-weight:700;line-height:1.1;margin-bottom:40px}
-.sec-h em{color:var(--gold);font-style:normal}
+.sec { padding: 80px 22px; }
+.sec-max { max-width: 1100px; margin: 0 auto; }
+.sec-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; color: var(--blue); letter-spacing: .15em; text-transform: uppercase;
+  margin-bottom: 12px; font-weight: 500;
+}
+.sec-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(32px, 6vw, 56px);
+  font-weight: 800; line-height: 1.0; letter-spacing: -.03em;
+  color: var(--dark); margin-bottom: 48px;
+}
+.sec-title .blue { color: var(--blue); }
 
 /* ABOUT */
-#about{background:var(--bg)}
-.about-text p{color:var(--soft);font-size:clamp(14px,3.5vw,16px);line-height:1.9;margin-bottom:18px}
-.about-text strong{color:var(--text)}
-.hlist{margin-top:32px;display:flex;flex-direction:column;gap:0}
-.hitem{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--bdr);align-items:flex-start}
-.hicon{width:38px;height:38px;background:rgba(201,168,76,.1);border-radius:8px;display:grid;place-items:center;font-size:17px;flex-shrink:0;margin-top:2px}
-.hitem h4{font-size:14px;font-weight:600;margin-bottom:4px}
-.hitem p{font-size:13px;color:var(--muted);line-height:1.5}
+.about-grid { display: grid; gap: 40px; }
+.about-body p { font-size: 16px; color: var(--mid); line-height: 1.8; margin-bottom: 18px; }
+.about-body p strong { color: var(--dark); font-weight: 600; }
+.about-card {
+  background: var(--white);
+  border: 1px solid var(--mid-light);
+  border-radius: var(--r);
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+.about-card-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px; font-weight: 700; color: var(--blue);
+  letter-spacing: .08em; text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.hl-list { display: flex; flex-direction: column; gap: 0; }
+.hl-item {
+  display: flex; gap: 14px; padding: 14px 0;
+  border-bottom: 1px solid var(--mid-light); align-items: flex-start;
+}
+.hl-item:last-child { border-bottom: none; }
+.hl-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--blue); flex-shrink: 0; margin-top: 7px;
+}
+.hl-item h4 { font-size: 14px; font-weight: 600; color: var(--dark); margin-bottom: 2px; }
+.hl-item p { font-size: 13px; color: var(--mid); }
 
 /* EXPERTISE */
-#expertise{background:var(--sur)}
-.exp-grid{display:grid;grid-template-columns:1fr;gap:16px}
-.exp-card{background:var(--bg);border:1px solid var(--bdr);border-radius:var(--r);padding:24px;position:relative;overflow:hidden;transition:border-color .25s,transform .2s}
-.exp-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s}
-.exp-card:hover{border-color:rgba(201,168,76,.3);transform:translateY(-3px)}
-.exp-card:hover::before{transform:scaleX(1)}
-.exp-num{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:.15em;margin-bottom:12px}
-.exp-card h3{font-size:16px;font-weight:600;margin-bottom:8px}
-.exp-card p{font-size:13px;color:var(--muted);line-height:1.7}
+.expertise-grid {
+  display: grid; gap: 16px;
+  grid-template-columns: 1fr;
+}
+.exp-card {
+  background: var(--white);
+  border: 1px solid var(--mid-light);
+  border-radius: var(--r);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+  position: relative; overflow: hidden;
+}
+.exp-card::after {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--blue); transform: scaleX(0); transform-origin: left;
+  transition: transform .3s;
+}
+.exp-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: rgba(0,113,227,.2); }
+.exp-card:hover::after { transform: scaleX(1); }
+.exp-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; color: var(--blue); letter-spacing: .1em; margin-bottom: 12px;
+}
+.exp-card h3 { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+.exp-card p { font-size: 14px; color: var(--mid); line-height: 1.6; }
 
 /* TIMELINE */
-#experience{background:var(--bg)}
-.timeline{position:relative;padding-left:28px}
-.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:1px;background:var(--bdr)}
-.titem{position:relative;padding-bottom:44px}
-.titem::before{content:'';position:absolute;left:-33px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--gold);border:2px solid var(--bg)}
-.tco{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--gold)}
-.tperiod{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.1em;margin:4px 0 6px}
-.trole{font-size:14px;font-weight:600;color:var(--text);margin-bottom:6px}
-.tdesc{font-size:13px;color:var(--muted);line-height:1.7}
+.timeline { position: relative; padding-left: 24px; }
+.timeline::before {
+  content: ''; position: absolute; left: 0; top: 8px; bottom: 0;
+  width: 1px; background: var(--mid-light);
+}
+.t-item { position: relative; padding-bottom: 40px; }
+.t-item::before {
+  content: ''; position: absolute; left: -28px; top: 6px;
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--blue); border: 2px solid var(--white);
+  box-shadow: 0 0 0 2px rgba(0,113,227,.2);
+}
+.t-co {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px; font-weight: 800; color: var(--dark);
+  letter-spacing: -.02em; margin-bottom: 2px;
+}
+.t-period {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; color: var(--blue); letter-spacing: .08em; margin-bottom: 6px;
+}
+.t-role { font-size: 14px; font-weight: 600; color: var(--mid); margin-bottom: 6px; }
+.t-desc { font-size: 14px; color: var(--mid); line-height: 1.6; }
 
 /* CERTS */
-#certs{background:var(--sur)}
-.cert-wrap{display:flex;flex-wrap:wrap;gap:10px}
-.cert{background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);color:var(--gold2);padding:9px 16px;border-radius:100px;font-size:13px;font-weight:500}
-
-/* RESOURCES CTA */
-#resources{background:var(--bg);padding:60px 24px}
-.res-grid{display:grid;grid-template-columns:1fr;gap:16px;max-width:1100px;margin:0 auto}
-.res-card{background:var(--sur);border:1px solid var(--bdr);border-radius:var(--r);padding:28px;display:flex;flex-direction:column;gap:12px;transition:border-color .25s,transform .2s;position:relative;overflow:hidden}
-.res-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
-.res-card.c1::before{background:linear-gradient(90deg,var(--gold),var(--gold2))}
-.res-card.c2::before{background:linear-gradient(90deg,var(--teal),#818cf8)}
-.res-card.c3::before{background:linear-gradient(90deg,#f472b6,var(--gold))}
-.res-card:hover{border-color:rgba(201,168,76,.25);transform:translateY(-3px)}
-.res-icon{font-size:28px}
-.res-card h3{font-size:18px;font-weight:600}
-.res-card p{font-size:14px;color:var(--muted);line-height:1.6;flex:1}
-.res-link{font-size:13px;font-weight:600;color:var(--gold);letter-spacing:.06em;text-transform:uppercase;margin-top:4px}
-
-/* FOOTER */
-footer{background:var(--sur);border-top:1px solid var(--bdr);padding:40px 24px}
-.foot-inner{max-width:1100px;margin:0 auto}
-.foot-logo{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:var(--gold);margin-bottom:8px}
-.foot-sub{font-size:13px;color:var(--muted);margin-bottom:24px}
-.foot-links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:24px}
-.foot-links a{font-size:13px;color:var(--muted);transition:color .2s}
-.foot-links a:hover{color:var(--gold)}
-.foot-copy{font-size:12px;color:var(--bdr);border-top:1px solid var(--bdr);padding-top:20px;color:var(--muted)}
-
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
-.reveal.vis{opacity:1;transform:none}
-.reveal-d1{transition-delay:.1s}
-.reveal-d2{transition-delay:.2s}
-.reveal-d3{transition-delay:.3s}
-
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-
-/* TABLET+ */
-@media(min-width:640px){
-  .stats-row{grid-template-columns:repeat(4,1fr)}
-  .exp-grid{grid-template-columns:repeat(2,1fr)}
-  .res-grid{grid-template-columns:repeat(3,1fr)}
+.cert-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
+.cert {
+  background: var(--white); border: 1px solid var(--mid-light);
+  border-radius: 100px; padding: 8px 16px;
+  font-size: 13px; font-weight: 500; color: var(--dark);
+  box-shadow: var(--shadow);
+  transition: border-color .15s, color .15s;
 }
-@media(min-width:900px){
-  nav{padding:0 48px}
-  .hamburger{display:none}
-  .nav-desktop{display:flex}
-  .nav-cta{display:block}
-  section{padding:100px 48px}
-  #resources{padding:80px 48px}
-  footer{padding:48px 48px}
-  .about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:64px;align-items:start}
-  .exp-grid{grid-template-columns:repeat(3,1fr)}
-  .hero{padding:calc(var(--nh)+60px) 48px 80px}
+.cert:hover { border-color: var(--blue); color: var(--blue); }
+
+/* DARK CTA SECTION */
+.cta-dark {
+  background: var(--dark);
+  padding: 80px 22px;
+  position: relative; overflow: hidden;
+}
+.cta-dark::before {
+  content: '';
+  position: absolute; top: -50%; right: -20%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(0,113,227,.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+.cta-grid {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; gap: 16px;
+}
+.cta-card {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--r);
+  padding: 28px;
+  transition: background .2s, transform .2s, border-color .2s;
+  cursor: pointer;
+}
+.cta-card:hover {
+  background: rgba(255,255,255,.08);
+  border-color: rgba(0,113,227,.4);
+  transform: translateY(-3px);
+}
+.cta-card-icon { font-size: 28px; margin-bottom: 12px; }
+.cta-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px; font-weight: 700; color: #fff;
+  letter-spacing: -.02em; margin-bottom: 8px;
+}
+.cta-card p { font-size: 14px; color: rgba(255,255,255,.5); line-height: 1.6; margin-bottom: 12px; }
+.cta-card-link { font-size: 13px; color: var(--blue); font-weight: 600; }
+
+@keyframes fadeUp { from { opacity:0;transform:translateY(16px) } to { opacity:1;transform:none } }
+
+@media (min-width:640px) {
+  .hero { padding: 100px 40px 80px; }
+  .sec { padding: 100px 40px; }
+  .cta-dark { padding: 100px 40px; }
+  .hero-stats { grid-template-columns: repeat(4,1fr); }
+  .expertise-grid { grid-template-columns: repeat(2,1fr); }
+  .cta-grid { grid-template-columns: repeat(3,1fr); }
+  .about-grid { grid-template-columns: 1.4fr 1fr; align-items: start; }
+}
+@media (min-width:900px) {
+  .hero { padding: 100px 52px 80px; }
+  .sec { padding: 110px 52px; }
+  .cta-dark { padding: 110px 52px; }
+  .expertise-grid { grid-template-columns: repeat(3,1fr); }
 }
 </style>
 </head>
 <body>
 
 <nav id="nav">
-  <a class="nav-logo" href="index.html">GKP</a>
+  <a class="nav-logo" href="index.html">GKP<span>.</span></a>
   <ul class="nav-desktop">
     <li><a href="index.html" class="act">Home</a></li>
-    <li><a href="index.html#about">About</a></li>
-    <li><a href="index.html#expertise">Expertise</a></li>
-    <li><a href="questions.html">Interview Q&amp;A</a></li>
+    <li><a href="questions.html">Interview Q&A</a></li>
     <li><a href="coach.html">Interview Coach</a></li>
     <li><a href="speaking.html">Speaking Guide</a></li>
+    
   </ul>
-  <a class="nav-cta" href="questions.html">Free Resources →</a>
+  <a class="nav-cta-btn" href="questions.html">Free Resources</a>
   <button class="hamburger" id="hbg" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
-
-<div class="mobile-menu" id="mmenu">
+<div class="mmenu" id="mmenu">
   <a href="index.html" class="act">Home</a>
-  <a href="index.html#about">About Me</a>
-  <a href="index.html#expertise">Expertise</a>
-  <a href="index.html#experience">Experience</a>
-  <a href="questions.html">Interview Q&amp;A</a>
+  <a href="questions.html">Interview Q&A</a>
+  <a href="coach.html">Interview Coach</a>
   <a href="speaking.html">Speaking Guide</a>
+  
   <a href="questions.html" class="m-cta">Free Resources →</a>
 </div>
 
-<div class="hero">
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-mesh"></div>
   <div class="hero-inner">
-    <div class="eyebrow">// Capability Leader · Bangalore, India</div>
-    <h1>Gyanesh<br/><em>Kumar Pandey</em></h1>
-    <p class="hero-sub">Certified Product Owner · PLM &amp; Application Lifecycle Expert · 20+ Years</p>
-    <p class="hero-desc">Technology leader driving digital transformation for global enterprises. Free interview resources and speaking guides — shared from real-world experience.</p>
+    <div class="hero-badge">Available for Director Roles</div>
+    <h1>Gyanesh<br/><span class="grad">Kumar Pandey</span></h1>
+    <p class="hero-role">Capability Leader · Certified Product Owner · PLM Expert · Bangalore</p>
+    <p class="hero-desc">20+ years driving digital transformation for global enterprises. Leading a $2.4B portfolio at Schneider Electric. Free interview resources shared from real experience.</p>
     <div class="hero-btns">
-      <a href="questions.html" class="btn-p">Free Interview Q&amp;A →</a>
-      <a href="speaking.html" class="btn-o">Speaking Guide</a>
+      <a href="questions.html" class="btn-blue">Free Interview Q&amp;A →</a>
+      <a href="coach.html" class="btn-ghost">Interview Coach</a>
     </div>
-    <div class="stats-row">
+    <div class="hero-stats">
       <div class="stat-box"><div class="stat-n">20+</div><div class="stat-l">Years Experience</div></div>
-      <div class="stat-box"><div class="stat-n">4</div><div class="stat-l">Major Enterprises</div></div>
-      <div class="stat-box"><div class="stat-n">MTech</div><div class="stat-l">Manipal Inst.</div></div>
-      <div class="stat-box"><div class="stat-n">5+</div><div class="stat-l">Certifications</div></div>
+      <div class="stat-box"><div class="stat-n">$2.4B</div><div class="stat-l">Portfolio Managed</div></div>
+      <div class="stat-box"><div class="stat-n">16</div><div class="stat-l">Platform Releases</div></div>
+      <div class="stat-box"><div class="stat-n">MTech</div><div class="stat-l">AI · Manipal Inst.</div></div>
     </div>
   </div>
-</div>
+</section>
 
-<section id="about">
+<!-- ABOUT -->
+<section class="sec" id="about" style="background:var(--white);">
   <div class="sec-max">
-    <div class="sec-tag reveal">01 / About</div>
-    <h2 class="sec-h reveal">The Professional<br/>Behind the <em>Work</em></h2>
+    <div class="sec-eyebrow reveal">About</div>
+    <h2 class="sec-title reveal">The professional<br/>behind the <span class="blue">work.</span></h2>
     <div class="about-grid">
-      <div class="about-text reveal">
-        <p>I'm a technology leader with over two decades of experience in enterprise software, digital transformation, and product ownership. Currently at <strong>Schneider Electric</strong> as Capability Leader, leading Strategic Portfolio and PLM management for high-impact enterprise applications.</p>
-        <p>As a <strong>Certified Product Owner</strong>, I define multi-year technology roadmaps, manage end-to-end product lifecycles, and drive distributed system integrations. I'm passionate about bridging technical complexity and business value.</p>
-        <p>This website is also a <strong>free knowledge hub</strong> — interview questions, speaking guides, and preparation material from 20 years of real-world enterprise experience.</p>
-        <div class="hlist">
-          <div class="hitem"><div class="hicon">🎯</div><div><h4>Certified Product Owner</h4><p>Backlog, sprints, stakeholder collaboration</p></div></div>
-          <div class="hitem"><div class="hicon">🏗️</div><div><h4>Systems Architect</h4><p>Distributed enterprise integrations</p></div></div>
-          <div class="hitem"><div class="hicon">📊</div><div><h4>Portfolio Management</h4><p>Multi-year technology roadmaps</p></div></div>
-          <div class="hitem"><div class="hicon">🎓</div><div><h4>MTech — Manipal Institute</h4><p>Computer Software Engineering, 2022–2025</p></div></div>
+      <div class="about-body reveal">
+        <p>I'm a technology leader with over two decades of experience in enterprise software, digital transformation, and product ownership. Currently at <strong>Schneider Electric</strong> as Capability Leader, managing a $2.4B global R&D portfolio.</p>
+        <p>As a <strong>Certified Product Owner</strong>, I define multi-year technology roadmaps, manage end-to-end product lifecycles, and drive distributed system integrations across global teams.</p>
+        <p>This website is a <strong>free knowledge hub</strong> — 39 director-level interview questions with real answers, an AI speech guide, and the GCC transformation story, shared from genuine enterprise experience.</p>
+        <div style="margin-top:28px;display:flex;flex-wrap:wrap;gap:8px;">
+          <a href="mailto:mahegyaneshpandey@gmail.com" style="font-size:13px;color:var(--blue);font-weight:600;padding:8px 16px;border:1.5px solid rgba(0,113,227,.25);border-radius:100px;transition:background .15s;" onmouseover="this.style.background='var(--blue-light)'" onmouseout="this.style.background='transparent'">✉ mahegyaneshpandey@gmail.com</a>
+          <a href="https://www.linkedin.com/in/gyaneshkpandey" target="_blank" style="font-size:13px;color:var(--blue);font-weight:600;padding:8px 16px;border:1.5px solid rgba(0,113,227,.25);border-radius:100px;transition:background .15s;" onmouseover="this.style.background='var(--blue-light)'" onmouseout="this.style.background='transparent'">LinkedIn ↗</a>
         </div>
       </div>
-      <div class="reveal reveal-d2" style="margin-top:32px">
-        <div style="background:var(--sur);border:1px solid var(--bdr);border-radius:var(--r);padding:28px">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:16px">Current Role</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:var(--gold);margin-bottom:4px">Schneider Electric</div>
-          <div style="font-size:14px;color:var(--text);margin-bottom:16px">Capability Leader</div>
-          <div style="font-size:13px;color:var(--muted);line-height:1.7">Leading Strategic Portfolio and PLM management for high-impact enterprise applications. Architecting multi-tool workflows enabling seamless PLM data exchange and lifecycle automation.</div>
-          <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--bdr)">
-            <a href="mailto:mahegyaneshpandey@gmail.com" style="font-size:13px;color:var(--gold);display:block;margin-bottom:8px">✉ mahegyaneshpandey@gmail.com</a>
-            <a href="https://www.linkedin.com/in/gyaneshkpandey" target="_blank" style="font-size:13px;color:var(--gold)">🔗 linkedin.com/in/gyaneshkpandey</a>
+      <div class="reveal d2">
+        <div class="about-card">
+          <div class="about-card-title">Current Role</div>
+          <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--dark);letter-spacing:-.02em;margin-bottom:4px;">Schneider Electric</div>
+          <div style="font-size:14px;color:var(--blue);font-weight:600;margin-bottom:14px;">Capability Leader</div>
+          <div class="hl-list">
+            <div class="hl-item"><div class="hl-dot"></div><div><h4>Certified Product Owner</h4><p>Backlog, sprints, stakeholder alignment</p></div></div>
+            <div class="hl-item"><div class="hl-dot"></div><div><h4>$2.4B Portfolio</h4><p>Strategic portfolio &amp; PLM management</p></div></div>
+            <div class="hl-item"><div class="hl-dot"></div><div><h4>GCC Builder</h4><p>Built India GCC from zero — 3 progressive roles</p></div></div>
+            <div class="hl-item"><div class="hl-dot"></div><div><h4>MTech AI — Manipal</h4><p>Completed while working full-time</p></div></div>
           </div>
         </div>
       </div>
@@ -230,105 +491,96 @@ footer{background:var(--sur);border-top:1px solid var(--bdr);padding:40px 24px}
   </div>
 </section>
 
-<section id="expertise">
+<!-- EXPERTISE -->
+<section class="sec" id="expertise" style="background:var(--light);">
   <div class="sec-max">
-    <div class="sec-tag reveal">02 / Expertise</div>
-    <h2 class="sec-h reveal">Core <em>Competencies</em></h2>
-    <div class="exp-grid">
-      <div class="exp-card reveal"><div class="exp-num">01</div><h3>Product Ownership</h3><p>Certified PO and EPIC Owner. Multi-year PLM and workflow roadmaps. Backlog management, sprint planning, and customer-centric delivery.</p></div>
-      <div class="exp-card reveal reveal-d1"><div class="exp-num">02</div><h3>Strategic Portfolio Mgmt</h3><p>Multi-year technology roadmaps, tech-debt optimization, and lifecycle alignment with organizational goals for global enterprises.</p></div>
-      <div class="exp-card reveal reveal-d2"><div class="exp-num">03</div><h3>PLM &amp; App Lifecycle</h3><p>Complete lifecycle from requirements through launch, optimization, and support. Deep expertise in PLM platforms and governance.</p></div>
-      <div class="exp-card reveal"><div class="exp-num">04</div><h3>Distributed Systems</h3><p>Designed, implemented, and optimized distributed enterprise integrations for scalability and reliability across multi-platform ecosystems.</p></div>
-      <div class="exp-card reveal reveal-d1"><div class="exp-num">05</div><h3>Business Case Dev.</h3><p>Business cases with key performance metrics — ROI, SLA, integration success — delivering measurable enterprise improvements.</p></div>
-      <div class="exp-card reveal reveal-d2"><div class="exp-num">06</div><h3>Agile &amp; Scrum</h3><p>Led large agile teams through complex digital transformation programs. Change management and multi-vendor alignment.</p></div>
+    <div class="sec-eyebrow reveal">Expertise</div>
+    <h2 class="sec-title reveal">Core <span class="blue">competencies.</span></h2>
+    <div class="expertise-grid">
+      <div class="exp-card reveal"><div class="exp-num">01</div><h3>Product Ownership</h3><p>Certified PO and EPIC Owner. Multi-year PLM and workflow roadmaps. Customer-centric delivery across global teams.</p></div>
+      <div class="exp-card reveal d1"><div class="exp-num">02</div><h3>Strategic Portfolio</h3><p>$2.4B portfolio management, tech-debt optimization, and lifecycle alignment with organizational goals.</p></div>
+      <div class="exp-card reveal d2"><div class="exp-num">03</div><h3>PLM &amp; App Lifecycle</h3><p>Complete lifecycle from requirements through launch and support. Deep PLM platform and governance expertise.</p></div>
+      <div class="exp-card reveal"><div class="exp-num">04</div><h3>Distributed Systems</h3><p>Designed enterprise integrations for scalability and reliability across multi-platform ecosystems.</p></div>
+      <div class="exp-card reveal d1"><div class="exp-num">05</div><h3>Cross-Border Leadership</h3><p>Built India GCC from zero. Migrated complex projects France → India. Integrated cross-border teams.</p></div>
+      <div class="exp-card reveal d2"><div class="exp-num">06</div><h3>Agile &amp; Digital Transform.</h3><p>Led large agile teams through complex programs. Change management and multi-vendor alignment globally.</p></div>
     </div>
   </div>
 </section>
 
-<section id="experience">
+<!-- EXPERIENCE -->
+<section class="sec" id="experience" style="background:var(--white);">
   <div class="sec-max">
-    <div class="sec-tag reveal">03 / Experience</div>
-    <h2 class="sec-h reveal">Career <em>Journey</em></h2>
+    <div class="sec-eyebrow reveal">Experience</div>
+    <h2 class="sec-title reveal">Career <span class="blue">journey.</span></h2>
     <div class="timeline reveal">
-      <div class="titem">
-        <div class="tco">Schneider Electric</div>
-        <div class="tperiod">2011 — Present · Bangalore</div>
-        <div class="trole">Capability Leader → Product Owner → Portfolio Expert → Technical Lead</div>
-        <div class="tdesc">13+ years of progressive leadership. From architecting multi-tool workflows and database migrations, to defining PLM roadmaps as Certified PO, to currently leading strategic portfolio management as Capability Leader.</div>
-      </div>
-      <div class="titem">
-        <div class="tco">HP</div>
-        <div class="tperiod">2009 — 2011 · Bangalore</div>
-        <div class="trole">Technical Consultant</div>
-        <div class="tdesc">Led distributed workflow enhancements, database integrations, and high-priority feature releases. Mentored junior engineers and supported enterprise product transitions.</div>
-      </div>
-      <div class="titem">
-        <div class="tco">Medisoft Solutions</div>
-        <div class="tperiod">2006 — 2009</div>
-        <div class="trole">Senior Software Engineer</div>
-        <div class="tdesc">Designed core database architecture and PLM modules. Managed deployments and ensured code, data, and workflow quality across distributed modules.</div>
-      </div>
+      <div class="t-item"><div class="t-co">Schneider Electric</div><div class="t-period">2011 — Present</div><div class="t-role">Capability Leader → Product Owner → Portfolio Expert → Technical Lead</div><div class="t-desc">13+ years of progressive leadership. From architecting multi-tool workflows to defining PLM roadmaps as Certified PO, to building the India GCC, to currently leading a $2.4B strategic portfolio.</div></div>
+      <div class="t-item"><div class="t-co">HP</div><div class="t-period">2009 — 2011</div><div class="t-role">Technical Consultant</div><div class="t-desc">Led distributed workflow enhancements, database integrations, and HP OpenView enterprise product transitions.</div></div>
+      <div class="t-item"><div class="t-co">Medisoft Solutions</div><div class="t-period">2006 — 2009</div><div class="t-role">Senior Software Engineer</div><div class="t-desc">Designed core database architecture and PLM modules. Built software for global telecom clients including Verizon, AT&T, and AccuWeather.</div></div>
     </div>
   </div>
 </section>
 
-<section id="certs">
+<!-- CERTIFICATIONS -->
+<section class="sec" style="background:var(--light);padding-top:60px;padding-bottom:60px;">
   <div class="sec-max">
-    <div class="sec-tag reveal">04 / Credentials</div>
-    <h2 class="sec-h reveal"><em>Certifications</em></h2>
+    <div class="sec-eyebrow reveal">Credentials</div>
+    <h2 class="sec-title reveal" style="margin-bottom:28px;">Certifications.</h2>
     <div class="cert-wrap reveal">
-      <span class="cert">✦ Certified Product Owner (PO)</span>
-      <span class="cert">✦ AI For Everyone</span>
-      <span class="cert">✦ Programming for Everybody — Python</span>
-      <span class="cert">✦ Introduction to Marketing</span>
-      <span class="cert">✦ The Art of Storytelling</span>
+      <span class="cert">Certified Product Owner (PO)</span>
+      <span class="cert">AI For Everyone</span>
+      <span class="cert">Programming for Everybody — Python</span>
+      <span class="cert">Introduction to Marketing</span>
+      <span class="cert">The Art of Storytelling</span>
+      <span class="cert">MTech Software Engineering &amp; AI</span>
     </div>
   </div>
 </section>
 
-<div id="resources">
-  <div class="res-grid">
-    <a href="questions.html" class="res-card c1">
-      <div class="res-icon">❓</div>
-      <h3>Interview Q&amp;A Hub</h3>
-      <p>100+ curated questions with detailed answers across Product Owner, Agile, PLM, Architecture, Leadership, and AI topics.</p>
-      <div class="res-link">Explore Questions →</div>
+<!-- DARK CTA -->
+<div class="cta-dark">
+  <div class="cta-grid">
+    <a href="questions.html" class="cta-card reveal">
+      <div class="cta-card-icon">❓</div>
+      <h3>Interview Q&amp;A</h3>
+      <p>39 real director-level questions with polished answers. 9 categories. Search and filter.</p>
+      <div class="cta-card-link">Explore all questions →</div>
     </a>
-    <a href="speaking.html" class="res-card c2">
-      <div class="res-icon">🎤</div>
-      <h3>Public Speaking Guide</h3>
-      <p>Learn when to pause, how to convince, how to own the room. Marked-up speech script with pause cues and techniques.</p>
-      <div class="res-link">Master Speaking →</div>
+    <a href="coach.html" class="cta-card reveal d1">
+      <div class="cta-card-icon">🏆</div>
+      <h3>Interview Coach</h3>
+      <p>Master your GCC transformation story. 6 practice modes including script, quiz, and cheatsheet.</p>
+      <div class="cta-card-link">Start coaching →</div>
     </a>
-    <a href="speaking.html#convince" class="res-card c3">
-      <div class="res-icon">💡</div>
-      <h3>Tough Questions Guide</h3>
-      <p>How to handle difficult interview questions, hostile audiences, and situations where you don't know the answer.</p>
-      <div class="res-link">Read the Guide →</div>
+    <a href="speaking.html" class="cta-card reveal d2">
+      <div class="cta-card-icon">🎤</div>
+      <h3>Speaking Guide</h3>
+      <p>When to pause, how to convince, how to handle tough questions. Your AI speech script.</p>
+      <div class="cta-card-link">Master speaking →</div>
     </a>
   </div>
 </div>
 
 <footer>
-  <div class="foot-inner">
-    <div class="foot-logo">GKP</div>
-    <div class="foot-sub">Gyanesh Kumar Pandey · Bangalore, India · Free knowledge for tech professionals</div>
-    <div class="foot-links">
+  <div class="footer-inner">
+    <div class="footer-logo">GKP<span>.</span></div>
+    <div class="footer-sub">Gyanesh Kumar Pandey · Capability Leader · Bangalore, India</div>
+    <div class="footer-links">
       <a href="index.html">Home</a>
       <a href="questions.html">Interview Q&amp;A</a>
+      <a href="coach.html">Interview Coach</a>
       <a href="speaking.html">Speaking Guide</a>
+      <a href="swimlane.html">Lifecycle Diagram</a>
       <a href="mailto:mahegyaneshpandey@gmail.com">Email</a>
       <a href="https://www.linkedin.com/in/gyaneshkpandey" target="_blank">LinkedIn ↗</a>
     </div>
-    <div class="foot-copy">No login · No paywall · No ads · Just knowledge shared freely.</div>
+    <div class="footer-copy">Free knowledge · No login · No paywall · Shared from 20 years of enterprise experience.</div>
   </div>
 </footer>
-
 <script>
 const hbg=document.getElementById('hbg'),mm=document.getElementById('mmenu');
-hbg.addEventListener('click',()=>{hbg.classList.toggle('open');mm.classList.toggle('open');document.body.style.overflow=mm.classList.contains('open')?'hidden':''});
-mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hbg.classList.remove('open');mm.classList.remove('open');document.body.style.overflow=''}));
-const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.1});
+hbg.addEventListener('click',()=>{hbg.classList.toggle('open');mm.classList.toggle('open');document.body.style.overflow=mm.classList.contains('open')?'hidden':'';});
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hbg.classList.remove('open');mm.classList.remove('open');document.body.style.overflow='';}));
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),{threshold:.08});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
 </body>
